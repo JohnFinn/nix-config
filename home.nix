@@ -80,7 +80,10 @@
       sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ru" ]) ];
       xkb-options = [ "" ];
     };
-
+    "org/gnome/desktop/wm/keybindings" = {
+      close = [ "<Super>q" ];
+      toggle-fullscreen = [ "<Super>f" ];
+    };
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
