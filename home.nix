@@ -78,12 +78,14 @@
     "org/gnome/desktop/input-sources" = {
       mru-sources = [ (mkTuple [ "xkb" "us" ]) ];
       sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ru" ]) ];
-      xkb-options = [ "" ];
+      xkb-options = [ "" "caps:swapescape" ];
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
       toggle-fullscreen = [ "<Super>f" ];
     };
+    "org/gnome/desktop/wm/preferences" = { focus-mode = "sloppy"; };
+
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
