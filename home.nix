@@ -24,6 +24,7 @@
     dconf2nix
     git
     fish
+    alacritty
     google-chrome
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -103,7 +104,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
       {
         binding = "<Super>Return";
-        command = "kgx";
+        command = "alacritty -e fish";
         name = "terminal";
       };
   };
