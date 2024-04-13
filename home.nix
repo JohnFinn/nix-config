@@ -18,14 +18,13 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.nixfmt-classic
-    pkgs.htop
-    pkgs.dconf2nix
-    pkgs.git
-    pkgs.vim
-    pkgs.fish
-    pkgs.google-chrome
+  home.packages = with pkgs; [
+    nixfmt-classic
+    htop
+    dconf2nix
+    git
+    fish
+    google-chrome
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -81,6 +80,7 @@
   };
   programs.neovim = {
     enable = true;
+    vimAlias = true;
     extraConfig = builtins.readFile ./vimrc;
   };
 
