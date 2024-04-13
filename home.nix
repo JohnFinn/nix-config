@@ -85,6 +85,17 @@
       toggle-fullscreen = [ "<Super>f" ];
     };
     "org/gnome/desktop/wm/preferences" = { focus-mode = "sloppy"; };
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
+      {
+        binding = "<Super>Return";
+        command = "kgx";
+        name = "terminal";
+      };
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
