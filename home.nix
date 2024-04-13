@@ -77,6 +77,7 @@
     enable = true;
     userName = "JohnFinn";
     userEmail = "dz4tune@gmail.com";
+    extraConfig = { core = { editor = "nvim"; }; };
   };
   programs.neovim = {
     enable = true;
