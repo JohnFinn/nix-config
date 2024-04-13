@@ -73,6 +73,10 @@
     userName = "JohnFinn";
     userEmail = "dz4tune@gmail.com";
   };
+  programs.neovim = {
+    enable = true;
+    extraConfig = builtins.readFile ./vimrc;
+  };
 
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/desktop/input-sources" = {
