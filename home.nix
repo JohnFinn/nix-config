@@ -18,7 +18,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.nixfmt
+    pkgs.nixfmt-classic
+    pkgs.htop
+    pkgs.dconf2nix
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -83,7 +85,6 @@
       toggle-fullscreen = [ "<Super>f" ];
     };
     "org/gnome/desktop/wm/preferences" = { focus-mode = "sloppy"; };
-
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
