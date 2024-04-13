@@ -107,6 +107,10 @@
         command = "alacritty -e fish";
         name = "terminal";
       };
+    "org/gnome/desktop/peripherals/touchpad" = {
+      tap-to-click = true;
+      two-finger-scrolling-enabled = true;
+    };
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
