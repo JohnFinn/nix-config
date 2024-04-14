@@ -27,6 +27,12 @@ vim.api.nvim_set_keymap('o', 'k', 'j', { noremap = true })
 vim.api.nvim_set_keymap('o', 'j', 'h', { noremap = true })
 vim.api.nvim_set_keymap('o', 'h', ';', { noremap = true })
 
+vim.api.nvim_set_keymap('n', '<C-w>;', '<C-w>l', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-w>l', '<C-w>k', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-w>k', '<C-w>j', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-w>j', '<C-w>h', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-w>h', '<C-w>;', { noremap = true })
+
 vim.o.timeoutlen = 0
 
 vim.opt.foldmethod = "expr"                     -- default is "normal"
