@@ -30,6 +30,10 @@
     google-chrome
     lunarvim
     starship
+    zoxide
+    fzf
+    clang
+    clang-tools
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -85,12 +89,14 @@
       enable = true;
       initExtra = ''
         eval "$(starship init bash)"
+        eval "$(zoxide init bash)"
       '';
     };
     fish = {
       enable = true;
       interactiveShellInit = ''
         starship init fish | source
+        zoxide init fish | source
       '';
     };
     git = {

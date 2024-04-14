@@ -40,7 +40,7 @@ lvim.builtin.which_key.setup.plugins.presets.z = true
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
-  pattern = "*.lua",
+  pattern = "*.*",
   timeout = 1000,
 }
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -102,16 +102,20 @@ lvim.builtin.treesitter.auto_install = true
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
--- -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "stylua" },
---   {
---     command = "prettier",
---     extra_args = { "--print-width", "100" },
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+-- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  -- { command = "stylua" },
+  -- {
+  --   command = "prettier",
+  --   extra_args = { "--print-width", "100" },
+  --   filetypes = { "typescript", "typescriptreact" },
+  -- },
+  { command = "nixfmt",
+    filetype = { "nix" }, },
+  { command = "clang-format",
+    filetype = { "cpp" }, },
+}
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
