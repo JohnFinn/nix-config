@@ -124,6 +124,7 @@
     tmux = {
       enable = true;
       mouse = true;
+      baseIndex = 1;
       extraConfig = ''
         unbind r
         bind r source-file ~/.config/tmux/tmux.conf
