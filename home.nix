@@ -31,6 +31,7 @@
     lunarvim
     starship
     zoxide
+    direnv
     fzf
     clang
     clang-tools
@@ -89,15 +90,25 @@
       enable = true;
       initExtra = ''
         eval "$(starship init bash)"
-        eval "$(zoxide init bash)"
+        eval "$(zoxide init --cmd cd bash)"
+        eval "$(direnv hook bash)"
       '';
     };
     fish = {
       enable = true;
       interactiveShellInit = ''
         starship init fish | source
-        zoxide init fish | source
+        zoxide init --cmd cd fish | source
+        direnv hook fish | source
       '';
+    };
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+    alacritty = {
+      enable = true;
+      settings.window.decorations = "None";
     };
     git = {
       enable = true;
