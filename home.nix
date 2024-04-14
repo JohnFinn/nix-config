@@ -28,6 +28,8 @@
     nerdfonts
     alacritty
     google-chrome
+    lunarvim
+    starship
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -56,6 +58,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/lvim/config.lua".source = ./lvim-config.lua;
+    ".config/starship.toml".source = ./starship.toml;
   };
 
   # Home Manager can also manage your environment variables through
@@ -74,7 +78,18 @@
   #  /etc/profiles/per-user/jouni/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = { EDITOR = "vim"; };
-
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      eval "$(starship init bash)"
+    '';
+  };
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      starship init fish | source
+    '';
+  };
   programs.git = {
     enable = true;
     userName = "JohnFinn";
@@ -85,7 +100,6 @@
     enable = true;
     vimAlias = true;
     extraConfig = builtins.readFile ./vimrc;
-    plugins = [ pkgs.vimPlugins.vim-visual-multi ];
   };
   programs.tmux = {
     enable = true;
