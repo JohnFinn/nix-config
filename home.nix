@@ -23,6 +23,7 @@
     htop
     dconf2nix
     git
+    zsh
     fish
     tmux
     nerdfonts
@@ -33,6 +34,7 @@
     zoxide
     direnv
     fzf
+    entr
     clang
     clang-tools
 
