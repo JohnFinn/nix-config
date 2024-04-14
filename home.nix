@@ -78,61 +78,65 @@
   #  /etc/profiles/per-user/jouni/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = { EDITOR = "vim"; };
-  programs.bash = {
-    enable = true;
-    initExtra = ''
-      eval "$(starship init bash)"
-    '';
-  };
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      starship init fish | source
-    '';
-  };
-  programs.git = {
-    enable = true;
-    userName = "JohnFinn";
-    userEmail = "dz4tune@gmail.com";
-    extraConfig = { core = { editor = "nvim"; }; };
-  };
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-    extraConfig = builtins.readFile ./vimrc;
-  };
-  programs.tmux = {
-    enable = true;
-    mouse = true;
-    extraConfig = ''
-      unbind r
-      bind r source-file ~/.config/tmux/tmux.conf
-      set-option -g status-position top
-      set -s escape-time 0
-    '';
-    plugins = with pkgs; [{
-      plugin = tmuxPlugins.catppuccin;
-      extraConfig = ''
-        set -g @catppuccin_window_left_separator ""
-        set -g @catppuccin_window_right_separator " "
-        set -g @catppuccin_window_middle_separator " █"
-        set -g @catppuccin_window_number_position "right"
-
-        set -g @catppuccin_window_default_fill "number"
-        set -g @catppuccin_window_default_text "#W"
-
-        set -g @catppuccin_window_current_fill "number"
-        set -g @catppuccin_window_current_text "#W"
-
-        set -g @catppuccin_status_modules_right "directory user host session"
-        set -g @catppuccin_status_left_separator  " "
-        set -g @catppuccin_status_right_separator ""
-        set -g @catppuccin_status_fill "icon"
-        set -g @catppuccin_status_connect_separator "no"
-
-        set -g @catppuccin_directory_text "#{pane_current_path}"
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
+    bash = {
+      enable = true;
+      initExtra = ''
+        eval "$(starship init bash)"
       '';
-    }];
+    };
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        starship init fish | source
+      '';
+    };
+    git = {
+      enable = true;
+      userName = "JohnFinn";
+      userEmail = "dz4tune@gmail.com";
+      extraConfig = { core = { editor = "nvim"; }; };
+    };
+    neovim = {
+      enable = true;
+      vimAlias = true;
+      extraConfig = builtins.readFile ./vimrc;
+    };
+    tmux = {
+      enable = true;
+      mouse = true;
+      extraConfig = ''
+        unbind r
+        bind r source-file ~/.config/tmux/tmux.conf
+        set-option -g status-position top
+        set -s escape-time 0
+      '';
+      plugins = with pkgs; [{
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_window_left_separator ""
+          set -g @catppuccin_window_right_separator " "
+          set -g @catppuccin_window_middle_separator " █"
+          set -g @catppuccin_window_number_position "right"
+
+          set -g @catppuccin_window_default_fill "number"
+          set -g @catppuccin_window_default_text "#W"
+
+          set -g @catppuccin_window_current_fill "number"
+          set -g @catppuccin_window_current_text "#W"
+
+          set -g @catppuccin_status_modules_right "directory user host session"
+          set -g @catppuccin_status_left_separator  " "
+          set -g @catppuccin_status_right_separator ""
+          set -g @catppuccin_status_fill "icon"
+          set -g @catppuccin_status_connect_separator "no"
+
+          set -g @catppuccin_directory_text "#{pane_current_path}"
+        '';
+      }];
+    };
   };
 
   dconf.settings = with lib.hm.gvariant; {
@@ -162,6 +166,4 @@
       two-finger-scrolling-enabled = true;
     };
   };
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
