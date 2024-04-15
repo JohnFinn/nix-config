@@ -110,6 +110,7 @@
     alacritty = {
       enable = true;
       settings.window.decorations = "None";
+      settings.env.TERM = "screen-256color";
     };
     git = {
       enable = true;
@@ -126,11 +127,13 @@
       enable = true;
       mouse = true;
       baseIndex = 1;
+      terminal = "screen-256color";
       extraConfig = ''
         unbind r
         bind r source-file ~/.config/tmux/tmux.conf
         set-option -g status-position top
         set -s escape-time 0
+        set -ga terminal-overrides ',*256col*:Tc'
       '';
       plugins = with pkgs; [{
         plugin = tmuxPlugins.catppuccin;
