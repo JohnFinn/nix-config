@@ -179,6 +179,13 @@
         command = "alacritty -e fish";
         name = "terminal";
       };
+    "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" =
+      {
+        font = "0xProto Nerd Font 12";
+        use-system-font = false;
+        use-custom-command = true;
+        custom-command = "fish";
+      };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
