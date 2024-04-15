@@ -88,24 +88,22 @@
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-    bash = {
+    bash = { enable = true; };
+    fish = { enable = true; };
+    zoxide = {
       enable = true;
-      initExtra = ''
-        eval "$(starship init bash)"
-        eval "$(zoxide init --cmd cd bash)"
-        eval "$(direnv hook bash)"
-      '';
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      options = [ "--cmd" "cd" ];
     };
-    fish = {
+    starship = {
       enable = true;
-      interactiveShellInit = ''
-        starship init fish | source
-        zoxide init --cmd cd fish | source
-        direnv hook fish | source
-      '';
+      enableBashIntegration = true;
+      enableFishIntegration = true;
     };
     direnv = {
       enable = true;
+      enableBashIntegration = true;
       nix-direnv.enable = true;
     };
     alacritty = {
