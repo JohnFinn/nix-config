@@ -120,6 +120,7 @@
       enable = true;
       vimAlias = true;
       extraConfig = builtins.readFile ./vimrc;
+      extraLuaConfig = builtins.readFile ./extraLuaConfig.lua;
       plugins = with pkgs.vimPlugins; [
         telescope-nvim
         copilot-vim
