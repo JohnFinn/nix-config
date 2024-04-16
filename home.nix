@@ -85,6 +85,10 @@
     home-manager.enable = true;
     bash = { enable = true; };
     fish = { enable = true; };
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
     zoxide = {
       enable = true;
       enableBashIntegration = true;
@@ -116,7 +120,11 @@
       enable = true;
       vimAlias = true;
       extraConfig = builtins.readFile ./vimrc;
-      plugins = with pkgs.vimPlugins; [ telescope-nvim copilot-vim ];
+      plugins = with pkgs.vimPlugins; [
+        telescope-nvim
+        copilot-vim
+        vim-commentary
+      ];
     };
     tmux = {
       enable = true;
