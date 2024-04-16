@@ -53,14 +53,7 @@
     # '')
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
@@ -68,6 +61,7 @@
     # '';
     ".config/lvim/config.lua".source = ./lvim-config.lua;
     ".config/starship.toml".source = ./starship.toml;
+    ".ideavimrc".source = ./vimrc; # TODO make vim-commentary work in intelij
   };
 
   # Home Manager can also manage your environment variables through
@@ -91,6 +85,10 @@
     home-manager.enable = true;
     bash = { enable = true; };
     fish = { enable = true; };
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
     zoxide = {
       enable = true;
       enableBashIntegration = true;
@@ -122,6 +120,11 @@
       enable = true;
       vimAlias = true;
       extraConfig = builtins.readFile ./vimrc;
+      plugins = with pkgs.vimPlugins; [
+        telescope-nvim
+        copilot-vim
+        vim-commentary
+      ];
     };
     tmux = {
       enable = true;
@@ -182,6 +185,13 @@
         binding = "<Super>Return";
         command = "alacritty -e fish";
         name = "terminal";
+      };
+    "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" =
+      {
+        font = "0xProto Nerd Font 12";
+        use-system-font = false;
+        use-custom-command = true;
+        custom-command = "fish";
       };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
