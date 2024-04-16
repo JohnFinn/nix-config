@@ -116,6 +116,7 @@
       enable = true;
       vimAlias = true;
       extraConfig = builtins.readFile ./vimrc;
+      plugins = with pkgs.vimPlugins; [ telescope-nvim copilot-vim ];
     };
     tmux = {
       enable = true;
