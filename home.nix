@@ -68,6 +68,7 @@
     # '';
     ".config/lvim/config.lua".source = ./lvim-config.lua;
     ".config/starship.toml".source = ./starship.toml;
+    ".ideavimrc".source = ./vimrc;
   };
 
   # Home Manager can also manage your environment variables through
