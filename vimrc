@@ -4,7 +4,22 @@ noremap k j
 noremap j h
 noremap h ;
 
-set clipboard=unnamedplus
+let XDG_SESSION_TYPE = get(environ(), 'XDG_SESSION_TYPE', '')
+if XDG_SESSION_TYPE == 'x11'
+  set clipboard=unnamedplus
+elseif XDG_SESSION_TYPE == 'wayland'
+  set clipboard=unnamed
+  let g:clipboard = {
+    \   'copy': {
+    \       '+': ['wl-copy', '--trim-newline'],
+    \       '*': ['wl-copy', '--trim-newline'],
+    \   },
+    \   'paste': {
+    \       '+': ['wl-paste', '--no-newline'],
+    \       '*': ['wl-paste', '--no-newline'],
+    \   },
+    \ }
+endif
 
 " setting for vim-commentary plugin
 autocmd FileType nix setlocal commentstring=#\ %s

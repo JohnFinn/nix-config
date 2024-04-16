@@ -125,6 +125,7 @@
         copilot-vim
         vim-commentary
       ];
+      extraPackages = with pkgs; [ wl-clipboard ];
     };
     tmux = {
       enable = true;
