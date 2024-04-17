@@ -61,7 +61,8 @@
     # '';
     ".config/lvim/config.lua".source = ./lvim-config.lua;
     ".config/starship.toml".source = ./starship.toml;
-    ".ideavimrc".source = ./vimrc; # TODO make vim-commentary work in intelij
+    ".ideavimrc".text = "Plug 'tpope/vim-commentary'"
+      + builtins.readFile ./vimrc;
   };
 
   # Home Manager can also manage your environment variables through
