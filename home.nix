@@ -26,6 +26,7 @@
     htop
     dconf2nix
     git
+    lazygit
     zsh
     fish
     tmux
