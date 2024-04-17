@@ -133,6 +133,7 @@
     tmux = {
       enable = true;
       mouse = true;
+      prefix = "C-a";
       baseIndex = 1;
       terminal = "screen-256color";
       extraConfig = ''
@@ -142,6 +143,7 @@
         set -s escape-time 0
         set -ga terminal-overrides ',*256col*:Tc'
       '';
+      tmuxinator.enable = true;
       plugins = with pkgs; [{
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
