@@ -11,8 +11,8 @@ elseif XDG_SESSION_TYPE == 'wayland'
   set clipboard=unnamed
   let g:clipboard = {
     \   'copy': {
-    \       '+': ['wl-copy', '--trim-newline'],
-    \       '*': ['wl-copy', '--trim-newline'],
+    \       '+': ['wl-copy'],
+    \       '*': ['wl-copy'],
     \   },
     \   'paste': {
     \       '+': ['wl-paste', '--no-newline'],
