@@ -20,6 +20,9 @@
   # environment.
   home.packages = with pkgs; [
     nixfmt-classic
+    nh
+    nix-output-monitor
+    nvd
     htop
     dconf2nix
     git
