@@ -112,7 +112,7 @@
     };
     alacritty = {
       enable = true;
-      settings.window.decorations = "None";
+      # settings.window.decorations = "None";
       settings.env.TERM = "screen-256color";
     };
     git = {
