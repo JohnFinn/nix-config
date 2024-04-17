@@ -125,6 +125,7 @@
         telescope-nvim
         copilot-vim
         vim-commentary
+        conform-nvim
       ];
       extraPackages = with pkgs; [ wl-clipboard ];
     };
