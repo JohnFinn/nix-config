@@ -132,7 +132,7 @@
         vim-commentary
         conform-nvim
       ];
-      extraPackages = with pkgs; [ wl-clipboard ];
+      extraPackages = with pkgs; [ wl-clipboard stylua ];
     };
     tmux = {
       enable = true;
