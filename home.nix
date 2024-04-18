@@ -66,7 +66,7 @@
     ".config/lvim/config.lua".source = ./lvim-config.lua;
     ".config/starship.toml".source = ./starship.toml;
     ".ideavimrc".source = ./ideavimrc;
-	".config/lazygit/config.yml".source = ./lazygit.yaml;
+    ".config/lazygit/config.yml".source = ./lazygit.yaml;
   };
 
   # Home Manager can also manage your environment variables through
@@ -128,10 +128,10 @@
       extraLuaConfig = builtins.readFile ./extraLuaConfig.lua;
       plugins = with pkgs.vimPlugins; [
         telescope-nvim
+        telescope-live-grep-args-nvim
         copilot-vim
         vim-commentary
         conform-nvim
-        telescope-live-grep-args-nvim
       ];
       extraPackages = with pkgs; [ wl-clipboard stylua ];
     };
