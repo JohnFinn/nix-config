@@ -40,3 +40,14 @@ local telescope_builtin = require('telescope.builtin')
 vim.keymap.set('n', 'ff', telescope_builtin.find_files)
 vim.keymap.set('n', 'fg', telescope_builtin.live_grep)
 vim.keymap.set('n', 'fw', telescope_builtin.grep_string)
+local actions = require("telescope.actions")
+require("telescope").setup({
+	defaults = {
+		mappings = {
+			n = {
+				["k"] = actions.move_selection_next,
+				["l"] = actions.move_selection_previous,
+			},
+		},
+	},
+})
