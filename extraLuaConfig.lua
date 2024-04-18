@@ -45,6 +45,7 @@ vim.keymap.set("n", "fg", ":lua require('telescope').extensions.live_grep_args.l
 -- vim.keymap.set("n", "fg", require("telescope").load_extension("live_grep_args").live_grep_args)
 vim.keymap.set("n", "fo", telescope_builtin.oldfiles)
 vim.keymap.set("n", "fw", telescope_builtin.grep_string)
+vim.keymap.set('v', 'ff', 'y<ESC>:Telescope live_grep_args default_text=<c-r>0<CR>', {noremap = true, silent = true})
 
 local actions = require("telescope.actions")
 require("telescope").setup({
