@@ -6,3 +6,5 @@ keybinding:
     nextBlock-alt: ';' # goto the next block / panel
     scrollUpMain-alt1: 'L'
     scrollDownMain-alt1: 'K'
+    scrollLeft: # TODO
+    scrollRight: # TODO
