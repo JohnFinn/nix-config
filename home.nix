@@ -65,8 +65,7 @@
     # '';
     ".config/lvim/config.lua".source = ./lvim-config.lua;
     ".config/starship.toml".source = ./starship.toml;
-    ".ideavimrc".text = "Plug 'tpope/vim-commentary'"
-      + builtins.readFile ./vimrc;
+    ".ideavimrc".source = ./ideavimrc;
   };
 
   # Home Manager can also manage your environment variables through
