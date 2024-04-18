@@ -43,7 +43,7 @@ vim.keymap.set("n", "ff", telescope_builtin.find_files)
 vim.keymap.set("n", "fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 -- TODO find out why using this instead of the line above doesn't work
 -- vim.keymap.set("n", "fg", require("telescope").load_extension("live_grep_args").live_grep_args)
-
+vim.keymap.set("n", "fo", telescope_builtin.oldfiles)
 vim.keymap.set("n", "fw", telescope_builtin.grep_string)
 
 local actions = require("telescope.actions")
