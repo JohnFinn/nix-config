@@ -131,6 +131,7 @@
         copilot-vim
         vim-commentary
         conform-nvim
+        telescope-live-grep-args-nvim
       ];
       extraPackages = with pkgs; [ wl-clipboard stylua ];
     };
