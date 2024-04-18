@@ -35,3 +35,7 @@ vim.api.nvim_create_user_command("Format", function(args)
   end
   require("conform").format({ async = true, lsp_fallback = false, range = range })
 end, { range = true })
+
+local telescope_builtin = require('telescope.builtin')
+vim.keymap.set('n', 'ff', telescope_builtin.find_files)
+vim.keymap.set('n', 'fg', telescope_builtin.live_grep)
