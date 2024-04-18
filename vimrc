@@ -21,5 +21,7 @@ elseif XDG_SESSION_TYPE == 'wayland'
     \ }
 endif
 
+set tabstop=4 shiftwidth=4
+
 " setting for vim-commentary plugin
 autocmd FileType nix setlocal commentstring=#\ %s
