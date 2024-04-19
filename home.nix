@@ -67,6 +67,8 @@
     ".config/starship.toml".source = ./starship.toml;
     ".ideavimrc".source = ./ideavimrc;
     ".config/lazygit/config.yml".source = ./lazygit.yaml;
+    ".config/fish/functions/fish_user_key_bindings.fish".source =
+      ./fish_user_key_bindings.fish;
   };
 
   # Home Manager can also manage your environment variables through
