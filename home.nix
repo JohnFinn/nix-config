@@ -143,6 +143,8 @@
         cmp-path
         # --
         nvim-lspconfig
+        # -- theming
+        nvim-web-devicons
       ];
       extraPackages = with pkgs; [
         wl-clipboard
