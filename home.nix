@@ -135,6 +135,12 @@
         copilot-vim
         vim-commentary
         conform-nvim
+        # completion
+        nvim-cmp
+        cmp-nvim-lsp
+        luasnip
+        cmp_luasnip
+        # --
         nvim-lspconfig
       ];
       extraPackages = with pkgs; [

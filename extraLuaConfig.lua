@@ -64,10 +64,29 @@ require("telescope").setup({
 	},
 })
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+local luasnip = require("luasnip")
+luasnip.config.setup({})
+local cmp = require("cmp")
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	sources = { { name = "luasnip" } },
+})
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
 require("lspconfig").lua_ls.setup({
-	settings = { Lua = { workspace = { library = { unpack(vim.api.nvim_get_runtime_file("", true)) } } } },
+	settings = {
+		Lua = {
+			workspace = { library = { unpack(vim.api.nvim_get_runtime_file("", true)) } },
+		},
+	},
+	capabilities = capabilities,
 })
 require("lspconfig").nil_ls.setup({})
 
