@@ -57,6 +57,11 @@ require("telescope").setup({
 			},
 		},
 	},
+	pickers = {
+		colorscheme = {
+			enable_preview = true,
+		},
+	},
 })
 
 require("lspconfig").clangd.setup({})
