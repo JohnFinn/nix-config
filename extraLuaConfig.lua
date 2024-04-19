@@ -71,8 +71,7 @@ require("lspconfig").lua_ls.setup({
 })
 require("lspconfig").nil_ls.setup({})
 
--- TODO reenable this after making it's colorscheme not look ugly
-vim.diagnostic.disable()
+vim.diagnostic.config({ virtual_text = true, signs = false })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
