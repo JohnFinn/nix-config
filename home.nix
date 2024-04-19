@@ -145,6 +145,7 @@
         nvim-lspconfig
         # -- theming
         nvim-web-devicons
+        todo-comments-nvim
       ];
       extraPackages = with pkgs; [
         wl-clipboard

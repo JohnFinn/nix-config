@@ -1,3 +1,4 @@
+require("todo-comments").setup({ signs = false })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
@@ -41,7 +42,7 @@ require("telescope").load_extension("live_grep_args")
 vim.keymap.set("n", "ff", telescope_builtin.find_files)
 -- vim.keymap.set("n", "fg", telescope_builtin.live_grep)
 vim.keymap.set("n", "fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
--- TODO find out why using this instead of the line above doesn't work
+-- TODO: find out why using this instead of the line above doesn't work
 -- vim.keymap.set("n", "fg", require("telescope").load_extension("live_grep_args").live_grep_args)
 vim.keymap.set("n", "fo", telescope_builtin.oldfiles)
 vim.keymap.set("n", "fw", telescope_builtin.grep_string)
@@ -88,7 +89,7 @@ cmp.setup({
 		-- Manually trigger a completion from nvim-cmp.
 		--  Generally you don't need this, because nvim-cmp will display
 		--  completions whenever it has completion options available.
-		--  FIXME neither keybinding nor automatic pop-up works
+		--  FIXME: neither keybinding nor automatic pop-up works
 		-- ["<C-Space>"] = cmp.mapping.complete({}),
 
 		-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
