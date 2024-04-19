@@ -139,6 +139,7 @@
         stylua
         lua-language-server
         nil
+        nodePackages.pyright
       ];
     };
     tmux = {
