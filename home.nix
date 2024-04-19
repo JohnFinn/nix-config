@@ -140,6 +140,7 @@
         cmp-nvim-lsp
         luasnip
         cmp_luasnip
+        cmp-path
         # --
         nvim-lspconfig
       ];

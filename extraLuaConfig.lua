@@ -76,7 +76,7 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
-	sources = { { name = "nvim_lsp" } },
+	sources = { { name = "nvim_lsp" }, { name = "path" } },
 })
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
