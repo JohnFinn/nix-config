@@ -110,7 +110,7 @@ require("lspconfig").lua_ls.setup({
 require("lspconfig").nil_ls.setup({})
 
 vim.diagnostic.config({
-	virtual_text = {prefix = ''}, -- '' ''
+	virtual_text = { prefix = "" }, -- '' ''
 	signs = false,
 })
 
