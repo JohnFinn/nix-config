@@ -135,6 +135,7 @@
         copilot-vim
         vim-commentary
         conform-nvim
+        gitsigns-nvim
         # completion
         nvim-cmp
         cmp-nvim-lsp
