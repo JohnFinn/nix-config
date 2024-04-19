@@ -132,8 +132,14 @@
         copilot-vim
         vim-commentary
         conform-nvim
+        nvim-lspconfig
       ];
-      extraPackages = with pkgs; [ wl-clipboard stylua ];
+      extraPackages = with pkgs; [
+        wl-clipboard
+        stylua
+        lua-language-server
+        nil
+      ];
     };
     tmux = {
       enable = true;

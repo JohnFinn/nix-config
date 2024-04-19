@@ -58,3 +58,34 @@ require("telescope").setup({
 		},
 	},
 })
+
+-- require("lspconfig").clangd.setup({})
+require("lspconfig").lua_ls.setup({
+	settings = { Lua = { workspace = { library = { unpack(vim.api.nvim_get_runtime_file("", true)) } } } },
+})
+require("lspconfig").nil_ls.setup({})
+
+-- TODO reenable this after making it's colorscheme not look ugly
+vim.diagnostic.disable()
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
+	callback = function(event)
+		-- NOTE: Remember that Lua is a real programming language, and as such it is possible
+		-- to define small helper and utility functions so you don't have to repeat yourself.
+		--
+		-- In this case, we create a function that lets us more easily define mappings specific
+		-- for LSP related items. It sets the mode, buffer and description for us each time.
+		local map = function(keys, func, desc)
+			vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+		end
+
+		-- Jump to the definition of the word under your cursor.
+		--  This is where a variable was first declared, or where a function is defined, etc.
+		--  To jump back, press <C-t>.
+		map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+
+		-- Find references for the word under your cursor.
+		map("fr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+	end,
+})
