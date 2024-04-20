@@ -98,6 +98,7 @@ cmp.setup({
 	}),
 	sources = { { name = "nvim_lsp" }, { name = "path" } },
 })
+require("fidget").setup({})
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
 require("lspconfig").lua_ls.setup({

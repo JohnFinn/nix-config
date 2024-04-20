@@ -144,6 +144,7 @@
         cmp-path
         # --
         nvim-lspconfig
+        fidget-nvim
         # -- theming
         nvim-web-devicons
         todo-comments-nvim
