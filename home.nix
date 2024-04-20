@@ -146,6 +146,7 @@
         nvim-lspconfig
         fidget-nvim
         # -- theming
+        mini-nvim
         nvim-web-devicons
         todo-comments-nvim
       ];
