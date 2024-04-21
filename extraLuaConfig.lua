@@ -1,3 +1,4 @@
+vim.cmd("colorscheme tokyonight-night")
 require("todo-comments").setup({ signs = false })
 require("gitsigns").setup({})
 require("mini.statusline").setup({})

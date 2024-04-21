@@ -117,6 +117,42 @@
       enable = true;
       # settings.window.decorations = "None";
       settings.env.TERM = "screen-256color";
+      settings.colors = {
+        "bright" = {
+          "black" = "#414868";
+          "blue" = "#7aa2f7";
+          "cyan" = "#7dcfff";
+          "green" = "#9ece6a";
+          "magenta" = "#bb9af7";
+          "red" = "#f7768e";
+          "white" = "#c0caf5";
+          "yellow" = "#e0af68";
+        };
+        "indexed_colors" = [
+          {
+            "color" = "#ff9e64";
+            "index" = 16;
+          }
+          {
+            "color" = "#db4b4b";
+            "index" = 17;
+          }
+        ];
+        "normal" = {
+          "black" = "#15161e";
+          "blue" = "#7aa2f7";
+          "cyan" = "#7dcfff";
+          "green" = "#9ece6a";
+          "magenta" = "#bb9af7";
+          "red" = "#f7768e";
+          "white" = "#a9b1d6";
+          "yellow" = "#e0af68";
+        };
+        "primary" = {
+          "background" = "#1a1b26";
+          "foreground" = "#c0caf5";
+        };
+      };
     };
     git = {
       enable = true;
@@ -148,6 +184,7 @@
         # -- theming
         mini-nvim
         nvim-web-devicons
+        tokyonight-nvim
         todo-comments-nvim
       ];
       extraPackages = with pkgs; [
