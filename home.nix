@@ -178,6 +178,7 @@
         luasnip
         cmp_luasnip
         cmp-path
+        neodev-nvim
         # --
         nvim-lspconfig
         fidget-nvim

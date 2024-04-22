@@ -102,14 +102,15 @@ cmp.setup({
 	sources = { { name = "nvim_lsp" }, { name = "path" } },
 })
 require("fidget").setup({})
+require("neodev").setup({
+  override = function(root_dir, library)
+		library.enabled = true
+		library.plugins = true
+  end,
+})
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
 require("lspconfig").lua_ls.setup({
-	settings = {
-		Lua = {
-			workspace = { library = { unpack(vim.api.nvim_get_runtime_file("", true)) } },
-		},
-	},
 	capabilities = capabilities,
 })
 require("lspconfig").nil_ls.setup({})
