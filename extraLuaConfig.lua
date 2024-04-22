@@ -110,10 +110,10 @@ cmp.setup({
 })
 require("fidget").setup({})
 require("neodev").setup({
-  override = function(root_dir, library)
+	override = function(root_dir, library)
 		library.enabled = true
 		library.plugins = true
-  end,
+	end,
 })
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
