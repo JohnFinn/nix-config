@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.cmd("colorscheme tokyonight-night")
 require("todo-comments").setup({ signs = false })
 require("gitsigns").setup({})
