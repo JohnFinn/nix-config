@@ -140,3 +140,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("fr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 	end,
 })
+vim.filetype.add({ filename = { ["flake.lock"] = "json" } })
