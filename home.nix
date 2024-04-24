@@ -187,6 +187,15 @@
         nvim-web-devicons
         tokyonight-nvim
         todo-comments-nvim
+        (pkgs.vimUtils.buildVimPlugin {
+          name = "context-vim";
+          src = pkgs.fetchFromGitHub {
+            owner = "doums";
+            repo = "darcula";
+            rev = "faf8dbab27bee0f27e4f1c3ca7e9695af9b1242b";
+            sha256 = "sha256-Gn+lmlYxSIr91Bg3fth2GAQou2Nd1UjrLkIFbBYlmF8=";
+          };
+        })
       ];
       extraPackages = with pkgs; [
         wl-clipboard
