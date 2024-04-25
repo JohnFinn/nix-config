@@ -146,6 +146,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- Find references for the word under your cursor.
 		map("fr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+
+		-- Opens a popup that displays documentation about the word under your cursor
+		--  See `:help K` for why this keymap.
+		map("K", vim.lsp.buf.hover, "Hover Documentation")
 	end,
 })
 vim.filetype.add({ filename = { ["flake.lock"] = "json" } })
