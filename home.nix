@@ -161,6 +161,7 @@
       userName = "JohnFinn";
       userEmail = "dz4tune@gmail.com";
       extraConfig = { core = { editor = "nvim"; }; };
+      delta.enable = true;
     };
     neovim = {
       enable = true;
