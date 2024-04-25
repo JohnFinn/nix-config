@@ -276,6 +276,8 @@
         use-system-font = false;
         use-custom-command = true;
         custom-command = "fish";
+        # background-color = "rgb(23,20,33)";
+        background-color = "rgb(26, 27, 38)"; # from tokyonight theme
       };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
