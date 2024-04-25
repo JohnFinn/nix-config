@@ -30,6 +30,8 @@
     zsh
     fish
     tmux
+    bat
+    eza
     nerdfonts
     alacritty
     google-chrome
