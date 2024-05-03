@@ -34,6 +34,8 @@
     eza
     nerdfonts
     alacritty
+    watchexec
+    jqp
     google-chrome
     lunarvim
     starship
