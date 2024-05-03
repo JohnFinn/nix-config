@@ -115,6 +115,9 @@ require("neodev").setup({
 		library.plugins = true
 	end,
 })
+require("nvim-treesitter.configs").setup({
+	highlight = { enable = true },
+})
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
 require("lspconfig").lua_ls.setup({
