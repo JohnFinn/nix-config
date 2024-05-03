@@ -183,6 +183,7 @@
         cmp-path
         neodev-nvim
         # --
+        nvim-treesitter-parsers.lua
         nvim-lspconfig
         fidget-nvim
         # -- theming
