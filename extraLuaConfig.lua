@@ -117,6 +117,15 @@ require("neodev").setup({
 })
 require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "<leader>l", -- set to `false` to disable one of the mappings
+			node_incremental = "<leader>l",
+			scope_incremental = false,
+			node_decremental = "<leader>k",
+		},
+	},
 })
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
