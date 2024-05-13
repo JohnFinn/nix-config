@@ -65,6 +65,10 @@
     # '')
   ];
 
+  # NOTE: espanso won't start automatically. Use `espanso service start --unmanaged` to start it
+  # FIXME: make it work on wayland
+  services.espanso = { enable = true; };
+
   home.file = {
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -77,6 +81,7 @@
     ".config/lazygit/config.yml".source = ./lazygit.yaml;
     ".config/fish/functions/fish_user_key_bindings.fish".source =
       ./fish_user_key_bindings.fish;
+    ".config/espanso/match/base.yml".source = ./base.yml;
   };
 
   # Home Manager can also manage your environment variables through
