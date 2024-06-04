@@ -197,6 +197,7 @@
         nvim-treesitter-parsers.lua
         nvim-treesitter-parsers.cpp
         nvim-treesitter-parsers.nix
+        nvim-treesitter-parsers.python
         nvim-lspconfig
         fidget-nvim
         # -- theming
