@@ -196,6 +196,7 @@
         nvim-treesitter
         nvim-treesitter-parsers.lua
         nvim-treesitter-parsers.cpp
+        nvim-treesitter-parsers.c
         nvim-treesitter-parsers.nix
         nvim-treesitter-parsers.python
         nvim-lspconfig
