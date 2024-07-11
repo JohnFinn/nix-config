@@ -170,7 +170,10 @@
       enable = true;
       userName = "JohnFinn";
       userEmail = "dz4tune@gmail.com";
-      extraConfig = { core = { editor = "nvim"; }; };
+      extraConfig = {
+        core = { editor = "nvim"; };
+        init.defaultBranch = "main";
+      };
       delta.enable = true;
     };
     neovim = {
