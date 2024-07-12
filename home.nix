@@ -225,6 +225,7 @@
         lua-language-server
         nil
         nodePackages.pyright
+        texlab
       ];
     };
     tmux = {

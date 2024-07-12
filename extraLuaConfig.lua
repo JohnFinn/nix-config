@@ -135,6 +135,7 @@ require("lspconfig").lua_ls.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").nil_ls.setup({})
+require("lspconfig").texlab.setup({})
 
 vim.diagnostic.config({
 	virtual_text = { prefix = "" }, -- '' ''
