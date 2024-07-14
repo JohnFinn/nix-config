@@ -228,6 +228,7 @@
         nodePackages.pyright
         texlab
         rust-analyzer
+        rustfmt
       ];
     };
     tmux = {
