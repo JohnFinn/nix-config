@@ -118,7 +118,7 @@ require("neodev").setup({
 	end,
 })
 require("nvim-treesitter.configs").setup({
-	highlight = { enable = true },
+	highlight = { enable = false },
 	incremental_selection = {
 		enable = true,
 		keymaps = {
