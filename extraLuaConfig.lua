@@ -136,6 +136,7 @@ require("lspconfig").lua_ls.setup({
 })
 require("lspconfig").nil_ls.setup({})
 require("lspconfig").texlab.setup({})
+require("lspconfig").rust_analyzer.setup({})
 
 vim.diagnostic.config({
 	virtual_text = { prefix = "" }, -- '' ''

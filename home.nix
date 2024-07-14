@@ -226,6 +226,7 @@
         nil
         nodePackages.pyright
         texlab
+        rust-analyzer
       ];
     };
     tmux = {
