@@ -202,6 +202,7 @@
         nvim-treesitter-parsers.c
         nvim-treesitter-parsers.nix
         nvim-treesitter-parsers.python
+        nvim-treesitter-parsers.rust
         nvim-lspconfig
         fidget-nvim
         # -- theming
