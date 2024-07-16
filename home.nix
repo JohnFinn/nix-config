@@ -204,6 +204,7 @@
         nvim-treesitter-parsers.python
         nvim-treesitter-parsers.rust
         nvim-lspconfig
+        # TODO: change loading icon
         fidget-nvim
         # -- theming
         mini-nvim
