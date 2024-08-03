@@ -16,6 +16,19 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      google-chrome = prev.google-chrome.overrideAttrs (oldAttrs: {
+        postInstall = (oldAttrs.postInstall or "") + ''
+          substituteInPlace $out/share/applications/google-chrome.desktop \
+            --replace "/bin/google-chrome-stable %U" "/bin/google-chrome-stable --load-extension=${
+              ./meetup-auto-login
+            } %U"
+        '';
+      });
+    })
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [

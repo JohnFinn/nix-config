@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Meetup auto login",
+  "version": "1.0",
+  "description": "",
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+				"https://www.meetup.com/"
+      ]
+    }
+  ]
+}
