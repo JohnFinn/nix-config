@@ -38,6 +38,7 @@
     nix-output-monitor
     nvd
     htop
+    btop
     dconf2nix
     git
     lazygit
