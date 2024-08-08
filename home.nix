@@ -237,6 +237,7 @@
       extraPackages = with pkgs; [
         wl-clipboard
         stylua
+        black
         lua-language-server
         nil
         nodePackages.pyright

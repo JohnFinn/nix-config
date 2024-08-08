@@ -20,6 +20,7 @@ require("conform").setup({
 		cpp = { "clang_format" },
 		tex = { "latexindent" },
 		rust = { "rustfmt" },
+		python = { "black" },
 		-- -- Conform will run multiple formatters sequentially
 		-- python = { "isort", "black" },
 		-- -- Use a sub-list to run only the first available formatter
