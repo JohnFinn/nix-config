@@ -164,6 +164,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- Find references for the word under your cursor.
 		map("fr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+		map("<leader>rn", vim.lsp.buf.rename, "[R]e[N]ame")
 
 		-- Opens a popup that displays documentation about the word under your cursor
 		--  See `:help K` for why this keymap.
