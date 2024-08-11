@@ -48,6 +48,7 @@
     bat
     eza
     nerdfonts
+    pulsemixer
     alacritty
     watchexec
     jqp
