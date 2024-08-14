@@ -63,7 +63,8 @@
     clang-tools
     ripgrep
     swappy
-    python311Packages.ipython
+    (python3.withPackages
+      (python-pkgs: [ python-pkgs.ipython python-pkgs.pandas ]))
     zathura
     anki
     # # It is sometimes useful to fine-tune packages, for example, by applying
