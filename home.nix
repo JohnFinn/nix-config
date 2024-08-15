@@ -311,7 +311,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
       {
         binding = "<Super>Return";
-        command = "alacritty -e fish";
+        command = "kitty --single-instance fish";
         name = "terminal";
       };
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" =
