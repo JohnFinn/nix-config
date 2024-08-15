@@ -50,6 +50,7 @@
     nerdfonts
     pulsemixer
     alacritty
+    kitty
     watchexec
     jqp
     google-chrome
