@@ -121,6 +121,7 @@
     python = "python -q";
     fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}'";
     cat = "${pkgs.bat}/bin/bat";
+    ls = "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink";
   };
   programs = {
     # Let Home Manager install and manage itself.
