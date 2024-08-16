@@ -133,6 +133,11 @@
       '';
 
     };
+    atuin = {
+      enable = true;
+      enableFishIntegration = true;
+      enableBashIntegration = true;
+    };
     fzf = {
       enable = true;
       enableFishIntegration = true;
