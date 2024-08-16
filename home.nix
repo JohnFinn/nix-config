@@ -141,6 +141,7 @@
     fzf = {
       enable = true;
       enableFishIntegration = true;
+      enableBashIntegration = true;
     };
     zoxide = {
       enable = true;
