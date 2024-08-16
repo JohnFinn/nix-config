@@ -50,6 +50,7 @@
     pulsemixer
     alacritty
     kitty
+    wezterm
     watchexec
     jqp
     google-chrome
@@ -167,6 +168,14 @@
       enable = true;
       enableBashIntegration = true;
       nix-direnv.enable = true;
+    };
+    wezterm = {
+      enable = true;
+      extraConfig = ''
+        return {
+        	hide_mouse_cursor_when_typing = false,
+        };
+      '';
     };
     alacritty = {
       enable = true;
@@ -337,7 +346,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
       {
         binding = "<Super>Return";
-        command = "kitty --single-instance fish";
+        command = "wezterm";
         name = "terminal";
       };
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" =
