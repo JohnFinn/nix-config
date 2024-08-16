@@ -117,6 +117,10 @@
   #  /etc/profiles/per-user/jouni/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = { EDITOR = "vim"; };
+  home.shellAliases = {
+    ipython = "ipython --no-banner";
+    python = "python -q";
+  };
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
