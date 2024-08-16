@@ -125,7 +125,13 @@
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
     bash = { enable = true; };
-    fish = { enable = true; };
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting ""
+      '';
+
+    };
     fzf = {
       enable = true;
       enableFishIntegration = true;
