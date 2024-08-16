@@ -122,7 +122,8 @@
     fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}'";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink";
-    lt = "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink --ignore-glob .git --tree";
+    lt =
+      "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink --ignore-glob .git --tree";
     lt2 =
       "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink --ignore-glob .git --tree --level 2";
   };
