@@ -120,6 +120,7 @@
   home.shellAliases = {
     ipython = "ipython --no-banner";
     python = "python -q";
+    fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}'";
   };
   programs = {
     # Let Home Manager install and manage itself.
