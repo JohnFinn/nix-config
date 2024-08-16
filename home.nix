@@ -45,7 +45,6 @@
     zsh
     fish
     tmux
-    bat
     eza
     nerdfonts
     pulsemixer
@@ -121,6 +120,7 @@
     ipython = "ipython --no-banner";
     python = "python -q";
     fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}'";
+    cat = "${pkgs.bat}/bin/bat";
   };
   programs = {
     # Let Home Manager install and manage itself.
