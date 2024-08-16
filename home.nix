@@ -128,7 +128,7 @@
     fish = {
       enable = true;
       interactiveShellInit = ''
-        set fish_greeting ""
+        set fish_greeting
       '';
 
     };
