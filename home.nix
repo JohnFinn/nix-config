@@ -141,6 +141,10 @@
       enable = true;
       enableFishIntegration = true;
       enableBashIntegration = true;
+      settings = {
+        style = "compact";
+        inline_height = 20;
+      };
     };
     fzf = {
       enable = true;
