@@ -131,7 +131,6 @@ cmp.setup({
 	}),
 	sources = { { name = "nvim_lsp" }, { name = "path" } },
 })
-require("fidget").setup({})
 require("neodev").setup({
 	override = function(root_dir, library)
 		library.enabled = true
