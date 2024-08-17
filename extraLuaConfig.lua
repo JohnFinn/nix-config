@@ -1,3 +1,4 @@
+vim.loader.enable()
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.cmd("colorscheme tokyonight-night")
