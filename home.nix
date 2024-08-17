@@ -178,10 +178,11 @@
       enable = true;
       extraConfig = # lua
         ''
-          return {
-          	hide_mouse_cursor_when_typing = false,
-          	color_scheme = 'Tokyo Night',
-          };
+                    return {
+                    	hide_mouse_cursor_when_typing = false,
+                    	color_scheme = 'Tokyo Night',
+          						font = wezterm.font('JetBrains Mono'),
+                    };
         '';
     };
     alacritty = {
