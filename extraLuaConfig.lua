@@ -5,6 +5,7 @@ require("todo-comments").setup({ signs = false })
 require("Comment").setup()
 require("gitsigns").setup({})
 require("mini.statusline").setup({})
+require("notify")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
