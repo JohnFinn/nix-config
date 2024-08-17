@@ -40,6 +40,7 @@
     ncdu
     duf
     nix-output-monitor
+    portal
     nvd
     htop
     btop
