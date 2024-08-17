@@ -33,8 +33,12 @@
   # environment.
   home.packages = with pkgs; [
     telegram-desktop
+    yazi
     nixfmt-classic
     nh
+    dust
+    ncdu
+    duf
     nix-output-monitor
     nvd
     htop
