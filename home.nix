@@ -99,7 +99,7 @@
     # '';
     ".config/lvim/config.lua".source = ./lvim-config.lua;
     ".config/starship.toml".source = ./starship.toml;
-    ".ideavimrc".source = ./ideavimrc;
+    ".ideavimrc".source = ./nvim/ideavimrc;
     ".config/lazygit/config.yml".source = ./lazygit.yaml;
     ".config/fish/functions/fish_user_key_bindings.fish".source =
       ./fish_user_key_bindings.fish;
@@ -238,8 +238,8 @@
     neovim = {
       enable = true;
       vimAlias = true;
-      extraConfig = builtins.readFile ./vimrc;
-      extraLuaConfig = builtins.readFile ./extraLuaConfig.lua;
+      extraConfig = builtins.readFile ./nvim/vimrc;
+      extraLuaConfig = builtins.readFile ./nvim/extraLuaConfig.lua;
       plugins = with pkgs.vimPlugins; [
         telescope-nvim
         telescope-live-grep-args-nvim
