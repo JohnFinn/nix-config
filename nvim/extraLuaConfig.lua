@@ -1,6 +1,7 @@
-vim.loader.enable()
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+vim.loader.enable()
 vim.cmd("colorscheme tokyonight-night")
 require("todo-comments").setup({ signs = false })
 require("Comment").setup()
