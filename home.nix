@@ -175,11 +175,13 @@
     };
     wezterm = {
       enable = true;
-      extraConfig = ''
-        return {
-        	hide_mouse_cursor_when_typing = false,
-        };
-      '';
+      extraConfig = # lua
+        ''
+          return {
+          	hide_mouse_cursor_when_typing = false,
+          	color_scheme = 'Tokyo Night',
+          };
+        '';
     };
     alacritty = {
       enable = true;
