@@ -245,7 +245,7 @@
         telescope-nvim
         telescope-live-grep-args-nvim
         copilot-vim
-        vim-commentary
+        comment-nvim
         conform-nvim
         zen-mode-nvim
         twilight-nvim
