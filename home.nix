@@ -243,6 +243,8 @@
         copilot-vim
         vim-commentary
         conform-nvim
+        zen-mode-nvim
+        twilight-nvim
         gitsigns-nvim
         # completion
         nvim-cmp
