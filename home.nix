@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jouni";
@@ -19,12 +22,12 @@
   nixpkgs.overlays = [
     (final: prev: {
       google-chrome = prev.google-chrome.overrideAttrs (oldAttrs: {
-        postInstall = (oldAttrs.postInstall or "") + ''
-          substituteInPlace $out/share/applications/google-chrome.desktop \
-            --replace "/bin/google-chrome-stable %U" "/bin/google-chrome-stable --load-extension=${
-              ./meetup-auto-login
-            } %U"
-        '';
+        postInstall =
+          (oldAttrs.postInstall or "")
+          + ''
+            substituteInPlace $out/share/applications/google-chrome.desktop \
+              --replace "/bin/google-chrome-stable %U" "/bin/google-chrome-stable --load-extension=${./meetup-auto-login} %U"
+          '';
       });
     })
   ];
@@ -70,7 +73,7 @@
     ripgrep
     swappy
     (python3.withPackages
-      (python-pkgs: [ python-pkgs.ipython python-pkgs.pandas ]))
+      (python-pkgs: [python-pkgs.ipython python-pkgs.pandas]))
     zathura
     anki
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -89,7 +92,7 @@
 
   # NOTE: espanso won't start automatically. Use `espanso service start --unmanaged` to start it
   # FIXME: make it work on wayland
-  services.espanso = { enable = true; };
+  services.espanso = {enable = true;};
 
   home.file = {
     # # You can also set the file content immediately.
@@ -121,22 +124,20 @@
   #
   #  /etc/profiles/per-user/jouni/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = { EDITOR = "vim"; };
+  home.sessionVariables = {EDITOR = "vim";};
   home.shellAliases = {
     ipython = "ipython --no-banner";
     python = "python -q";
     fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}'";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink";
-    lt =
-      "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink --ignore-glob .git --tree";
-    lt2 =
-      "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink --ignore-glob .git --tree --level 2";
+    lt = "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink --ignore-glob .git --tree";
+    lt2 = "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink --ignore-glob .git --tree --level 2";
   };
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-    bash = { enable = true; };
+    bash = {enable = true;};
     fish = {
       enable = true;
       interactiveShellInit = ''
@@ -161,7 +162,7 @@
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
-      options = [ "--cmd" "cd" ];
+      options = ["--cmd" "cd"];
     };
     starship = {
       enable = true;
@@ -175,13 +176,16 @@
     };
     wezterm = {
       enable = true;
-      extraConfig = # lua
+      extraConfig =
+        /*
+        lua
+        */
         ''
-          		return {
-          			hide_mouse_cursor_when_typing = false,
-          			color_scheme = 'Tokyo Night',
-                font = wezterm.font('JetBrains Mono Nerd Font'),
-          		};
+          return {
+          	hide_mouse_cursor_when_typing = false,
+          	color_scheme = 'Tokyo Night',
+              font = wezterm.font('JetBrains Mono Nerd Font'),
+          };
         '';
     };
     alacritty = {
@@ -230,7 +234,7 @@
       userName = "JohnFinn";
       userEmail = "dz4tune@gmail.com";
       extraConfig = {
-        core = { editor = "nvim"; };
+        core = {editor = "nvim";};
         init.defaultBranch = "main";
       };
       delta.enable = true;
@@ -290,6 +294,7 @@
         wl-clipboard
         stylua
         black
+        alejandra
         lua-language-server
         nil
         nodePackages.pyright
@@ -312,63 +317,65 @@
         set -ga terminal-overrides ',*256col*:Tc'
       '';
       tmuxinator.enable = true;
-      plugins = with pkgs; [{
-        plugin = tmuxPlugins.catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_window_left_separator ""
-          set -g @catppuccin_window_right_separator " "
-          set -g @catppuccin_window_middle_separator " █"
-          set -g @catppuccin_window_number_position "right"
+      plugins = with pkgs; [
+        {
+          plugin = tmuxPlugins.catppuccin;
+          extraConfig = ''
+            set -g @catppuccin_window_left_separator ""
+            set -g @catppuccin_window_right_separator " "
+            set -g @catppuccin_window_middle_separator " █"
+            set -g @catppuccin_window_number_position "right"
 
-          set -g @catppuccin_window_default_fill "number"
-          set -g @catppuccin_window_default_text "#W"
+            set -g @catppuccin_window_default_fill "number"
+            set -g @catppuccin_window_default_text "#W"
 
-          set -g @catppuccin_window_current_fill "number"
-          set -g @catppuccin_window_current_text "#W"
+            set -g @catppuccin_window_current_fill "number"
+            set -g @catppuccin_window_current_text "#W"
 
-          set -g @catppuccin_status_modules_right "directory user host session"
-          set -g @catppuccin_status_left_separator  " "
-          set -g @catppuccin_status_right_separator ""
-          set -g @catppuccin_status_fill "icon"
-          set -g @catppuccin_status_connect_separator "no"
+            set -g @catppuccin_status_modules_right "directory user host session"
+            set -g @catppuccin_status_left_separator  " "
+            set -g @catppuccin_status_right_separator ""
+            set -g @catppuccin_status_fill "icon"
+            set -g @catppuccin_status_connect_separator "no"
 
-          set -g @catppuccin_directory_text "#{pane_current_path}"
-        '';
-      }];
+            set -g @catppuccin_directory_text "#{pane_current_path}"
+          '';
+        }
+      ];
     };
   };
 
+  fonts.fontconfig.enable = true;
+
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/desktop/input-sources" = {
-      mru-sources = [ (mkTuple [ "xkb" "us" ]) ];
-      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ru" ]) ];
-      xkb-options = [ "" "caps:swapescape" ];
+      mru-sources = [(mkTuple ["xkb" "us"])];
+      sources = [(mkTuple ["xkb" "us"]) (mkTuple ["xkb" "ru"])];
+      xkb-options = ["" "caps:swapescape"];
     };
     "org/gnome/desktop/wm/keybindings" = {
-      close = [ "<Super>q" ];
-      toggle-fullscreen = [ "<Super>f" ];
+      close = ["<Super>q"];
+      toggle-fullscreen = ["<Super>f"];
     };
-    "org/gnome/desktop/wm/preferences" = { focus-mode = "sloppy"; };
+    "org/gnome/desktop/wm/preferences" = {focus-mode = "sloppy";};
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
       ];
     };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
-      {
-        binding = "<Super>Return";
-        command = "wezterm start fish";
-        name = "terminal";
-      };
-    "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" =
-      {
-        font = "0xProto Nerd Font 12";
-        use-system-font = false;
-        use-custom-command = true;
-        custom-command = "fish";
-        # background-color = "rgb(23,20,33)";
-        background-color = "rgb(26, 27, 38)"; # from tokyonight theme
-      };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "wezterm start fish";
+      name = "terminal";
+    };
+    "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
+      font = "0xProto Nerd Font 12";
+      use-system-font = false;
+      use-custom-command = true;
+      custom-command = "fish";
+      # background-color = "rgb(23,20,33)";
+      background-color = "rgb(26, 27, 38)"; # from tokyonight theme
+    };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
