@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.cmd("colorscheme tokyonight-night")
 require("todo-comments").setup({ signs = false })
-require('nvim_comment').setup({comment_empty = false})
+require('Comment').setup()
 require("gitsigns").setup({})
 require("mini.statusline").setup({})
 
