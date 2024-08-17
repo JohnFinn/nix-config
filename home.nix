@@ -270,8 +270,10 @@
         nvim-lspconfig
         # TODO: change loading icon
         fidget-nvim
+        nvim-notify
         # -- theming
         mini-nvim
+        noice-nvim
         nvim-web-devicons
         tokyonight-nvim
         todo-comments-nvim
