@@ -307,7 +307,7 @@
         alejandra
         lua-language-server
         nil
-        nodePackages.pyright
+        pyright
         texlab
         rust-analyzer
         rustfmt
