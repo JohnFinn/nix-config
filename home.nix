@@ -156,6 +156,13 @@
         inline_height = 20;
       };
     };
+    less = {
+      enable = true;
+      keys = ''
+        k forw-line
+        l back-line
+      '';
+    };
     fzf = {
       enable = true;
       enableFishIntegration = true;
