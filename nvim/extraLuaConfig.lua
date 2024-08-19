@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 require("conform").setup({
 	formatters_by_ft = {
-		nix = { "nixfmt" },
+		nix = { "alejandra" },
 		lua = { "stylua" },
 		cpp = { "clang_format" },
 		tex = { "latexindent" },
