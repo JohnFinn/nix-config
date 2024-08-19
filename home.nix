@@ -128,7 +128,9 @@
   home.sessionVariables = {EDITOR = "vim";};
   home.shellAliases = {
     ipython = "ipython --no-banner";
+    ipy = "ipython --no-banner";
     python = "python -q";
+    py = "python -q";
     fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}'";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza -l --icons --git -a --hyperlink";
