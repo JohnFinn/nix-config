@@ -127,8 +127,8 @@
   #
   home.sessionVariables = {EDITOR = "vim";};
   home.shellAliases = {
-    ipython = "ipython --no-banner";
-    ipy = "ipython --no-banner";
+    ipython = "ipython --no-banner --no-confirm-exit";
+    ipy = "ipython --no-banner --no-confirm-exit";
     python = "python -q";
     py = "python -q";
     fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}'";
