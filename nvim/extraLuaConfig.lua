@@ -65,6 +65,7 @@ vim.keymap.set("v", "ff", "y<ESC>:Telescope live_grep_args default_text=<c-r>0<C
 local actions = require("telescope.actions")
 require("telescope").setup({
 	defaults = {
+		path_display={"smart"},
 		mappings = {
 			n = {
 				["k"] = actions.move_selection_next,
