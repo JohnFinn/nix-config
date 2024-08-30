@@ -44,6 +44,9 @@
     dust
     ncdu
     duf
+    fd
+    tldr
+    thefuck
     nix-output-monitor
     portal
     nvd
@@ -147,6 +150,11 @@
       interactiveShellInit = ''
         set fish_greeting
       '';
+    };
+    thefuck = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
     };
     atuin = {
       enable = true;
