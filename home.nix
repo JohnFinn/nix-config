@@ -135,7 +135,7 @@
     ipy = "ipython --no-banner --no-confirm-exit";
     python = "python -q";
     py = "python -q";
-    fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}'";
+    fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}' --bind ctrl-k:down,ctrl-l:up";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink";
     lt = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --ignore-glob .git --tree";
