@@ -317,6 +317,7 @@
         zen-mode-nvim
         twilight-nvim
         gitsigns-nvim
+        vim-fugitive
         # completion
         nvim-cmp
         cmp-nvim-lsp
