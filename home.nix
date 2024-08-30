@@ -144,7 +144,16 @@
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-    bash = {enable = true;};
+    bash = {
+      enable = true;
+      bashrcExtra =
+        /*
+        bash
+        */
+        ''
+          source ${pkgs.fzf-git-sh}/share/fzf-git-sh/fzf-git.sh
+        '';
+    };
     fish = {
       enable = true;
       interactiveShellInit = ''
