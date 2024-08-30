@@ -291,6 +291,16 @@
           run = "enter";
           desc = "Enter the child directory";
         }
+        {
+          on = ["L"];
+          run = "seek -5";
+          desc = "Seek up 5 units in the preview";
+        }
+        {
+          on = ["K"];
+          run = "seek 5";
+          desc = "Seek down 5 units in the preview";
+        }
       ];
     };
     neovim = {
