@@ -256,12 +256,12 @@
       keymap.manager.prepend_keymap = [
         {
           on = ["l"];
-          exec = "arrow -1";
+          run = "arrow -1";
           desc = "Move cursor up";
         }
         {
           on = ["k"];
-          exec = "arrow 1";
+          run = "arrow 1";
           desc = "Move cursor down";
         }
         {
