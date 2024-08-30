@@ -8,3 +8,7 @@ keybinding:
     scrollDownMain-alt1: 'K'
     scrollLeft: # TODO
     scrollRight: # TODO
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
