@@ -135,7 +135,8 @@
     ipy = "ipython --no-banner --no-confirm-exit";
     python = "python -q";
     py = "python -q";
-    fzf = "fzf --preview '${pkgs.bat}/bin/bat --color=always {}' --bind ctrl-k:down,ctrl-l:up";
+		# TODO: optimize chafa speed, maybe by caching thumbnails
+    fzf = "fzf --preview '${pkgs.chafa}/bin/chafa -f iterm -s \${FZF_PREVIEW_COLUMNS}x\${FZF_PREVIEW_LINES} {} 2> /dev/null || ${pkgs.bat}/bin/bat --color=always {}' --bind ctrl-k:down,ctrl-l:up";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink";
     lt = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --ignore-glob .git --tree";
