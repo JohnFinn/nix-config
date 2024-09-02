@@ -199,7 +199,6 @@
           '';
       };
     };
-    };
     thefuck = {
       enable = true;
       enableBashIntegration = true;
