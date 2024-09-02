@@ -98,6 +98,27 @@
     # '')
   ];
 
+  xdg.configFile."nvim/parser".source = let
+    parsers = pkgs.symlinkJoin {
+      name = "treesitter-parsers";
+      paths =
+        (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins:
+          with plugins; [
+            lua
+            cpp
+            c
+            nix
+            python
+            rust
+            bash
+            fish
+            latex
+            html
+          ]))
+        .dependencies;
+    };
+  in "${parsers}/parser";
+
   # NOTE: espanso won't start automatically. Use `espanso service start --unmanaged` to start it
   # FIXME: make it work on wayland
   services.espanso = {enable = true;};
@@ -327,7 +348,16 @@
       vimAlias = true;
       extraConfig = builtins.readFile ./nvim/vimrc;
       extraLuaConfig = builtins.readFile ./nvim/extraLuaConfig.lua;
+      /*
+      lua
+      */
+      /*
+        ''
+        dofile('/home/sunnari/.config/home-manager/nvim/extraLuaConfig.lua')
+      '';
+      */
       plugins = with pkgs.vimPlugins; [
+        lazy-nvim
         telescope-nvim
         telescope-live-grep-args-nvim
         copilot-vim
@@ -344,18 +374,6 @@
         cmp_luasnip
         cmp-path
         neodev-nvim
-        # --
-        nvim-treesitter
-        nvim-treesitter-parsers.lua
-        nvim-treesitter-parsers.cpp
-        nvim-treesitter-parsers.c
-        nvim-treesitter-parsers.nix
-        nvim-treesitter-parsers.python
-        nvim-treesitter-parsers.rust
-        nvim-treesitter-parsers.bash
-        nvim-treesitter-parsers.fish
-        nvim-treesitter-parsers.latex
-        nvim-treesitter-parsers.html
         nvim-lspconfig
         # TODO: change loading icon
         fidget-nvim
@@ -366,15 +384,6 @@
         nvim-web-devicons
         tokyonight-nvim
         todo-comments-nvim
-        (pkgs.vimUtils.buildVimPlugin {
-          name = "context-vim";
-          src = pkgs.fetchFromGitHub {
-            owner = "doums";
-            repo = "darcula";
-            rev = "faf8dbab27bee0f27e4f1c3ca7e9695af9b1242b";
-            sha256 = "sha256-Gn+lmlYxSIr91Bg3fth2GAQou2Nd1UjrLkIFbBYlmF8=";
-          };
-        })
       ];
       extraPackages = with pkgs; [
         wl-clipboard
