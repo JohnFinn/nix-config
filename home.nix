@@ -39,6 +39,9 @@
     hyperfine
     telegram-desktop
     yazi
+    chafa
+    bkt
+    kondo
     nixfmt-classic
     nh
     dust
