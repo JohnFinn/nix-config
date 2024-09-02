@@ -160,6 +160,22 @@
       interactiveShellInit = ''
         set fish_greeting
       '';
+      functions = {
+        # NOTE: use upstream code once merged https://github.com/sxyazi/yazi/discussions/1595
+        yy.body =
+          /*
+          fish
+          */
+          ''
+            set tmp (mktemp -t "yazi-cwd.XXXXX")
+            yazi $argv --cwd-file="$tmp"
+            if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+                builtin cd -- "$cwd"
+            end
+            rm -f -- "$tmp"
+          '';
+      };
+    };
     };
     thefuck = {
       enable = true;
