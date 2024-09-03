@@ -1,8 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.cmd("colorscheme tokyonight-night")
-
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
@@ -36,6 +34,16 @@ require("lazy").setup({
 		},
 	},
 	spec = {
+		{
+			-- the colorscheme should be available when starting Neovim
+			"folke/tokyonight.nvim",
+			dev = true,
+			lazy = false, -- make sure we load this during startup if it is your main colorscheme
+			priority = 1000, -- make sure to load this before all the other start plugins
+			config = function()
+				vim.cmd("colorscheme tokyonight-night")
+			end,
+		},
 		{
 			"echasnovski/mini.nvim",
 			dev = true,
