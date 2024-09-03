@@ -13,7 +13,6 @@ vim.filetype.add({ filename = { ["flake.lock"] = "json" } })
 
 local Path = require("pathlib")
 
--- Setup lazy.nvim
 require("lazy").setup({
 	dev = {
 		---@type string | fun(plugin: LazyPlugin): string directory where you store your local plugin projects
