@@ -19,9 +19,8 @@ local Path = require("pathlib")
 require("lazy").setup({
 	dev = {
 		---@type string | fun(plugin: LazyPlugin): string directory where you store your local plugin projects
-		-- TODO: figure out how not to have this magic constant
+		-- TODO: figure out proper way of doing it like here https://nixalted.com/
 		path = tostring(Path(vim.api.nvim_list_runtime_paths()[3]):parent()),
-		-- path = vim.api.nvim_list_runtime_paths()[1] .. "/pack/myNeovimPackages/start/",
 		---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
 		patterns = {}, -- For example {"folke"}
 		fallback = false, -- Fallback to git when local plugin doesn't exist
