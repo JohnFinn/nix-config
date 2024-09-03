@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.loader.enable()
 vim.cmd("colorscheme tokyonight-night")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -49,6 +48,7 @@ require("lazy").setup({
 		{
 			"numToStr/comment.nvim",
 			dev = true,
+			event = "VeryLazy",
 			config = function()
 				require("Comment").setup()
 			end,
@@ -56,6 +56,7 @@ require("lazy").setup({
 		{
 			"folke/todo-comments.nvim",
 			dev = true,
+			event = "VeryLazy",
 			config = function()
 				require("todo-comments").setup({ signs = false })
 			end,
@@ -63,6 +64,7 @@ require("lazy").setup({
 		{
 			"lewis6991/gitsigns.nvim",
 			dev = true,
+			event = "VeryLazy",
 			dependencies = { "MunifTanjim/nui.nvim", dev = true },
 			config = function()
 				require("gitsigns").setup({
@@ -147,6 +149,7 @@ require("lazy").setup({
 		{
 			"nvim-telescope/telescope.nvim",
 			dev = true,
+			event = "VeryLazy",
 			dependencies = {
 				{ "nvim-lua/plenary.nvim", dev = true },
 				{ "nvim-telescope/telescope-live-grep-args.nvim", dev = true },
@@ -252,6 +255,7 @@ require("lazy").setup({
 		},
 		{ -- Autocompletion
 			"hrsh7th/nvim-cmp",
+			event = "VeryLazy",
 			dev = true,
 			dependencies = {
 				-- Snippet Engine & its associated nvim-cmp source
@@ -305,6 +309,7 @@ require("lazy").setup({
 		{
 			"folke/noice.nvim",
 			dev = true,
+			event = "VeryLazy",
 			config = function()
 				require("noice").setup({
 					lsp = {
@@ -329,11 +334,13 @@ require("lazy").setup({
 		{
 			"rcarriga/nvim-notify",
 			dev = true,
+			event = "VeryLazy",
 			opts = {},
 		},
 		{
 			"nvim-treesitter/nvim-treesitter",
 			dev = true,
+			event = "VeryLazy",
 			config = function()
 				require("nvim-treesitter.configs").setup({
 					highlight = {
@@ -352,10 +359,11 @@ require("lazy").setup({
 			end,
 		},
 		{ "github/copilot.vim", dev = true },
-		{ "tpope/vim-fugitive", dev = true },
+		{ "tpope/vim-fugitive", dev = true, event = "VeryLazy" },
 		{
 			"folke/zen-mode.nvim",
 			dev = true,
+			event = "VeryLazy",
 			dependencies = {
 				{
 					"folke/twilight.nvim",
