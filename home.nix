@@ -3,7 +3,54 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins:
+    with plugins; [
+      lua
+      cpp
+      c
+      nix
+      python
+      rust
+      bash
+      fish
+      latex
+      html
+    ]);
+  treesitter-parsers = pkgs.symlinkJoin {
+    name = "treesitter-parsers";
+    paths = treesitter.dependencies;
+  };
+  vimPlugins = with pkgs.vimPlugins; [
+    lazy-nvim
+    telescope-nvim
+    telescope-live-grep-args-nvim
+    copilot-vim
+    comment-nvim
+    conform-nvim
+    zen-mode-nvim
+    twilight-nvim
+    gitsigns-nvim
+    vim-fugitive
+    # completion
+    nvim-cmp
+    cmp-nvim-lsp
+    luasnip
+    cmp_luasnip
+    cmp-path
+    neodev-nvim
+    nvim-lspconfig
+    # TODO: change loading icon
+    fidget-nvim
+    nvim-notify
+    # -- theming
+    mini-nvim
+    noice-nvim
+    nvim-web-devicons
+    tokyonight-nvim
+    todo-comments-nvim
+  ];
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jouni";
@@ -98,26 +145,6 @@
     # '')
   ];
 
-  xdg.configFile."nvim/parser".source = let
-    parsers = pkgs.symlinkJoin {
-      name = "treesitter-parsers";
-      paths =
-        (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins:
-          with plugins; [
-            lua
-            cpp
-            c
-            nix
-            python
-            rust
-            bash
-            fish
-            latex
-            html
-          ]))
-        .dependencies;
-    };
-  in "${parsers}/parser";
 
   # NOTE: espanso won't start automatically. Use `espanso service start --unmanaged` to start it
   # FIXME: make it work on wayland
@@ -346,7 +373,19 @@
       enable = true;
       vimAlias = true;
       extraConfig = builtins.readFile ./nvim/vimrc;
-      extraLuaConfig = builtins.readFile ./nvim/extraLuaConfig.lua;
+      extraLuaConfig =
+        /*
+        lua
+        */
+        ''
+
+          vim.opt.runtimepath:prepend("${treesitter-parsers}")
+        ''
+        /*
+
+        vim.opt.runtimepath:append("${pkgs.vimPlugins.nvim-treesitter}")
+        */
+        + builtins.readFile ./nvim/extraLuaConfig.lua;
       /*
       lua
       */
@@ -355,35 +394,8 @@
         dofile('/home/sunnari/.config/home-manager/nvim/extraLuaConfig.lua')
       '';
       */
-      plugins = with pkgs.vimPlugins; [
-        lazy-nvim
-        telescope-nvim
-        telescope-live-grep-args-nvim
-        copilot-vim
-        comment-nvim
-        conform-nvim
-        zen-mode-nvim
-        twilight-nvim
-        gitsigns-nvim
-        vim-fugitive
-        # completion
-        nvim-cmp
-        cmp-nvim-lsp
-        luasnip
-        cmp_luasnip
-        cmp-path
-        neodev-nvim
-        nvim-lspconfig
-        # TODO: change loading icon
-        fidget-nvim
-        nvim-notify
-        # -- theming
-        mini-nvim
-        noice-nvim
-        nvim-web-devicons
-        tokyonight-nvim
-        todo-comments-nvim
-      ];
+      extraLuaPackages = luaPkgs: with luaPkgs; [nvim-nio pathlib-nvim];
+      plugins = vimPlugins;
       extraPackages = with pkgs; [
         wl-clipboard
         stylua

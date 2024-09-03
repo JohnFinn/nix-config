@@ -14,13 +14,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.filetype.add({ filename = { ["flake.lock"] = "json" } })
 
+local Path = require("pathlib")
+
 -- Setup lazy.nvim
 require("lazy").setup({
 	dev = {
 		---@type string | fun(plugin: LazyPlugin): string directory where you store your local plugin projects
 		-- TODO: figure out how not to have this magic constant
-		path = "/nix/store/v5fsy7pp1x0l3sgg6vq1vnarf1dvik51-vim-pack-dir/pack/myNeovimPackages/start/",
-		-- path = vim.g.foo,
+		path = tostring(Path(vim.api.nvim_list_runtime_paths()[3]):parent()),
 		-- path = vim.api.nvim_list_runtime_paths()[1] .. "/pack/myNeovimPackages/start/",
 		---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
 		patterns = {}, -- For example {"folke"}
@@ -320,26 +321,27 @@ require("lazy").setup({
 			dev = true,
 			opts = {},
 		},
-		{
-			"nvim-treesitter/nvim-treesitter",
-			dev = true,
-			config = function()
-				require("nvim-treesitter.configs").setup({
-					highlight = {
-						enable = true,
-					},
-					incremental_selection = {
-						enable = true,
-						keymaps = {
-							init_selection = "<leader>l", -- set to `false` to disable one of the mappings
-							node_incremental = "<leader>l",
-							scope_incremental = false,
-							node_decremental = "<leader>k",
-						},
-					},
-				})
-			end,
-		},
+		-- {
+		-- dir = "/nix/store/c6qhgl6b8p4l379593fgksyvn441iffh-vimplugin-nvim-treesitter-2024-04-03",
+		-- 	"nvim-treesitter/nvim-treesitter",
+		-- 	dev = true,
+		-- 	config = function()
+		-- 		require("nvim-treesitter.configs").setup({
+		-- 			highlight = {
+		-- 				enable = true,
+		-- 			},
+		-- 			incremental_selection = {
+		-- 				enable = true,
+		-- 				keymaps = {
+		-- 					init_selection = "<leader>l", -- set to `false` to disable one of the mappings
+		-- 					node_incremental = "<leader>l",
+		-- 					scope_incremental = false,
+		-- 					node_decremental = "<leader>k",
+		-- 				},
+		-- 			},
+		-- 		})
+		-- 	end,
+		-- },
 		{ "github/copilot.vim", dev = true },
 		{ "tpope/vim-fugitive", dev = true },
 		{
