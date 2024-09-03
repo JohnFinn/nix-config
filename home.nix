@@ -17,10 +17,6 @@
       latex
       html
     ]);
-  treesitter-parsers = pkgs.symlinkJoin {
-    name = "treesitter-parsers";
-    paths = treesitter.dependencies;
-  };
   vimPlugins = with pkgs.vimPlugins; [
     lazy-nvim
     telescope-nvim
@@ -49,6 +45,7 @@
     nvim-web-devicons
     tokyonight-nvim
     todo-comments-nvim
+    treesitter
   ];
 in {
   # Home Manager needs a bit of information about you and the paths it should
@@ -373,27 +370,16 @@ in {
       enable = true;
       vimAlias = true;
       extraConfig = builtins.readFile ./nvim/vimrc;
-      extraLuaConfig =
-        /*
-        lua
-        */
-        ''
-
-          vim.opt.runtimepath:prepend("${treesitter-parsers}")
-        ''
-        /*
-
-        vim.opt.runtimepath:append("${pkgs.vimPlugins.nvim-treesitter}")
-        */
-        + builtins.readFile ./nvim/extraLuaConfig.lua;
+      extraLuaConfig = builtins.readFile ./nvim/extraLuaConfig.lua;
       /*
       lua
       */
-      /*
-        ''
-        dofile('/home/sunnari/.config/home-manager/nvim/extraLuaConfig.lua')
-      '';
-      */
+      # ''
+      #
+      #   -- vim.g.foo = "${pkgs.vimUtils.packDir pkgs.neovim.passthru.packpathDirs}/pack/myNeovimPackages/start",
+      #   dofile('/home/sunnari/.config/home-manager/nvim/extraLuaConfig.lua')
+      # '';
+
       extraLuaPackages = luaPkgs: with luaPkgs; [nvim-nio pathlib-nvim];
       plugins = vimPlugins;
       extraPackages = with pkgs; [

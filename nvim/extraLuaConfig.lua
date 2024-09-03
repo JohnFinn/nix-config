@@ -27,6 +27,16 @@ require("lazy").setup({
 		patterns = {}, -- For example {"folke"}
 		fallback = false, -- Fallback to git when local plugin doesn't exist
 	},
+	install = {
+		-- Safeguard in case we forget to install a plugin with Nix
+		missing = false,
+	},
+	performance = {
+		reset_packpath = false,
+		rtp = {
+			reset = false,
+		},
+	},
 	spec = {
 		{
 			"echasnovski/mini.nvim",
@@ -321,27 +331,26 @@ require("lazy").setup({
 			dev = true,
 			opts = {},
 		},
-		-- {
-		-- dir = "/nix/store/c6qhgl6b8p4l379593fgksyvn441iffh-vimplugin-nvim-treesitter-2024-04-03",
-		-- 	"nvim-treesitter/nvim-treesitter",
-		-- 	dev = true,
-		-- 	config = function()
-		-- 		require("nvim-treesitter.configs").setup({
-		-- 			highlight = {
-		-- 				enable = true,
-		-- 			},
-		-- 			incremental_selection = {
-		-- 				enable = true,
-		-- 				keymaps = {
-		-- 					init_selection = "<leader>l", -- set to `false` to disable one of the mappings
-		-- 					node_incremental = "<leader>l",
-		-- 					scope_incremental = false,
-		-- 					node_decremental = "<leader>k",
-		-- 				},
-		-- 			},
-		-- 		})
-		-- 	end,
-		-- },
+		{
+			"nvim-treesitter/nvim-treesitter",
+			dev = true,
+			config = function()
+				require("nvim-treesitter.configs").setup({
+					highlight = {
+						enable = true,
+					},
+					incremental_selection = {
+						enable = true,
+						keymaps = {
+							init_selection = "<leader>l", -- set to `false` to disable one of the mappings
+							node_incremental = "<leader>l",
+							scope_incremental = false,
+							node_decremental = "<leader>k",
+						},
+					},
+				})
+			end,
+		},
 		{ "github/copilot.vim", dev = true },
 		{ "tpope/vim-fugitive", dev = true },
 		{
