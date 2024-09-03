@@ -16,6 +16,7 @@
       fish
       latex
       html
+      vimdoc
     ]);
   vimPlugins = with pkgs.vimPlugins; [
     lazy-nvim
