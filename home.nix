@@ -209,7 +209,7 @@ in {
         set fish_greeting
       '';
       functions = {
-        # NOTE: use upstream code once merged https://github.com/sxyazi/yazi/discussions/1595
+        # NOTE: use upstream code once home-manager is updated https://github.com/nix-community/home-manager/pull/5449
         yazi.body =
           /*
           fish
