@@ -147,7 +147,10 @@ in {
 
   # NOTE: espanso won't start automatically. Use `espanso service start --unmanaged` to start it
   # FIXME: make it work on wayland
-  services.espanso = {enable = true;};
+  services.espanso = {
+    enable = true;
+    configs.default.show_notifications = false;
+  };
 
   home.file = {
     # # You can also set the file content immediately.
