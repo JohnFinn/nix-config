@@ -42,6 +42,9 @@ vim.filetype.add({ filename = { ["flake.lock"] = "json" } })
 
 local Path = require("pathlib")
 
+-- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+vim.opt.rtp:prepend("/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/lazy.nvim/")
+
 require("lazy").setup({
 	dev = {
 		---@type string | fun(plugin: LazyPlugin): string directory where you store your local plugin projects
@@ -56,9 +59,9 @@ require("lazy").setup({
 		missing = false,
 	},
 	performance = {
-		reset_packpath = false,
+		reset_packpath = true,
 		rtp = {
-			reset = false,
+			reset = true,
 		},
 	},
 	spec = {
@@ -377,6 +380,45 @@ require("lazy").setup({
 			dev = true,
 			event = "VeryLazy",
 			config = function()
+				vim.treesitter.language.add("c", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-c/parser/c.so",
+				})
+				vim.treesitter.language.add("lua", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-lua/parser/lua.so",
+				})
+				vim.treesitter.language.add("nix", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-nix/parser/nix.so",
+				})
+				vim.treesitter.language.add("cpp", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-cpp/parser/cpp.so",
+				})
+				vim.treesitter.language.add("python", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-python/parser/python.so",
+				})
+				vim.treesitter.language.add("rust", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-rust/parser/rust.so",
+				})
+				vim.treesitter.language.add("bash", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-bash/parser/bash.so",
+				})
+				vim.treesitter.language.add("fish", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-fish/parser/fish.so",
+				})
+				vim.treesitter.language.add("latex", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-latex/parser/latex.so",
+				})
+				vim.treesitter.language.add("html", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-html/parser/html.so",
+				})
+				vim.treesitter.language.add("json", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-json/parser/json.so",
+				})
+				vim.treesitter.language.add("vimdoc", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-vimdoc/parser/vimdoc.so",
+				})
+				vim.treesitter.language.add("tmux", {
+					path = "/nix/store/aynppyd8aq225spl7gklrmx1qibgc3gi-vim-pack-dir/pack/myNeovimPackages/start/vimplugin-treesitter-grammar-tmux/parser/tmux.so",
+				})
 				require("nvim-treesitter.configs").setup({
 					highlight = {
 						enable = true,
