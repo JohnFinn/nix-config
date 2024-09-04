@@ -374,16 +374,7 @@ in {
     neovim = {
       enable = true;
       vimAlias = true;
-      extraConfig = builtins.readFile ./nvim/vimrc;
       extraLuaConfig = builtins.readFile ./nvim/extraLuaConfig.lua;
-      /*
-      lua
-      */
-      # ''
-      #
-      #   -- vim.g.foo = "${pkgs.vimUtils.packDir pkgs.neovim.passthru.packpathDirs}/pack/myNeovimPackages/start",
-      #   dofile('/home/sunnari/.config/home-manager/nvim/extraLuaConfig.lua')
-      # '';
 
       extraLuaPackages = luaPkgs: with luaPkgs; [nvim-nio pathlib-nvim];
       plugins = vimPlugins;

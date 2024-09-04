@@ -1,3 +1,32 @@
+vim.api.nvim_command([[
+	noremap ; l
+	noremap l k
+	noremap k j
+	noremap j h
+	noremap h ;
+
+	set tabstop=2 shiftwidth=2
+]]);
+
+(function()
+	local XDG_SESSION_TYPE = vim.fn.getenv("XDG_SESSION_TYPE")
+	if XDG_SESSION_TYPE == "x11" then
+		vim.o.clipboard = "unnamedplus"
+	elseif XDG_SESSION_TYPE == "wayland" then
+		vim.o.clipboard = "unnamed"
+		vim.g.clipboard = {
+			copy = {
+				["+"] = "wl-copy",
+				["*"] = "wl-copy",
+			},
+			paste = {
+				["+"] = { "wl-paste", "--no-newline" },
+				["*"] = { "wl-paste", "--no-newline" },
+			},
+		}
+	end
+end)()
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
