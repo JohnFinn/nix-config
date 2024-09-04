@@ -16,6 +16,7 @@
       fish
       latex
       html
+      json
       vimdoc
     ]);
   vimPlugins = with pkgs.vimPlugins; [
