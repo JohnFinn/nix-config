@@ -117,7 +117,6 @@ in {
     watchexec
     jqp
     google-chrome
-    lunarvim
     starship
     zoxide
     direnv
