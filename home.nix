@@ -157,6 +157,58 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/nvim/lua/nix_paths.lua".text = let
+      parsers = pkgs.vimPlugins.nvim-treesitter-parsers;
+    in
+      /*
+      lua
+      */
+      ''
+        return {
+        	lazypath = "${pkgs.vimPlugins.lazy-nvim}",
+        	load_treesitters = function ()
+        		vim.treesitter.language.add("c", {
+        			path = "${parsers.c}/parser/c.so",
+        		})
+        		vim.treesitter.language.add("lua", {
+        			path = "${parsers.lua}/parser/lua.so",
+        		})
+        		vim.treesitter.language.add("nix", {
+        			path = "${parsers.nix}/parser/nix.so",
+        		})
+        		vim.treesitter.language.add("cpp", {
+        			path = "${parsers.cpp}/parser/cpp.so",
+        		})
+        		vim.treesitter.language.add("python", {
+        			path = "${parsers.python}/parser/python.so",
+        		})
+        		vim.treesitter.language.add("rust", {
+        			path = "${parsers.rust}/parser/rust.so",
+        		})
+        		vim.treesitter.language.add("bash", {
+        			path = "${parsers.bash}/parser/bash.so",
+        		})
+        		vim.treesitter.language.add("fish", {
+        			path = "${parsers.fish}/parser/fish.so",
+        		})
+        		vim.treesitter.language.add("latex", {
+        			path = "${parsers.latex}/parser/latex.so",
+        		})
+        		vim.treesitter.language.add("html", {
+        			path = "${parsers.html}/parser/html.so",
+        		})
+        		vim.treesitter.language.add("json", {
+        			path = "${parsers.json}/parser/json.so",
+        		})
+        		vim.treesitter.language.add("vimdoc", {
+        			path = "${parsers.vimdoc}/parser/vimdoc.so",
+        		})
+        		vim.treesitter.language.add("tmux", {
+        			path = "${parsers.tmux}/parser/tmux.so",
+        		})
+        	end
+        }
+      '';
     ".config/starship.toml".source = ./starship.toml;
     ".ideavimrc".source = ./nvim/ideavimrc;
     ".config/lazygit/config.yml".source = ./lazygit.yaml;
