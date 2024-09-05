@@ -157,7 +157,6 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".config/lvim/config.lua".source = ./lvim-config.lua;
     ".config/starship.toml".source = ./starship.toml;
     ".ideavimrc".source = ./nvim/ideavimrc;
     ".config/lazygit/config.yml".source = ./lazygit.yaml;
