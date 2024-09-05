@@ -258,6 +258,7 @@ require("lazy").setup({
 		{
 			"neovim/nvim-lspconfig",
 			dev = true,
+			event = "VeryLazy",
 			dependencies = {
 				{ "j-hui/fidget.nvim", dev = true, opts = {} },
 				{
@@ -315,6 +316,9 @@ require("lazy").setup({
 						map("K", vim.lsp.buf.hover, "Hover Documentation")
 					end,
 				})
+				-- NOTE: lsp won't work with initially opened file when loaded with VeryLazy, but would when switching files
+				-- this workaround I came up with to make it work again. Maybe there is a better way
+				vim.api.nvim_command("LspStart")
 			end,
 		},
 		{ -- Autocompletion
