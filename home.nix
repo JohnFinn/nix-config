@@ -31,6 +31,7 @@
     twilight-nvim
     gitsigns-nvim
     vim-fugitive
+    flash-nvim
     # completion
     nvim-cmp
     cmp-nvim-lsp
