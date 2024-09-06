@@ -417,6 +417,7 @@ require("lazy").setup({
 			},
 			config = function()
 				require("nix_paths").load_treesitters()
+				---@diagnostic disable-next-line: missing-fields
 				require("nvim-treesitter.configs").setup({
 					highlight = {
 						enable = true,
