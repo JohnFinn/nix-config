@@ -411,6 +411,10 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter",
 			dev = true,
 			event = "VeryLazy",
+			dependencies = {
+				"nvim-treesitter/nvim-treesitter-textobjects",
+				dev = true,
+			},
 			config = function()
 				require("nix_paths").load_treesitters()
 				require("nvim-treesitter.configs").setup({
@@ -424,6 +428,27 @@ require("lazy").setup({
 							node_incremental = "<leader>l",
 							scope_incremental = false,
 							node_decremental = "<leader>k",
+						},
+					},
+					textobjects = {
+						swap = {
+							enable = true,
+							swap_next = {
+								["<leader>sw"] = "@parameter.inner",
+								["<leader>sf"] = "@function.outer",
+							},
+						},
+						move = {
+							enable = true,
+							set_jumps = true,
+							goto_next_start = {
+								["]w"] = "@parameter.inner",
+								["]f"] = "@function.outer",
+							},
+							goto_previous_start = {
+								["[w"] = "@parameter.inner",
+								["[f"] = "@function.outer",
+							},
 						},
 					},
 				})
