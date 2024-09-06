@@ -6,6 +6,8 @@ vim.api.nvim_command([[
 	noremap h ;
 
 	set tabstop=2 shiftwidth=2
+
+	set signcolumn=yes " fixes UI flickering when using gitsigns
 ]]);
 
 (function()
