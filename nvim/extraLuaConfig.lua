@@ -182,6 +182,8 @@ require("lazy").setup({
 		{
 			"stevearc/conform.nvim",
 			dev = true,
+			event = { "BufWritePre" },
+			cmd = { "ConformInfo", "Format" },
 			config = function()
 				require("conform").setup({
 					format_on_save = true,
