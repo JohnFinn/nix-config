@@ -209,6 +209,7 @@ in {
         	end
         }
       '';
+    ".config/wezterm/wezterm.lua".source = ./wezterm.lua;
     ".config/starship.toml".source = ./starship.toml;
     ".ideavimrc".source = ./nvim/ideavimrc;
     ".config/lazygit/config.yml".source = ./lazygit.yaml;
@@ -319,21 +320,6 @@ in {
       enable = true;
       enableBashIntegration = true;
       nix-direnv.enable = true;
-    };
-    wezterm = {
-      enable = true;
-      extraConfig =
-        /*
-        lua
-        */
-        ''
-          return {
-          	hide_mouse_cursor_when_typing = false,
-          	color_scheme = 'Tokyo Night',
-              font = wezterm.font('JetBrains Mono Nerd Font'),
-            default_prog = { 'fish' }
-          };
-        '';
     };
     alacritty = {
       enable = true;

@@ -442,6 +442,14 @@ require("lazy").setup({
 					dev = true,
 				},
 			},
+			opts = {
+				plugins = {
+					wezterm = {
+						enabled = true,
+						font = "+2",
+					},
+				},
+			},
 		},
 	},
 })
