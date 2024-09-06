@@ -432,7 +432,10 @@ require("lazy").setup({
 		{
 			"folke/zen-mode.nvim",
 			dev = true,
-			event = "VeryLazy",
+			cmd = "ZenMode",
+			keys = {
+				{ "<leader>z", "<cmd>ZenMode<cr>", desc = "ZenMode" },
+			},
 			dependencies = {
 				{
 					"folke/twilight.nvim",
