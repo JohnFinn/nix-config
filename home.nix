@@ -245,6 +245,7 @@ in {
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink";
     lt = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --ignore-glob .git --tree";
     lt2 = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --ignore-glob .git --tree --level 2";
+    gs = "git status";
   };
   programs = {
     # Let Home Manager install and manage itself.
