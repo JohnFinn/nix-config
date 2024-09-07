@@ -19,6 +19,7 @@
       json
       vimdoc
       tmux
+      markdown
     ]);
   vimPlugins = with pkgs.vimPlugins; [
     lazy-nvim
@@ -208,6 +209,9 @@ in {
         		})
         		vim.treesitter.language.add("tmux", {
         			path = "${parsers.tmux}/parser/tmux.so",
+        		})
+        		vim.treesitter.language.add("markdown", {
+        			path = "${parsers.markdown}/parser/markdown.so",
         		})
         	end
         }
@@ -429,6 +433,7 @@ in {
         texlab
         rust-analyzer
         rustfmt
+        mdformat
       ];
     };
     tmux = {

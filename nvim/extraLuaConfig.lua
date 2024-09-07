@@ -208,6 +208,7 @@ require("lazy").setup({
 						tex = { "latexindent" },
 						rust = { "rustfmt" },
 						python = { "black" },
+						markdown = { "mdformat" },
 						-- -- Conform will run multiple formatters sequentially
 						-- python = { "isort", "black" },
 						-- -- Use a sub-list to run only the first available formatter
