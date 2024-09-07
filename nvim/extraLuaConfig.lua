@@ -93,6 +93,7 @@ require("lazy").setup({
 		{
 			"echasnovski/mini.nvim",
 			dev = true,
+			lazy = false, -- disables UI flickeriing in statusbar changing it's style
 			config = function()
 				require("mini.statusline").setup({
 					content = {
@@ -396,7 +397,7 @@ require("lazy").setup({
 		{
 			"folke/noice.nvim",
 			dev = true,
-			event = "VeryLazy",
+			lazy = false, -- disables UI flickering in statusbar movement one line below
 			config = function()
 				require("noice").setup({
 					lsp = {
