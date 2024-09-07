@@ -473,6 +473,7 @@ require("lazy").setup({
 		},
 		{ "github/copilot.vim", dev = true },
 		{ "tpope/vim-fugitive", dev = true, event = "VeryLazy" },
+		{ "tpope/vim-rhubarb", dev = true, event = "VeryLazy" },
 		{
 			"folke/zen-mode.nvim",
 			dev = true,

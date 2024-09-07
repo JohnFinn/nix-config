@@ -24,6 +24,7 @@
     lazy-nvim
     telescope-nvim
     telescope-live-grep-args-nvim
+    vim-rhubarb
     copilot-vim
     comment-nvim
     conform-nvim
