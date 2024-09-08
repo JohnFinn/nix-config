@@ -152,9 +152,7 @@ require("lazy").setup({
 			"folke/todo-comments.nvim",
 			dev = true,
 			event = "VeryLazy",
-			config = function()
-				require("todo-comments").setup({ signs = false })
-			end,
+			opts = { signs = false },
 		},
 		{
 			"lewis6991/gitsigns.nvim",
