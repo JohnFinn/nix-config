@@ -284,14 +284,13 @@ require("lazy").setup({
 				{
 					"folke/neodev.nvim",
 					dev = true,
-					config = function()
-						require("neodev").setup({
-							override = function(root_dir, library)
-								library.enabled = true
-								library.plugins = true
-							end,
-						})
-					end,
+					---@type LuaDevOptions
+					opts = {
+						override = function(root_dir, library)
+							library.enabled = true
+							library.plugins = true
+						end,
+					},
 				},
 			},
 			config = function()
