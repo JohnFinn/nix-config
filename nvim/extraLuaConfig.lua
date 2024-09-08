@@ -144,9 +144,8 @@ require("lazy").setup({
 			"numToStr/comment.nvim",
 			dev = true,
 			event = "VeryLazy",
-			config = function()
-				require("Comment").setup()
-			end,
+			---@type CommentConfig
+			opts = {},
 		},
 		{
 			"folke/todo-comments.nvim",
