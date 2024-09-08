@@ -495,7 +495,8 @@ require("lazy").setup({
 			dev = true,
 			cmd = "ZenMode",
 			keys = {
-				{ "<leader>z", "<cmd>ZenMode<cr>", desc = "ZenMode" },
+				{ "Z", "<cmd>ZenMode<cr>", desc = "ZenMode" },
+				{ "z", "<cmd>Twilight<cr>", desc = "Twilight" },
 			},
 			dependencies = {
 				{
