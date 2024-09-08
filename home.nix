@@ -162,7 +162,19 @@ in {
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/nvim/lua/nix_paths.lua".text = let
-      parsers = pkgs.vimPlugins.nvim-treesitter-parsers;
+      load_treesitters_body = lib.strings.concatStrings (lib.strings.intersperse "\n"
+        (
+          lib.lists.forEach treesitter.dependencies
+          (
+            parser: let
+              lang = lib.strings.removePrefix "vimplugin-treesitter-grammar-" parser.name;
+            in
+              /*
+              lua
+              */
+              ''vim.treesitter.language.add("${lang}", {path = "${parser}/parser/${lang}.so"})''
+          )
+        ));
     in
       /*
       lua
@@ -171,48 +183,7 @@ in {
         return {
         	lazypath = "${pkgs.vimPlugins.lazy-nvim}",
         	load_treesitters = function ()
-        		vim.treesitter.language.add("c", {
-        			path = "${parsers.c}/parser/c.so",
-        		})
-        		vim.treesitter.language.add("lua", {
-        			path = "${parsers.lua}/parser/lua.so",
-        		})
-        		vim.treesitter.language.add("nix", {
-        			path = "${parsers.nix}/parser/nix.so",
-        		})
-        		vim.treesitter.language.add("cpp", {
-        			path = "${parsers.cpp}/parser/cpp.so",
-        		})
-        		vim.treesitter.language.add("python", {
-        			path = "${parsers.python}/parser/python.so",
-        		})
-        		vim.treesitter.language.add("rust", {
-        			path = "${parsers.rust}/parser/rust.so",
-        		})
-        		vim.treesitter.language.add("bash", {
-        			path = "${parsers.bash}/parser/bash.so",
-        		})
-        		vim.treesitter.language.add("fish", {
-        			path = "${parsers.fish}/parser/fish.so",
-        		})
-        		vim.treesitter.language.add("latex", {
-        			path = "${parsers.latex}/parser/latex.so",
-        		})
-        		vim.treesitter.language.add("html", {
-        			path = "${parsers.html}/parser/html.so",
-        		})
-        		vim.treesitter.language.add("json", {
-        			path = "${parsers.json}/parser/json.so",
-        		})
-        		vim.treesitter.language.add("vimdoc", {
-        			path = "${parsers.vimdoc}/parser/vimdoc.so",
-        		})
-        		vim.treesitter.language.add("tmux", {
-        			path = "${parsers.tmux}/parser/tmux.so",
-        		})
-        		vim.treesitter.language.add("markdown", {
-        			path = "${parsers.markdown}/parser/markdown.so",
-        		})
+        	${load_treesitters_body}
         	end
         }
       '';
