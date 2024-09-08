@@ -63,6 +63,7 @@ require("lazy").setup({
 			reset = true,
 		},
 	},
+	---@type LazySpec
 	spec = {
 		{
 			-- the colorscheme should be available when starting Neovim
