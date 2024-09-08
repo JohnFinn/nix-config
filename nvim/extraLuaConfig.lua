@@ -6,8 +6,6 @@ vim.api.nvim_command([[
 	noremap h ;
 
 	set tabstop=2 shiftwidth=2
-
-	set signcolumn=yes " fixes UI flickering when using gitsigns
 ]]);
 
 (function()
@@ -147,6 +145,10 @@ require("lazy").setup({
 			dev = true,
 			event = "VeryLazy",
 			dependencies = { "MunifTanjim/nui.nvim", dev = true },
+			init = function()
+				-- fixes UI flickering when using gitsigns
+				vim.api.nvim_command("set signcolumn=yes")
+			end,
 			config = function()
 				require("gitsigns").setup({
 					on_attach = function(bufnr)
