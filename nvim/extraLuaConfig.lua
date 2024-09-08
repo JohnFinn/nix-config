@@ -76,6 +76,21 @@ require("lazy").setup({
 			end,
 		},
 		{
+			"rmagatti/auto-session",
+			dev = true,
+			lazy = false,
+			-- dependencies = {
+			-- 	"nvim-telescope/telescope.nvim", -- Only needed if you want to use session lens
+			-- },
+			---enables autocomplete for opts
+			---@module "auto-session"
+			---@type AutoSession.Config
+			opts = {
+				suppressed_dirs = { "~/", "~/code", "~/Downloads", "/" },
+				-- log_level = 'debug',
+			},
+		},
+		{
 			"folke/flash.nvim",
 			dev = true,
 			---@type Flash.Config

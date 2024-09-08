@@ -34,6 +34,7 @@
     gitsigns-nvim
     vim-fugitive
     flash-nvim
+    auto-session
     # completion
     nvim-cmp
     cmp-nvim-lsp
