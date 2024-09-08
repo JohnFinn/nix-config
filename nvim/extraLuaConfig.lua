@@ -449,6 +449,43 @@ require("lazy").setup({
 			},
 			config = function()
 				require("nix_paths").load_treesitters()
+
+				local ts_utils = require("nvim-treesitter.ts_utils")
+
+				vim.keymap.set({ "n", "x" }, "<leader>;", function()
+					ts_utils.goto_node(
+						ts_utils.get_next_node(ts_utils.get_node_at_cursor(nil, true), true, true),
+						nil,
+						false
+					)
+				end)
+				vim.keymap.set({ "n", "x" }, "<leader>j", function()
+					ts_utils.goto_node(
+						ts_utils.get_previous_node(ts_utils.get_node_at_cursor(nil, true), true, true),
+						nil,
+						false
+					)
+				end)
+				vim.keymap.set({ "n", "x" }, "]n", function()
+					---@type TSNode
+					local node = ts_utils.get_node_at_cursor(nil, true)
+					if node == nil then
+						print("is nil")
+					end
+					while true do
+						local row, col, bytes = node:start()
+						local parent = node:parent()
+						local parent_row, parent_col, parent_bytes = parent:start()
+						print(row, col, bytes, parent_row, parent_col, parent_bytes)
+						if parent_row == row and parent_col == col then
+							node = parent
+						else
+							node = parent
+							break
+						end
+					end
+					ts_utils.goto_node(node, false, false)
+				end)
 				---@diagnostic disable-next-line: missing-fields
 				require("nvim-treesitter.configs").setup({
 					highlight = {
