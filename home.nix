@@ -220,7 +220,6 @@ in {
     ".config/starship.toml".source = ./starship.toml;
     ".ideavimrc".source = ./nvim/ideavimrc;
     ".config/lazygit/config.yml".source = ./lazygit.yaml;
-    ".config/lazydocker/config.yml".source = ./lazygit.yaml;
     ".config/espanso/match/base.yml".source = ./base.yml;
   };
 
