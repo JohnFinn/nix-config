@@ -86,6 +86,7 @@ require("lazy").setup({
 			---@module "auto-session"
 			---@type AutoSession.Config
 			opts = {
+				-- FIXME: make this work
 				suppressed_dirs = { "~/", "~/code", "~/Downloads", "/" },
 				-- log_level = 'debug',
 			},
