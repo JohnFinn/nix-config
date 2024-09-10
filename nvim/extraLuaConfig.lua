@@ -406,6 +406,45 @@ require("lazy").setup({
 						--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
 					}),
 					sources = { { name = "nvim_lsp" }, { name = "path" } }, -- TODO: try neodev/lazydev and luasnip
+					window = {
+						documentation = cmp.config.window.bordered({
+							winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+						}),
+					},
+					formatting = {
+						fields = { "kind", "abbr" },
+						format = function(_, vim_item)
+							local cmp_kinds = {
+								Text = "  ",
+								Method = "󰡱  ",
+								Function = "󰊕  ",
+								Constructor = "  ",
+								Field = "  ",
+								Variable = "  ",
+								Class = "  ",
+								Interface = "  ",
+								Module = "  ",
+								Property = "  ",
+								Unit = "  ",
+								Value = "  ",
+								Enum = "  ",
+								Keyword = "  ",
+								Snippet = "  ",
+								Color = "  ",
+								File = "  ",
+								Reference = "  ",
+								Folder = "  ",
+								EnumMember = "  ",
+								Constant = "  ",
+								Struct = "  ",
+								Event = "  ",
+								Operator = "  ",
+								TypeParameter = "  ",
+							}
+							vim_item.kind = cmp_kinds[vim_item.kind] or ""
+							return vim_item
+						end,
+					},
 				})
 			end,
 		},
