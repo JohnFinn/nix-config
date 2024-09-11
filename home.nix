@@ -93,6 +93,8 @@ in {
     telegram-desktop
     yazi
     chafa
+    figlet
+    cowsay
     bkt
     kondo
     nixfmt-classic
