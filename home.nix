@@ -272,6 +272,7 @@ in {
       settings = {
         style = "compact";
         inline_height = 20;
+        show_preview = true;
       };
     };
     less = {
