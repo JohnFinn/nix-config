@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.filetype.add({ filename = { ["flake.lock"] = "json" } })
+vim.filetype.add({ extension = { tfvars = "terraform" }, filename = { ["flake.lock"] = "json" } })
 
 local Path = require("pathlib")
 
