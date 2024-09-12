@@ -20,6 +20,7 @@
       vimdoc
       tmux
       markdown
+      terraform
     ]);
   vimPlugins = with pkgs.vimPlugins; [
     lazy-nvim
