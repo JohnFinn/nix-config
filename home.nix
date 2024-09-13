@@ -106,6 +106,7 @@ in {
     dust
     ncdu
     duf
+    jq
     fd
     tldr
     thefuck
