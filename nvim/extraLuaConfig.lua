@@ -74,6 +74,13 @@ require("lazy").setup({
 			lazy = false, -- make sure we load this during startup if it is your main colorscheme
 			priority = 1000, -- make sure to load this before all the other start plugins
 			config = function()
+				local colors = require("vscode.colors").get_colors()
+				require("vscode").setup({
+					group_overrides = {
+						FlashBackdrop = { fg = colors.vscGray },
+						FlashLabel = { bg = "#fd0178" },
+					},
+				})
 				vim.cmd("colorscheme vscode")
 			end,
 		},
