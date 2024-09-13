@@ -54,6 +54,7 @@
     noice-nvim
     nvim-web-devicons
     tokyonight-nvim
+    vscode-nvim
     todo-comments-nvim
     treesitter
     nvim-treesitter-textobjects
