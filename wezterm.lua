@@ -26,7 +26,7 @@ end)
 
 return {
 	hide_mouse_cursor_when_typing = false,
-	color_scheme = "Tokyo Night",
+	color_scheme = "Vs Code Dark+ (Gogh)",
 	-- font = wezterm.font('JetBrains Mono Nerd Font'),
 	default_prog = { "fish" },
 }
