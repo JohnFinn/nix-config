@@ -451,6 +451,18 @@ require("lazy").setup({
 			end,
 		},
 		{
+			"ThePrimeagen/refactoring.nvim",
+			dev = true,
+			dependencies = {
+				{ "nvim-lua/plenary.nvim", dev = true },
+				{ "nvim-treesitter/nvim-treesitter", dev = true },
+			},
+			opts = {},
+			keys = {
+				{ "<leader>ri", mode = { "n", "x" }, "<cmd>Refactor inline_var<cr>", desc = "Refactor Inline" },
+			},
+		},
+		{
 			"folke/noice.nvim",
 			dev = true,
 			lazy = false, -- disables UI flickering in statusbar movement one line below

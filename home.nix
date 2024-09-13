@@ -36,6 +36,7 @@
     vim-fugitive
     flash-nvim
     auto-session
+    refactoring-nvim
     # completion
     nvim-cmp
     cmp-nvim-lsp
