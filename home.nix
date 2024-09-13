@@ -137,7 +137,7 @@ in {
     ripgrep
     swappy
     (python3.withPackages
-      (python-pkgs: [python-pkgs.ipython python-pkgs.pandas]))
+      (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib]))
     zathura
     anki
     # # It is sometimes useful to fine-tune packages, for example, by applying
