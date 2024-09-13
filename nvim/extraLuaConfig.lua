@@ -79,6 +79,7 @@ require("lazy").setup({
 					group_overrides = {
 						FlashBackdrop = { fg = colors.vscGray },
 						FlashLabel = { bg = "#fd0178" },
+						DiagnosticUnnecessary = { fg = colors.vscGray },
 					},
 				})
 				vim.cmd("colorscheme vscode")
