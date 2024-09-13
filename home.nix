@@ -17,6 +17,7 @@
       latex
       html
       json
+      yaml
       vimdoc
       tmux
       markdown
