@@ -26,7 +26,10 @@ end)
 
 return {
 	hide_mouse_cursor_when_typing = false,
-	color_scheme = "Vs Code Dark+ (Gogh)",
+	color_scheme = "GruvboxDarkHard",
+	colors = {
+		background = "#1e1e1e", -- from vim's colorscheme
+	},
 	-- font = wezterm.font('JetBrains Mono Nerd Font'),
 	default_prog = { "fish" },
 }
