@@ -107,6 +107,7 @@ in {
     ncdu
     duf
     jq
+    yq
     fd
     tldr
     thefuck
