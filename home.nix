@@ -46,6 +46,8 @@
     cmp-path
     neodev-nvim
     nvim-lspconfig
+    # debugging
+    nvim-dap
     # TODO: change loading icon
     fidget-nvim
     nvim-notify

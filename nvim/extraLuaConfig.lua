@@ -459,6 +459,14 @@ require("lazy").setup({
 			end,
 		},
 		{
+			"mfussenegger/nvim-dap",
+			dev = true,
+			-- stylua: ignore
+			keys = {
+				{ "<leader>db", mode = { "n", "x" }, function() require('dap').toggle_breakpoint() end, desc = "Toggle breakpoint" },
+			},
+		},
+		{
 			"ThePrimeagen/refactoring.nvim",
 			dev = true,
 			dependencies = {
