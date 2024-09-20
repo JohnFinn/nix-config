@@ -80,6 +80,7 @@ require("lazy").setup({
 						FlashBackdrop = { fg = colors.vscGray },
 						FlashLabel = { bg = "#fd0178" },
 						DiagnosticUnnecessary = { fg = colors.vscGray },
+						DapBreakpoint = { fg = colors.vscRed },
 					},
 				})
 				vim.cmd("colorscheme vscode")
@@ -461,6 +462,17 @@ require("lazy").setup({
 		{
 			"mfussenegger/nvim-dap",
 			dev = true,
+			init = function()
+				vim.fn.sign_define("DapBreakpoint", {
+					text = "",
+					texthl = "DapBreakpoint",
+				})
+				-- TODO:
+				-- vim.fn.sign_define('DapBreakpointCondition', { text='ﳁ', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })
+				-- vim.fn.sign_define('DapBreakpointRejected', { text='', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl= 'DapBreakpoint' })
+				-- vim.fn.sign_define('DapLogPoint', { text='', texthl='DapLogPoint', linehl='DapLogPoint', numhl= 'DapLogPoint' })
+				-- vim.fn.sign_define('DapStopped', { text='', texthl='DapStopped', linehl='DapStopped', numhl= 'DapStopped' })
+			end,
 			-- stylua: ignore
 			keys = {
 				{ "<leader>db", mode = { "n", "x" }, function() require('dap').toggle_breakpoint() end, desc = "Toggle breakpoint" },
