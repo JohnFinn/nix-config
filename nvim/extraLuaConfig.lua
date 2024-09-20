@@ -462,6 +462,15 @@ require("lazy").setup({
 		{
 			"mfussenegger/nvim-dap",
 			dev = true,
+			dependencies = {
+				{
+					"mfussenegger/nvim-dap-python",
+					dev = true,
+					config = function()
+						require("dap-python").setup("python")
+					end,
+				},
+			},
 			init = function()
 				vim.fn.sign_define("DapBreakpoint", {
 					text = "",
@@ -476,6 +485,7 @@ require("lazy").setup({
 			-- stylua: ignore
 			keys = {
 				{ "<leader>db", mode = { "n", "x" }, function() require('dap').toggle_breakpoint() end, desc = "Toggle breakpoint" },
+				{ "<leader>dc", mode = { "n", "x" }, function() require('dap').continue() end, desc = "Debug continue" },
 			},
 		},
 		{
