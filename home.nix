@@ -21,6 +21,7 @@
       vimdoc
       tmux
       markdown
+      todotxt
       terraform
     ]);
   vimPlugins = with pkgs.vimPlugins; [
