@@ -167,6 +167,9 @@ in {
     enable = true;
     configs.default.show_notifications = false;
   };
+  services.syncthing = {
+    enable = true;
+  };
 
   xdg.configFile = let
     nvim-spell-de-utf8-dictionary = builtins.fetchurl {
