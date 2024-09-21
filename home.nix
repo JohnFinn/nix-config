@@ -48,6 +48,7 @@
     nvim-lspconfig
     # debugging
     nvim-dap
+    nvim-dap-python
     # TODO: change loading icon
     fidget-nvim
     nvim-notify
@@ -143,7 +144,7 @@ in {
     ripgrep
     swappy
     (python3.withPackages
-      (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib]))
+      (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy]))
     zathura
     anki
     # # It is sometimes useful to fine-tune packages, for example, by applying
