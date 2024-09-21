@@ -112,6 +112,7 @@ in {
     jq
     yq
     fd
+    sd
     tldr
     thefuck
     nix-output-monitor
