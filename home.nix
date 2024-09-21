@@ -445,7 +445,7 @@ in {
         texlab
         rust-analyzer
         rustfmt
-        mdformat
+        (python3.withPackages (python-pkgs: [python-pkgs.mdformat-gfm]))
       ];
     };
     tmux = {
