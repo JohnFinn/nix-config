@@ -96,6 +96,7 @@ in {
   # environment.
   home.packages = with pkgs; [
     monolith
+    todo-txt-cli
     pwgen
     hyperfine
     telegram-desktop
@@ -193,6 +194,7 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".todo/config".source = ./todotxt-config;
     ".config/nvim/lua/nix_paths.lua".text = let
       load_treesitters_body = lib.strings.concatStrings (lib.strings.intersperse "\n"
         (
