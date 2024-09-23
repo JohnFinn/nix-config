@@ -316,7 +316,7 @@ require("lazy").setup({
 			event = "VeryLazy",
 			dependencies = {
 				{ "j-hui/fidget.nvim", dev = true, opts = {} },
-				{
+				{ -- TODO: replace with lazydev
 					"folke/neodev.nvim",
 					dev = true,
 					---@type LuaDevOptions
