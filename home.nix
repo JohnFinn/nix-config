@@ -131,7 +131,7 @@ in {
     pulsemixer
     alacritty
     kitty
-    # using older version, cuz older has a bug https://github.com/wez/wezterm/issues/5990
+    # using older version, cuz the new one has a bug https://github.com/wez/wezterm/issues/5990
     pkgs_old.wezterm
     watchexec
     jqp
