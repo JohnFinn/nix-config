@@ -147,7 +147,6 @@ in {
     swappy
     (python3.withPackages
       (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy]))
-    zathura
     anki
     obsidian
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -374,6 +373,15 @@ in {
           "background" = "#1a1b26";
           "foreground" = "#c0caf5";
         };
+      };
+    };
+    zathura = {
+      enable = true;
+      mappings = {
+        "k" = "scroll down";
+        "l" = "scroll up";
+        "K" = "navigate next";
+        "L" = "navigate previous";
       };
     };
     git = {
