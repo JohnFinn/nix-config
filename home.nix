@@ -47,7 +47,8 @@
     gitsigns-nvim
     vim-fugitive
     flash-nvim
-    auto-session
+    # for some reason old one has better startup time
+    pkgs_old.vimPlugins.auto-session
     refactoring-nvim
     # completion
     nvim-cmp
