@@ -23,6 +23,15 @@
       markdown
       todotxt
       terraform
+      (helm.overrideAttrs
+        (oldAttrs: {
+          src = pkgs.fetchFromGitHub {
+            owner = "ngalaiko";
+            repo = "tree-sitter-go-template";
+            rev = "fd9e1c6647e5e9b23918d00d1e48710d0f703e19";
+            hash = "sha256-DGeaKT1uqvXiYwL4g5kZNX6f5TwLPbb5qbhI4amdl98=";
+          };
+        }))
     ]);
   vimPlugins = with pkgs.vimPlugins; [
     lazy-nvim
