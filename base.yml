@@ -26,6 +26,8 @@ matches:
     replace: ⊕
   - trigger: ":nn"
     replace: ñ
+  - trigger: ":NN"
+    replace: Ñ
   - trigger: ":u`"
     replace: ú
   - trigger: ":E`"
