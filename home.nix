@@ -426,6 +426,12 @@ in {
           '';
         }
       ];
+      theme.icon.prepend_dirs = [
+        {
+          name = "Sync";
+          text = "󰴋";
+        }
+      ];
     };
     neovim = {
       enable = true;
