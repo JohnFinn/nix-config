@@ -24,7 +24,7 @@ matches:
     replace: ↓
   - trigger: ":xor"
     replace: ⊕
-  - trigger: ":n~"
+  - trigger: ":nn"
     replace: ñ
   - trigger: ":u`"
     replace: ú
