@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs_old,
   lib,
   ...
 }: let
@@ -88,19 +89,6 @@ in {
   home.stateVersion = "23.11"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      google-chrome = prev.google-chrome.overrideAttrs (oldAttrs: {
-        postInstall =
-          (oldAttrs.postInstall or "")
-          + ''
-            substituteInPlace $out/share/applications/google-chrome.desktop \
-              --replace "/bin/google-chrome-stable %U" "/bin/google-chrome-stable --load-extension=${./meetup-auto-login} %U"
-          '';
-      });
-    })
-  ];
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -133,7 +121,7 @@ in {
     btop
     dconf2nix
     git
-    lazygit
+    pkgs_old.lazygit
     zsh
     fish
     tmux
@@ -142,10 +130,11 @@ in {
     pulsemixer
     alacritty
     kitty
-    wezterm
+    # using older version, cuz older has a bug https://github.com/wez/wezterm/issues/5990
+    pkgs_old.wezterm
     watchexec
     jqp
-    google-chrome
+    pkgs_old.google-chrome
     starship
     zoxide
     direnv
