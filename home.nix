@@ -512,7 +512,10 @@ in {
     };
     k9s = {
       enable = true;
-      settings.k9s.ui.skin = "vscode";
+      settings.k9s.ui = {
+        skin = "vscode";
+        enableMouse = true;
+      };
       skins = {
         vscode = {
           k9s = {
