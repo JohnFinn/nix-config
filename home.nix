@@ -45,6 +45,7 @@
     conform-nvim
     zen-mode-nvim
     twilight-nvim
+    nvim-highlight-colors
     gitsigns-nvim
     vim-fugitive
     flash-nvim

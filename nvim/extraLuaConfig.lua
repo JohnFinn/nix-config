@@ -124,6 +124,7 @@ require("lazy").setup({
 				{ "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
 			},
 		},
+		{ "brenoprata10/nvim-highlight-colors", dev = true, opts = {}, event = "VeryLazy" },
 		{
 			"echasnovski/mini.nvim",
 			dev = true,
