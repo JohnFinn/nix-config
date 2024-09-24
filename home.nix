@@ -566,5 +566,6 @@ in {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
     };
+    "org/gnome/desktop/sound".allow-volume-above-100-percent = true;
   };
 }
