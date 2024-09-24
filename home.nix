@@ -510,6 +510,19 @@ in {
         }
       ];
     };
+    k9s = {
+      enable = true;
+      settings.k9s.ui.skin = "vscode";
+      skins = {
+        vscode = {
+          k9s = {
+            body.bgColor = "#1e1e1e";
+            views.table.bgColor = "#1e1e1e";
+            views.table.header.bgColor = "#1e1e1e";
+          };
+        };
+      };
+    };
   };
 
   fonts.fontconfig.enable = true;
