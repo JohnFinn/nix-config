@@ -516,9 +516,11 @@ in {
       skins = {
         vscode = {
           k9s = {
-            body.bgColor = "#1e1e1e";
-            views.table.bgColor = "#1e1e1e";
-            views.table.header.bgColor = "#1e1e1e";
+            body.bgColor = "default";
+            frame.title.bgColor = "default";
+            views.table.bgColor = "default";
+            views.table.header.bgColor = "default";
+            views.logs.bgColor = "default";
           };
         };
       };
