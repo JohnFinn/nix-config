@@ -462,6 +462,7 @@ in {
         pyright
         texlab
         rust-analyzer
+        typescript-language-server
         rustfmt
         (python3.withPackages (python-pkgs: [python-pkgs.mdformat-gfm]))
       ];
