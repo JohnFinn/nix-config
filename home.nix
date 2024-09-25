@@ -16,6 +16,7 @@
       bash
       fish
       latex
+      javascript
       html
       json
       yaml
