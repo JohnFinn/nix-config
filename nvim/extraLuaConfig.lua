@@ -47,6 +47,7 @@ vim.filetype.add({
 		[".*/templates/.*%.tpl"] = "helm",
 		[".*/templates/.*%.ya?ml"] = "helm",
 		-- ["helmfile.*%.ya?ml"] = "helm",
+		["~/.kube/config"] = "yaml",
 	},
 })
 
