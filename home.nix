@@ -26,6 +26,7 @@
       markdown
       todotxt
       terraform
+      just
       (helm.overrideAttrs
         (oldAttrs: {
           src = pkgs.fetchFromGitHub {
@@ -106,6 +107,7 @@ in {
     figlet
     cowsay
     bkt
+    just
     kondo
     nixfmt-classic
     nh
