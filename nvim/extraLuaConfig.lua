@@ -1,9 +1,13 @@
+-- hjkl
 vim.api.nvim_command([[
 	noremap ; l
 	noremap l k
 	noremap k j
 	noremap j h
 	noremap h ;
+
+	noremap gk gj
+	noremap gl gk
 
 	set tabstop=2 shiftwidth=2
 ]]);
