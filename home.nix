@@ -191,6 +191,7 @@ in {
   in {
     "nvim/spell/de.utf-8.spl".source = nvim-spell-de-utf8-dictionary;
     # "nvim/spell/de.utf-8.sug".source = nvim-spell-de-utf8-suggestions;
+    "pulsemixer.cfg".source = ./pulsemixer.cfg;
   };
 
   home.file = {
