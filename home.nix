@@ -2,6 +2,7 @@
   config,
   pkgs,
   pkgs_old,
+  pkgs_firefox-addons,
   lib,
   ...
 }: let
@@ -393,6 +394,22 @@ in {
     };
     firefox = {
       enable = true;
+      profiles = {
+        personal = {
+          isDefault = true;
+          id = 0;
+          extensions = [
+            pkgs_firefox-addons.ublock-origin
+            pkgs_firefox-addons.sponsorblock
+            pkgs_firefox-addons.istilldontcareaboutcookies
+            pkgs_firefox-addons.videospeed
+          ];
+        };
+        work = {
+          isDefault = false;
+          id = 1;
+        };
+      };
     };
     git = {
       enable = true;
