@@ -391,6 +391,9 @@ in {
         "L" = "navigate previous";
       };
     };
+    firefox = {
+      enable = true;
+    };
     git = {
       enable = true;
       userName = "JohnFinn";
