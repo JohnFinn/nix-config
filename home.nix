@@ -398,6 +398,9 @@ in {
         personal = {
           isDefault = true;
           id = 0;
+          settings = {
+            "browser.shell.checkDefaultBrowser" = false;
+          };
           extensions = [
             pkgs_firefox-addons.ublock-origin
             pkgs_firefox-addons.sponsorblock
