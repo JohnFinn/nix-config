@@ -406,6 +406,7 @@ in {
             pkgs_firefox-addons.sponsorblock
             pkgs_firefox-addons.istilldontcareaboutcookies
             pkgs_firefox-addons.videospeed
+            pkgs_firefox-addons.vimium # TODO: remap hjkl
           ];
         };
         work = {
