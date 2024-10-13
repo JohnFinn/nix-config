@@ -32,4 +32,16 @@ return {
 	},
 	-- font = wezterm.font('JetBrains Mono Nerd Font'),
 	default_prog = { "fish" },
+	keys = {
+		{
+			mods = "CTRL",
+			key = "'",
+			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		},
+		{
+			mods = "CTRL",
+			key = "/",
+			action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		},
+	},
 }
