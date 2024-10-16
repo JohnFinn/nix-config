@@ -402,6 +402,7 @@ in {
             "browser.shell.checkDefaultBrowser" = false;
           };
           extensions = [
+            pkgs_firefox-addons.dictionary-german
             pkgs_firefox-addons.ublock-origin
             pkgs_firefox-addons.sponsorblock
             pkgs_firefox-addons.istilldontcareaboutcookies
