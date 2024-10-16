@@ -400,6 +400,7 @@ in {
           id = 0;
           settings = {
             "browser.shell.checkDefaultBrowser" = false;
+            "extensions.pocket.enabled" = false;
           };
           extensions = [
             pkgs_firefox-addons.dictionary-german
