@@ -129,6 +129,7 @@ in {
     dconf2nix
     git
     pkgs_old.lazygit
+    lazydocker
     zsh
     fish
     tmux
