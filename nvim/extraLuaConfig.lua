@@ -355,7 +355,7 @@ require("lazy").setup({
 								--       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
 								--   },
 								home_manager = {
-									expr = '(builtins.getFlake "/home/jouni/.config/home-manager").homeConfigurations."jouni".options',
+									expr = '(builtins.getFlake ("git+file://" + toString ./.)).homeConfigurations."jouni".options',
 								},
 							},
 						},
