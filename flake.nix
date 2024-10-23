@@ -42,6 +42,9 @@
     };
     pkgs_firefox-addons = firefox-addons.packages.${system};
   in {
+    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      modules = [./configuration.nix];
+    };
     homeConfigurations."jouni" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {
