@@ -140,9 +140,8 @@ in {
     neovide
     mpv
     kitty
-    # using older version, cuz the new one has a bug https://github.com/wez/wezterm/issues/5990
     # on Ubuntu I'm using wezterm-nightly package (version 20241015-083151-9ddca7bd) because it has better startuptime
-    pkgs_old.wezterm
+    wezterm
     watchexec
     jqp
     google-chrome
