@@ -340,7 +340,27 @@ require("lazy").setup({
 				-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 				require("lspconfig").clangd.setup({})
 				require("lspconfig").pyright.setup({})
-				require("lspconfig").nil_ls.setup({})
+				require("lspconfig").nixd.setup({
+					cmd = { "nixd" },
+					settings = {
+						nixd = {
+							nixpkgs = {
+								expr = "import <nixpkgs> { }",
+							},
+							-- formatting = {
+							-- 	command = { "alejandra" }, -- or nixfmt or nixpkgs-fmt
+							-- },
+							options = {
+								--   nixos = {
+								--       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
+								--   },
+								home_manager = {
+									expr = '(builtins.getFlake "/home/jouni/.config/home-manager").homeConfigurations."jouni".options',
+								},
+							},
+						},
+					},
+				})
 				require("lspconfig").lua_ls.setup({})
 				require("lspconfig").texlab.setup({})
 				require("lspconfig").rust_analyzer.setup({})

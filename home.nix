@@ -491,7 +491,7 @@ in {
         black
         alejandra
         lua-language-server
-        nil
+        nixd
         pyright
         texlab
         rust-analyzer
