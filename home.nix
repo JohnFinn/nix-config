@@ -145,7 +145,7 @@ in {
     pkgs_old.wezterm
     watchexec
     jqp
-    pkgs_old.google-chrome
+    google-chrome
     starship
     zoxide
     direnv

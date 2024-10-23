@@ -26,19 +26,6 @@
     pkgs = nixpkgs.legacyPackages.${system};
     pkgs_old = import nixpkgs_old {
       inherit system;
-      config.allowUnfree = true;
-      overlays = [
-        (final: prev: {
-          google-chrome = prev.google-chrome.overrideAttrs (oldAttrs: {
-            postInstall =
-              (oldAttrs.postInstall or "")
-              + ''
-                substituteInPlace $out/share/applications/google-chrome.desktop \
-                  --replace "/bin/google-chrome-stable %U" "/bin/google-chrome-stable --load-extension=${./meetup-auto-login} %U"
-              '';
-          });
-        })
-      ];
     };
     pkgs_firefox-addons = firefox-addons.packages.${system};
   in {
