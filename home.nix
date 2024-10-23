@@ -467,7 +467,7 @@ in {
         {
           on = ["i"];
           run = ''
-            shell '${pkgs.ripdrag}/bin/ripdrag "$1"' --confirm
+            shell '${pkgs.ripdrag}/bin/ripdrag "$@"' --confirm
           '';
         }
       ];
