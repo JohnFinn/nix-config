@@ -405,6 +405,8 @@ in {
             "browser.shell.checkDefaultBrowser" = false;
             "extensions.pocket.enabled" = false;
             "extensions.autoDisableScopes" = 0;
+            "browser.aboutwelcome.enabled" = false;
+            "datareporting.policy.firstRunURL" = "";
           };
           extensions = [
             pkgs_firefox-addons.dictionary-german
