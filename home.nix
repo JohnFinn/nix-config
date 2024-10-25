@@ -404,6 +404,7 @@ in {
           settings = {
             "browser.shell.checkDefaultBrowser" = false;
             "extensions.pocket.enabled" = false;
+            "extensions.autoDisableScopes" = 0;
           };
           extensions = [
             pkgs_firefox-addons.dictionary-german
