@@ -119,6 +119,7 @@ in {
     yq
     fd
     sd
+    nodePackages.prettier
     tldr
     thefuck
     nix-output-monitor
