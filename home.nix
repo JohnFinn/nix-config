@@ -195,7 +195,7 @@ in {
   in {
     "nvim/spell/de.utf-8.spl".source = nvim-spell-de-utf8-dictionary;
     # "nvim/spell/de.utf-8.sug".source = nvim-spell-de-utf8-suggestions;
-    "pulsemixer.cfg".source = ./pulsemixer.cfg;
+    "pulsemixer.cfg".source = ./dotfiles/pulsemixer.cfg;
   };
 
   home.file = {
@@ -204,7 +204,7 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".todo/config".source = ./todotxt-config;
+    ".todo/config".source = ./dotfiles/todotxt-config;
     ".config/nvim/lua/nix_paths.lua".text = let
       load_treesitters_body = lib.strings.concatStrings (lib.strings.intersperse "\n"
         (
@@ -231,11 +231,11 @@ in {
         	end
         }
       '';
-    ".config/wezterm/wezterm.lua".source = ./wezterm.lua;
-    ".config/starship.toml".source = ./starship.toml;
-    ".ideavimrc".source = ./nvim/ideavimrc;
-    ".config/lazygit/config.yml".source = ./lazygit.yaml;
-    ".config/espanso/match/base.yml".source = ./base.yml;
+    ".config/wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
+    ".config/starship.toml".source = ./dotfiles/starship.toml;
+    ".ideavimrc".source = ./dotfiles/nvim/ideavimrc;
+    ".config/lazygit/config.yml".source = ./dotfiles/lazygit.yaml;
+    ".config/espanso/match/base.yml".source = ./dotfiles/base.yml;
   };
 
   # Home Manager can also manage your environment variables through
@@ -480,7 +480,7 @@ in {
     neovim = {
       enable = true;
       vimAlias = true;
-      extraLuaConfig = builtins.readFile ./nvim/extraLuaConfig.lua;
+      extraLuaConfig = builtins.readFile ./dotfiles/nvim/extraLuaConfig.lua;
 
       extraLuaPackages = luaPkgs: with luaPkgs; [nvim-nio pathlib-nvim];
       plugins = vimPlugins;
