@@ -13,6 +13,10 @@
     {
       "passKeys": "",
       "pattern": "https?://www.youtube.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.hackerrank.com/*"
     }
   ]
 }
