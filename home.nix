@@ -398,6 +398,7 @@ in {
     };
     firefox = {
       enable = true;
+      package = pkgs.firefox-esr; # enable installing of unsigned addons as xpinstall.signatures.required is not enough
       profiles = {
         personal = {
           isDefault = true;
@@ -408,6 +409,7 @@ in {
             "extensions.autoDisableScopes" = 0;
             "browser.aboutwelcome.enabled" = false;
             "datareporting.policy.firstRunURL" = "";
+            "xpinstall.signatures.required" = false;
           };
           extensions = [
             pkgs_firefox-addons.dictionary-german
@@ -597,7 +599,7 @@ in {
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       binding = "<Super>b";
-      command = "${pkgs.firefox}/bin/firefox";
+      command = "${pkgs.firefox-esr}/bin/firefox-esr";
       name = "browser";
     };
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
