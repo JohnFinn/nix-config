@@ -17,6 +17,10 @@
     {
       "passKeys": "",
       "pattern": "https?://www.hackerrank.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://leetcode.com/*"
     }
   ]
 }
