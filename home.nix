@@ -139,7 +139,6 @@ in {
     pulsemixer
     alacritty
     neovide
-    mpv
     kitty
     # on Ubuntu I'm using wezterm-nightly package (version 20241015-083151-9ddca7bd) because it has better startuptime
     wezterm
@@ -394,6 +393,15 @@ in {
         "l" = "scroll up";
         "K" = "navigate next";
         "L" = "navigate previous";
+      };
+    };
+    mpv = {
+      enable = true;
+      bindings = {
+        "[" = "add speed -0.1";
+        "]" = "add speed 0.1";
+        "{" = "add speed -0.5";
+        "}" = "add speed 0.5";
       };
     };
     firefox = {
