@@ -426,6 +426,60 @@ in {
             pkgs_firefox-addons.istilldontcareaboutcookies
             pkgs_firefox-addons.videospeed
             pkgs_firefox-addons.vimium # TODO: remap hjkl
+            (let
+              buildFirefoxXpiAddon = lib.makeOverridable ({
+                stdenv ? pkgs.stdenv,
+                fetchurl ? pkgs.fetchurl,
+                pname,
+                version,
+                addonId,
+                url,
+                sha256,
+                meta,
+                ...
+              }:
+                stdenv.mkDerivation {
+                  name = "${pname}-${version}";
+
+                  inherit meta;
+
+                  src = fetchurl {inherit url sha256;};
+
+                  preferLocalBuild = true;
+                  allowSubstitutes = true;
+
+                  passthru = {inherit addonId;};
+
+                  buildCommand = ''
+                    dst="$out/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                    mkdir -p "$dst"
+                    # install -v -m644 "$src" "$dst/${addonId}.xpi"
+                    install -v -m644 "${/home/jouni/code/vim_editor_remap/web-ext-artifacts/hackce-0.1.zip}" "$dst/${addonId}.xpi"
+                  '';
+                });
+            in (
+              buildFirefoxXpiAddon {
+                pname = "darkreader";
+                version = "4.9.94";
+                addonId = "addon@darkreader.org";
+                url = "https://addons.mozilla.org/firefox/downloads/file/4359254/darkreader-4.9.94.xpi";
+                sha256 = "251c4e7d0a30c0cab006803600e59ab92dcc0c606429740d42677846d4c9ccd6";
+                meta = with lib; {
+                  homepage = "https://darkreader.org/";
+                  description = "Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.";
+                  license = licenses.mit;
+                  mozPermissions = [
+                    "alarms"
+                    "contextMenus"
+                    "storage"
+                    "tabs"
+                    "theme"
+                    "<all_urls>"
+                  ];
+                  platforms = platforms.all;
+                };
+              }
+            ))
           ];
         };
         work = {
