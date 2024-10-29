@@ -403,6 +403,13 @@ in {
         "{" = "add speed -0.5";
         "}" = "add speed 0.5";
       };
+      config = {
+        # for fast jumping to next/prev subtitles
+        cache = "yes"; # uses a large seekable RAM cache even for local input.
+        # cache-secs=300                # uses extra large RAM cache (needs cache=yes to make it useful).
+        demuxer-max-back-bytes = "20M"; # sets fast seeking
+        demuxer-max-bytes = "20M";
+      };
     };
     firefox = {
       enable = true;
