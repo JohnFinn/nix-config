@@ -119,6 +119,7 @@ in {
     yq
     fd
     sd
+    jless
     nodePackages.prettier
     tldr
     thefuck
