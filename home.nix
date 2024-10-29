@@ -196,6 +196,7 @@ in {
     "nvim/spell/de.utf-8.spl".source = nvim-spell-de-utf8-dictionary;
     # "nvim/spell/de.utf-8.sug".source = nvim-spell-de-utf8-suggestions;
     "pulsemixer.cfg".source = ./dotfiles/pulsemixer.cfg;
+    "mpv/mpv.conf".source = ./dotfiles/mpv.conf;
   };
 
   home.file = {
@@ -402,13 +403,6 @@ in {
         "]" = "add speed 0.1";
         "{" = "add speed -0.5";
         "}" = "add speed 0.5";
-      };
-      config = {
-        # for fast jumping to next/prev subtitles
-        cache = "yes"; # uses a large seekable RAM cache even for local input.
-        # cache-secs=300                # uses extra large RAM cache (needs cache=yes to make it useful).
-        demuxer-max-back-bytes = "20M"; # sets fast seeking
-        demuxer-max-bytes = "20M";
       };
     };
     firefox = {
