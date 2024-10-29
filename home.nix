@@ -157,7 +157,7 @@ in {
     ripgrep
     swappy
     (python3.withPackages
-      (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy]))
+      (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.selenium]))
     anki
     obsidian
     discord
