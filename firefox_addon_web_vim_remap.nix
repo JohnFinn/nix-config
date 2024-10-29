@@ -7,17 +7,6 @@ in
   pkgs.stdenv.mkDerivation {
     name = "hackce-0.1";
 
-    meta = with lib; {
-      homepage = "https://github.com/JohnFinn/web_vim_remap";
-      license = licenses.mit;
-      mozPermissions = [
-        "webRequest"
-        "webRequestBlocking"
-        "<all_urls>"
-      ];
-      platforms = platforms.all;
-    };
-
     src = pkgs.fetchFromGitHub {
       owner = "JohnFinn";
       repo = "web_vim_remap";
