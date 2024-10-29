@@ -422,6 +422,7 @@ in {
             "datareporting.policy.firstRunURL" = "";
             "xpinstall.signatures.required" = false;
           };
+          search.force = true;
           search.engines = {
             "Nix Packages" = {
               urls = [
