@@ -428,20 +428,23 @@ in {
             pkgs_firefox-addons.istilldontcareaboutcookies
             pkgs_firefox-addons.videospeed
             pkgs_firefox-addons.vimium # TODO: remap hjkl
-            (let
-              buildFirefoxXpiAddon = lib.makeOverridable ({
-                stdenv ? pkgs.stdenv,
-                fetchurl ? pkgs.fetchurl,
-                pname,
-                version,
-                addonId,
-                url,
-                sha256,
-                meta,
-                ...
-              }:
+            (
+              let
+                addonId = "hackce@nanigashi.stackoverflow";
+                meta = with lib; {
+                  homepage = "https://darkreader.org/";
+                  description = "Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.";
+                  license = licenses.mit;
+                  mozPermissions = [
+                    "webRequest"
+                    "webRequestBlocking"
+                    "<all_urls>"
+                  ];
+                  platforms = platforms.all;
+                };
+              in (({stdenv ? pkgs.stdenv, ...}:
                 stdenv.mkDerivation {
-                  name = "${pname}-${version}";
+                  name = "hackce-0.1";
 
                   inherit meta;
 
@@ -465,27 +468,8 @@ in {
                     mkdir -p "$dst"
                     install -v -m644 "web-ext-artifacts/hackce-0.1.zip" "$dst/${addonId}.xpi"
                   '';
-                });
-            in (
-              buildFirefoxXpiAddon {
-                pname = "hackce";
-                version = "0.1";
-                addonId = "hackce@nanigashi.stackoverflow";
-                url = "https://addons.mozilla.org/firefox/downloads/file/4359254/darkreader-4.9.94.xpi";
-                sha256 = "251c4e7d0a30c0cab006803600e59ab92dcc0c606429740d42677846d4c9ccd6";
-                meta = with lib; {
-                  homepage = "https://darkreader.org/";
-                  description = "Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.";
-                  license = licenses.mit;
-                  mozPermissions = [
-                    "webRequest"
-                    "webRequestBlocking"
-                    "<all_urls>"
-                  ];
-                  platforms = platforms.all;
-                };
-              }
-            ))
+                }) {})
+            )
           ];
         };
         work = {
