@@ -1,7 +1,4 @@
-{
-  pkgs,
-  lib,
-}: let
+{pkgs}: let
   addonId = "hackce@nanigashi.stackoverflow";
 in
   pkgs.stdenv.mkDerivation {
