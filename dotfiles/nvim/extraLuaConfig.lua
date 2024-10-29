@@ -100,6 +100,17 @@ require("lazy").setup({
 			end,
 		},
 		{
+			"stevearc/oil.nvim",
+			dev = true,
+			---@module 'oil'
+			---@type oil.SetupOpts
+			opts = {},
+			cmd = "Oil",
+			-- Optional dependencies
+			-- dependencies = { { "echasnovski/mini.icons", opts = {} } },
+			-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+		},
+		{
 			"rmagatti/auto-session",
 			dev = true,
 			lazy = false,
