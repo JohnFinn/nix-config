@@ -609,7 +609,7 @@ in {
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       binding = "<Super>b";
-      command = "${pkgs.firefox-esr}/bin/firefox-esr";
+      command = "${config.programs.firefox.finalPackage}/bin/firefox-esr";
       name = "browser";
     };
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
