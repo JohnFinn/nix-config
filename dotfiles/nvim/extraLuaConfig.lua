@@ -528,6 +528,14 @@ require("lazy").setup({
 				-- vim.fn.sign_define('DapLogPoint', { text='', texthl='DapLogPoint', linehl='DapLogPoint', numhl= 'DapLogPoint' })
 				-- vim.fn.sign_define('DapStopped', { text='', texthl='DapStopped', linehl='DapStopped', numhl= 'DapStopped' })
 			end,
+			config = function()
+				local dap = require("dap")
+				dap.adapters.gdb = {
+					type = "executable",
+					command = "gdb",
+					args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+				}
+			end,
 			-- stylua: ignore
 			keys = {
 				{ "<leader>db", mode = { "n", "x" }, function() require('dap').toggle_breakpoint() end, desc = "Toggle breakpoint" },
@@ -549,6 +557,7 @@ require("lazy").setup({
 		{
 			"folke/noice.nvim",
 			dev = true,
+			enabled = false,
 			lazy = false, -- disables UI flickering in statusbar movement one line below
 			config = function()
 				require("noice").setup({

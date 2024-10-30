@@ -138,6 +138,7 @@ in {
     fish
     tmux
     eza
+    gdb
     nerdfonts
     pulsemixer
     alacritty
