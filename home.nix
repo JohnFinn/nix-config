@@ -517,6 +517,12 @@ in {
           text = "󰴋";
         }
       ];
+      theme.icon.files = [
+        {
+          name = ".ideavimrc";
+          text = " ";
+        }
+      ];
     };
     neovim = {
       enable = true;
