@@ -557,7 +557,7 @@ require("lazy").setup({
 		{
 			"folke/noice.nvim",
 			dev = true,
-			enabled = false,
+			enabled = false, -- TODO: reanable. Was disabled because it makes dap prompts unusable
 			lazy = false, -- disables UI flickering in statusbar movement one line below
 			config = function()
 				require("noice").setup({
