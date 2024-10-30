@@ -506,6 +506,37 @@ require("lazy").setup({
 			end,
 		},
 		{
+			"rcarriga/nvim-dap-ui",
+			dev = true,
+			dependencies = { { "mfussenegger/nvim-dap", dev = true }, { "nvim-neotest/nvim-nio", dev = true } },
+			opts = {
+				layouts = {
+					{
+						elements = {
+							{ id = "scopes", size = 0.25 },
+							{ id = "breakpoints", size = 0.25 },
+							{ id = "stacks", size = 0.25 },
+							{ id = "watches", size = 0.25 },
+						},
+						position = "right",
+						size = 40,
+					},
+					{
+						elements = {
+							{ id = "repl", size = 0.5 },
+							{ id = "console", size = 0.5 },
+						},
+						position = "bottom",
+						size = 10,
+					},
+				},
+			},
+			keys = {
+				-- stylua: ignore
+				{ "<leader>dui", mode = { "n", "x" }, function() require('dapui').toggle() end, desc = "Toggle breakpoint" },
+			},
+		},
+		{
 			"mfussenegger/nvim-dap",
 			dev = true,
 			dependencies = {

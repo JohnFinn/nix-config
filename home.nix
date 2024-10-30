@@ -67,6 +67,7 @@
     # debugging
     nvim-dap
     nvim-dap-python
+    nvim-dap-ui
     # TODO: change loading icon
     fidget-nvim
     nvim-notify
