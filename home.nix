@@ -121,6 +121,7 @@ in {
     fd
     sd
     jless
+    qpdf
     nodePackages.prettier
     tldr
     thefuck
