@@ -28,6 +28,7 @@
       todotxt
       terraform
       just
+      thrift
       (helm.overrideAttrs
         (oldAttrs: {
           src = pkgs.fetchFromGitHub {
