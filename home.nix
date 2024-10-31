@@ -543,6 +543,7 @@ in {
         lua-language-server
         nixd
         pyright
+        jdt-language-server
         texlab
         rust-analyzer
         typescript-language-server
