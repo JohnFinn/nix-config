@@ -124,6 +124,7 @@ in {
     fd
     sd
     jless
+    concurrently
     qpdf
     nodePackages.prettier
     tldr
