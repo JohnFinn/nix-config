@@ -9,6 +9,12 @@ vim.api.nvim_command([[
 	noremap gk gj
 	noremap gl gk
 
+	nnoremap <C-W>; <C-W>l
+	nnoremap <C-W>l <C-W>k
+	nnoremap <C-W>k <C-W>j
+	nnoremap <C-W>j <C-W>h
+	nnoremap <C-W>h <C-W>;
+
 	set tabstop=2 shiftwidth=2
 ]]);
 
