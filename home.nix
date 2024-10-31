@@ -18,6 +18,7 @@
       fish
       latex
       javascript
+      java
       html
       json
       yaml
