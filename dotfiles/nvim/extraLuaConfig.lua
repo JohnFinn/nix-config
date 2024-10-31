@@ -585,6 +585,8 @@ require("lazy").setup({
 			keys = {
 				{ "<leader>db", mode = { "n", "x" }, function() require('dap').toggle_breakpoint() end, desc = "Toggle breakpoint" },
 				{ "<leader>dc", mode = { "n", "x" }, function() require('dap').continue() end, desc = "Debug continue" },
+				{ "<leader>dj", mode = { "n", "x" }, function() require('dap').up() end, desc = "Debug callstack up" },
+				{ "<leader>d;", mode = { "n", "x" }, function() require('dap').down() end, desc = "Debug callstack down" },
 			},
 		},
 		{
