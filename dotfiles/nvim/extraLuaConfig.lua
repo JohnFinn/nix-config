@@ -530,10 +530,18 @@ require("lazy").setup({
 						size = 10,
 					},
 				},
+				mappings = {
+					edit = "e",
+					expand = { "<CR>", "<2-LeftMouse>" },
+					open = "gd",
+					remove = "d",
+					repl = "r",
+					toggle = "t",
+				},
 			},
 			keys = {
 				-- stylua: ignore
-				{ "<leader>dui", mode = { "n", "x" }, function() require('dapui').toggle() end, desc = "Toggle breakpoint" },
+				{ "<leader>dui", mode = { "n", "x" }, function() require('dapui').toggle() end },
 			},
 		},
 		{
