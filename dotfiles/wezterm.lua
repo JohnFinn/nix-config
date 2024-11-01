@@ -33,6 +33,9 @@ return {
 		background = "#1e1e1e", -- from vim's colorscheme
 	},
 	-- font = wezterm.font('JetBrains Mono Nerd Font'),
+	-- https://github.com/wez/wezterm/issues/3334#issuecomment-1877641574
+	xcursor_theme = "Adwaita",
+	xcursor_size = 24,
 	keys = {
 		{
 			mods = "CTRL",
