@@ -32,6 +32,7 @@
     chafa
     figlet
     cowsay
+    lolcat
     bkt
     just
     kondo
