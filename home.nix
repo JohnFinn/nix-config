@@ -134,16 +134,13 @@ in {
     htop
     btop
     dconf2nix
-    git
     pkgs_old.lazygit
     lazydocker
     zsh
-    tmux
     eza
     gdb
     nerdfonts
     pulsemixer
-    alacritty
     neovide
     kitty
     # on Ubuntu I'm using wezterm-nightly package (version 20241015-083151-9ddca7bd) because it has better startuptime
