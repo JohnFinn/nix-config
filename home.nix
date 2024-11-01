@@ -30,6 +30,7 @@
       terraform
       just
       thrift
+      hcl
       (helm.overrideAttrs
         (oldAttrs: {
           src = pkgs.fetchFromGitHub {
