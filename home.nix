@@ -139,7 +139,6 @@ in {
     pkgs_old.lazygit
     lazydocker
     zsh
-    fish
     tmux
     eza
     gdb
@@ -154,9 +153,6 @@ in {
     (import ./checkexec.nix {inherit pkgs;})
     jqp
     google-chrome
-    starship
-    zoxide
-    direnv
     fzf
     entr
     clang
