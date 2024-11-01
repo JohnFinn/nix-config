@@ -115,6 +115,7 @@
     #   sha256 = "sha256:0j592ibsias7prm1r3dsz7la04ss5bmsba6l1kv9xn3353wyrl0k";
     # };
   in {
+    # TODO: move to ./vim.nix
     "nvim/spell/de.utf-8.spl".source = nvim-spell-de-utf8-dictionary;
     # "nvim/spell/de.utf-8.sug".source = nvim-spell-de-utf8-suggestions;
     "pulsemixer.cfg".source = ./dotfiles/pulsemixer.cfg;
