@@ -108,7 +108,6 @@ in {
     pwgen
     hyperfine
     telegram-desktop
-    yazi
     chafa
     figlet
     cowsay
