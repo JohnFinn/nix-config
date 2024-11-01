@@ -546,6 +546,7 @@ in {
         lua-language-server
         nixd
         pyright
+        nodePackages.bash-language-server
         jdt-language-server
         texlab
         rust-analyzer

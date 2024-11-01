@@ -383,6 +383,7 @@ require("lazy").setup({
 				require("lspconfig").rust_analyzer.setup({})
 				require("lspconfig").ts_ls.setup({})
 				require("lspconfig").jdtls.setup({})
+				require("lspconfig").bashls.setup({})
 
 				vim.diagnostic.config({
 					virtual_text = { prefix = "" }, -- '' ''
