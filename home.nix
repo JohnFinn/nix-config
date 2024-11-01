@@ -56,7 +56,7 @@
     htop
     btop
     dconf2nix
-    pkgs_old.lazygit
+    lazygit
     lazydocker
     zsh
     eza

@@ -1,16 +1,16 @@
 keybinding:
-  universal:
-    prevItem-alt: 'l' # go one line up
-    nextItem-alt: 'k' # go one line down
-    prevBlock-alt: 'j' # goto the previous block / panel
-    nextBlock-alt: ';' # goto the next block / panel
-    scrollUpMain-alt1: 'L'
-    scrollDownMain-alt1: 'K'
-    scrollLeft: # TODO
-    scrollRight: # TODO
+    universal:
+        prevItem-alt: 'l' # go one line up
+        nextItem-alt: 'k' # go one line down
+        prevBlock-alt: 'j' # goto the previous block / panel
+        nextBlock-alt: ';' # goto the next block / panel
+        scrollUpMain-alt1: 'L'
+        scrollDownMain-alt1: 'K'
+        scrollLeft: <disabled> # TODO
+        scrollRight: <disabled> # TODO
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never --tabs=2
+    paging:
+        colorArg: always
+        pager: delta --dark --paging=never --tabs=2
 gui:
-  nerdFontsVersion: "3"
+    nerdFontsVersion: "3"
