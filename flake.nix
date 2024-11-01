@@ -11,6 +11,10 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-npm-buildpackage = {
+      url = "github:serokell/nix-npm-buildpackage";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -19,13 +23,14 @@
     firefox-addons,
     home-manager,
     ...
-  }: let
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     pkgs_old = import nixpkgs_old {
       inherit system;
     };
     pkgs_firefox-addons = firefox-addons.packages.${system};
+    bp = pkgs.callPackage inputs.nix-npm-buildpackage {};
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       modules = [./configuration.nix];
@@ -35,6 +40,7 @@
       extraSpecialArgs = {
         inherit pkgs_old;
         inherit pkgs_firefox-addons;
+        inherit bp;
       };
 
       # Specify your home configuration modules here, for example,

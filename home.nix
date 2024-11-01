@@ -4,6 +4,7 @@
   pkgs_old,
   pkgs_firefox-addons,
   lib,
+  bp,
   ...
 }: let
   treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins:
@@ -547,6 +548,14 @@ in {
         nixd
         pyright
         nodePackages.bash-language-server
+        (bp.buildYarnPackage {
+          src = pkgs.fetchFromGitHub {
+            owner = "ndonfris";
+            repo = "fish-lsp";
+            rev = "v1.0.8-1";
+            sha256 = "sha256-u125EZXQEouVbmJuoW3KNDNqLB5cS/TzblXraClcw6Q";
+          };
+        })
         jdt-language-server
         texlab
         rust-analyzer
