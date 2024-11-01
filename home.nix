@@ -54,6 +54,7 @@
     twilight-nvim
     nvim-highlight-colors
     gitsigns-nvim
+    render-markdown-nvim
     vim-fugitive
     flash-nvim
     # for some reason old one has better startup time
