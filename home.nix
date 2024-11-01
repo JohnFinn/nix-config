@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs_old,
   pkgs_firefox-addons,
   lib,
   ...
