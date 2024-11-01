@@ -553,6 +553,7 @@ in {
         pyright
         nodePackages.bash-language-server
         vscode-langservers-extracted
+        yaml-language-server
         jdt-language-server
         texlab
         rust-analyzer
