@@ -552,6 +552,7 @@ in {
         nixd
         pyright
         nodePackages.bash-language-server
+        vscode-langservers-extracted
         jdt-language-server
         texlab
         rust-analyzer

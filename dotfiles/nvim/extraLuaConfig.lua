@@ -384,6 +384,7 @@ require("lazy").setup({
 				require("lspconfig").ts_ls.setup({})
 				require("lspconfig").jdtls.setup({})
 				require("lspconfig").bashls.setup({})
+				require("lspconfig").jsonls.setup({})
 
 				vim.diagnostic.config({
 					virtual_text = { prefix = "" }, -- '' ''
