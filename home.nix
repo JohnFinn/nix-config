@@ -128,7 +128,6 @@ in {
     qpdf
     nodePackages.prettier
     tldr
-    thefuck
     nix-output-monitor
     portal
     nvd
@@ -153,7 +152,6 @@ in {
     (import ./checkexec.nix {inherit pkgs;})
     jqp
     google-chrome
-    fzf
     entr
     clang
     clang-tools
