@@ -33,7 +33,6 @@ return {
 		background = "#1e1e1e", -- from vim's colorscheme
 	},
 	-- font = wezterm.font('JetBrains Mono Nerd Font'),
-	default_prog = { "fish" },
 	keys = {
 		{
 			mods = "CTRL",
