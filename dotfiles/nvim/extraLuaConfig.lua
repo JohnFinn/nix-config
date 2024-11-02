@@ -702,10 +702,12 @@ require("lazy").setup({
 	},
 })
 
--- vim.api.nvim_create_autocmd("User", {
--- 	pattern = "LazyVimStarted",
--- 	desc = "tool for benchmarking startup time. To use uncomment and run hyperfine 'vim -c /path/to/this/file'",
--- 	callback = function()
--- 		vim.api.nvim_command(":q")
--- 	end,
--- })
+if vim.g.exitAfterStart then
+	vim.api.nvim_create_autocmd("User", {
+		pattern = "LazyVimStarted", -- TODO: find out if "LazyDone" is a better choice
+		desc = "tool for benchmarking startup time. To use and run vim --cmd 'let g:exitAfterStart=1'",
+		callback = function()
+			vim.api.nvim_command(":q")
+		end,
+	})
+end
