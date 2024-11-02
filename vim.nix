@@ -135,4 +135,19 @@ in {
       	end
       }
     '';
+
+  xdg.configFile = let
+    nvim-spell-de-utf8-dictionary = builtins.fetchurl {
+      url = "http://ftp.vim.org/vim/runtime/spell/de.utf-8.spl";
+      sha256 = "sha256:1ld3hgv1kpdrl4fjc1wwxgk4v74k8lmbkpi1x7dnr19rldz11ivk";
+    };
+    # nvim-spell-de-utf8-suggestions = builtins.fetchurl {
+    #   url = "http://ftp.vim.org/vim/runtime/spell/de.utf-8.sug";
+    #   sha256 = "sha256:0j592ibsias7prm1r3dsz7la04ss5bmsba6l1kv9xn3353wyrl0k";
+    # };
+  in {
+    # TODO: move to ./vim.nix
+    "nvim/spell/de.utf-8.spl".source = nvim-spell-de-utf8-dictionary;
+    # "nvim/spell/de.utf-8.sug".source = nvim-spell-de-utf8-suggestions;
+  };
 }
