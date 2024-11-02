@@ -325,11 +325,7 @@ require("lazy").setup({
 							},
 						},
 					},
-					pickers = {
-						colorscheme = {
-							enable_preview = true,
-						},
-					},
+					pickers = { colorscheme = { enable_preview = true } },
 				})
 			end,
 		},
@@ -640,10 +636,7 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter",
 			dev = true,
 			event = "VeryLazy",
-			dependencies = {
-				"nvim-treesitter/nvim-treesitter-textobjects",
-				dev = true,
-			},
+			dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", dev = true },
 			config = function()
 				require("nix_paths").load_treesitters()
 				---@diagnostic disable-next-line: missing-fields
@@ -695,12 +688,7 @@ require("lazy").setup({
 				{ "Z", "<cmd>ZenMode<cr>", desc = "ZenMode" },
 				{ "z", "<cmd>Twilight<cr>", desc = "Twilight" },
 			},
-			dependencies = {
-				{
-					"folke/twilight.nvim",
-					dev = true,
-				},
-			},
+			dependencies = { { "folke/twilight.nvim", dev = true } },
 			opts = {
 				plugins = {
 					wezterm = {
