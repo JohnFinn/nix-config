@@ -66,6 +66,7 @@ local Path = require("pathlib")
 vim.opt.rtp:prepend(require("nix_paths").lazypath)
 
 require("lazy").setup({
+	-- TODO: try out lazy's change detection
 	dev = {
 		---@type string | fun(plugin: LazyPlugin): string directory where you store your local plugin projects
 		-- TODO: figure out proper way of doing it like here https://nixalted.com/
