@@ -68,7 +68,7 @@
     # on Ubuntu I'm using wezterm-nightly package (version 20241015-083151-9ddca7bd) because it has better startuptime
     wezterm
     watchexec
-    (import ./checkexec.nix {inherit pkgs;})
+    (import ./derivations/checkexec.nix {inherit pkgs;})
     jqp
     google-chrome
     entr
@@ -340,7 +340,7 @@
             pkgs_firefox-addons.istilldontcareaboutcookies
             pkgs_firefox-addons.videospeed
             pkgs_firefox-addons.vimium # TODO: remap hjkl
-            (import ./firefox_addon_web_vim_remap.nix {inherit pkgs;})
+            (import ./derivations/firefox_addon_web_vim_remap.nix {inherit pkgs;})
           ];
         };
         work = {

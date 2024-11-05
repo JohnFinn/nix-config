@@ -78,7 +78,7 @@
     nvim-web-devicons
     tokyonight-nvim
     vscode-nvim
-    (import ./render-markdown-nvim.nix {inherit pkgs;})
+    (import ./derivations/render-markdown-nvim.nix {inherit pkgs;})
     todo-comments-nvim
     treesitter
     nvim-treesitter-textobjects
@@ -100,7 +100,7 @@ in {
       nixd
       pyright
       nodePackages.bash-language-server
-      (pkgs.callPackage ./fish-lsp.nix {})
+      (pkgs.callPackage ./derivations/fish-lsp.nix {})
       vscode-langservers-extracted
       yaml-language-server
       jdt-language-server
