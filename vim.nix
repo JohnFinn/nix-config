@@ -78,6 +78,7 @@
     nvim-web-devicons
     tokyonight-nvim
     vscode-nvim
+    (import ./render-markdown-nvim.nix {inherit pkgs;})
     todo-comments-nvim
     treesitter
     nvim-treesitter-textobjects

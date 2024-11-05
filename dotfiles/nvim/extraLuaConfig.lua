@@ -290,6 +290,18 @@ require("lazy").setup({
 			end,
 		},
 		{
+			"MeanderingProgrammer/render-markdown.nvim",
+			dev = true,
+			-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+			-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+			--stylua: ignore
+			dependencies = { { "nvim-treesitter/nvim-treesitter", dev = true }, { "nvim-tree/nvim-web-devicons", dev = true }, }, -- if you prefer nvim-web-devicons
+			ft = { "markdown" },
+			---@module 'render-markdown'
+			---@type render.md.UserConfig
+			opts = {},
+		},
+		{
 			"nvim-telescope/telescope.nvim",
 			dev = true,
 			event = "VeryLazy",
