@@ -393,6 +393,7 @@ require("lazy").setup({
 				require("lspconfig").ts_ls.setup({})
 				require("lspconfig").jdtls.setup({})
 				require("lspconfig").bashls.setup({})
+				require("lspconfig").fish_lsp.setup({})
 				require("lspconfig").jsonls.setup({})
 
 				vim.diagnostic.config({

@@ -100,6 +100,7 @@ in {
       nixd
       pyright
       nodePackages.bash-language-server
+      (pkgs.callPackage ./fish-lsp.nix {})
       vscode-langservers-extracted
       yaml-language-server
       jdt-language-server
