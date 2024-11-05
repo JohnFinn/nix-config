@@ -88,7 +88,6 @@ in {
     enable = true;
     vimAlias = true;
     extraLuaConfig = builtins.readFile ./dotfiles/nvim/extraLuaConfig.lua;
-
     extraLuaPackages = luaPkgs: with luaPkgs; [nvim-nio pathlib-nvim];
     plugins = vimPlugins;
     extraPackages = with pkgs; [
