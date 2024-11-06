@@ -146,9 +146,7 @@
   home.sessionVariables = {EDITOR = "vim";};
   home.shellAliases = {
     ipython = "ipython --no-banner --no-confirm-exit";
-    ipy = "ipython --no-banner --no-confirm-exit";
     python = "python -q";
-    py = "python -q";
     # TODO: optimize chafa speed, maybe by caching thumbnails
     fzf = let
       preview =
@@ -161,8 +159,6 @@
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --group-directories-first";
     lt = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --ignore-glob .git --tree";
     lt2 = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --ignore-glob .git --tree --level 2";
-    gs = "git status";
-    lg = "lazygit";
   };
   programs = {
     # Let Home Manager install and manage itself.
@@ -196,6 +192,12 @@
             end
             rm -f -- "$tmp"
           '';
+      };
+      shellAbbrs = {
+        lg = "lazygit";
+        gs = "git status";
+        ipy = "ipython";
+        py = "python";
       };
     };
     thefuck = {
