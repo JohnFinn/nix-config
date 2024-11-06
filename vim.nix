@@ -29,6 +29,7 @@
       just
       thrift
       hcl
+      dockerfile
       (helm.overrideAttrs
         (oldAttrs: {
           src = pkgs.fetchFromGitHub {
