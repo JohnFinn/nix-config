@@ -71,6 +71,10 @@
     (import ./derivations/checkexec.nix {inherit pkgs;})
     jqp
     google-chrome
+    spotify
+    (pkgs.writeShellScriptBin "spotify-adblock" ''
+      LD_PRELOAD=${pkgs.callPackage ./derivations/spotify-adblock.nix {}}/lib/libspotifyadblock.so spotify
+    '')
     entr
     clang
     clang-tools
