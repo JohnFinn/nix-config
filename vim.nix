@@ -95,8 +95,10 @@ in {
       stylua
       black
       alejandra
+      # language servers
       lua-language-server
       nixd
+      dockerfile-language-server-nodejs
       pyright
       nodePackages.bash-language-server
       (pkgs.callPackage ./derivations/fish-lsp.nix {})
@@ -106,6 +108,7 @@ in {
       texlab
       rust-analyzer
       typescript-language-server
+      #
       rustfmt
       (python3.withPackages (python-pkgs: [python-pkgs.mdformat-gfm]))
     ];
