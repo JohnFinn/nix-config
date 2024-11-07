@@ -33,6 +33,7 @@
     figlet
     cowsay
     lolcat
+    fortune
     bkt
     just
     kondo
