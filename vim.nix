@@ -18,6 +18,7 @@
       javascript
       java
       html
+      xml
       json
       yaml
       toml
