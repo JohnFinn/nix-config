@@ -64,8 +64,6 @@
     pulsemixer
     neovide
     kitty
-    # on Ubuntu I'm using wezterm-nightly package (version 20241015-083151-9ddca7bd) because it has better startuptime
-    wezterm
     watchexec
     (import ./derivations/checkexec.nix {inherit pkgs;})
     jqp
