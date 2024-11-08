@@ -532,36 +532,44 @@ require("lazy").setup({
 			"rcarriga/nvim-dap-ui",
 			dev = true,
 			dependencies = { { "mfussenegger/nvim-dap", dev = true }, { "nvim-neotest/nvim-nio", dev = true } },
-			opts = {
-				layouts = {
-					{
-						elements = {
-							{ id = "scopes", size = 0.25 },
-							{ id = "breakpoints", size = 0.25 },
-							{ id = "stacks", size = 0.25 },
-							{ id = "watches", size = 0.25 },
+			config = function()
+				require("dapui").setup({
+					layouts = {
+						{
+							elements = {
+								{ id = "scopes", size = 0.25 },
+								{ id = "breakpoints", size = 0.25 },
+								{ id = "stacks", size = 0.25 },
+								{ id = "watches", size = 0.25 },
+							},
+							position = "right",
+							size = 40,
 						},
-						position = "right",
-						size = 40,
-					},
-					{
-						elements = {
-							{ id = "repl", size = 0.5 },
-							{ id = "console", size = 0.5 },
+						{
+							elements = {
+								{ id = "repl", size = 0.5 },
+								{ id = "console", size = 0.5 },
+							},
+							position = "bottom",
+							size = 10,
 						},
-						position = "bottom",
-						size = 10,
 					},
-				},
-				mappings = {
-					edit = "e",
-					expand = { "<CR>", "<2-LeftMouse>" },
-					open = "gd",
-					remove = "d",
-					repl = "r",
-					toggle = "t",
-				},
-			},
+					mappings = {
+						edit = "e",
+						expand = { "<CR>", "<2-LeftMouse>" },
+						open = "gd",
+						remove = "d",
+						repl = "r",
+						toggle = "t",
+					},
+				})
+				vim.api.nvim_create_autocmd("QuitPre", {
+					desc = "Close dapui on :q",
+					callback = function()
+						require("dapui").close()
+					end,
+				})
+			end,
 			keys = {
 				-- stylua: ignore
 				{ "<leader>dui", mode = { "n", "x" }, function() require('dapui').toggle() end },
