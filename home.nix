@@ -200,7 +200,10 @@
         ipy = "ipython";
         py = "python";
         ta = "todo.sh -t add";
-        nhm = "nh home switch ~/.config/home-manager";
+        nhm = {
+          position = "anywhere";
+          expansion = "nh home switch ~/.config/home-manager";
+        };
       };
     };
     thefuck = {
