@@ -199,6 +199,7 @@
         gs = "git status";
         ipy = "ipython";
         py = "python";
+        ta = "todo.sh -t add";
       };
     };
     thefuck = {
