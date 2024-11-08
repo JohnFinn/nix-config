@@ -39,7 +39,22 @@
 
       # Specify your home configuration modules here, for example,
       # the path to your home.nix.
-      modules = [./home.nix];
+      modules = [./jouni.nix];
+
+      # Optionally use extraSpecialArgs
+      # to pass through arguments to home.nix
+    };
+
+    homeConfigurations."sunnari" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {
+        inherit pkgs_old;
+        inherit pkgs_firefox-addons;
+      };
+
+      # Specify your home configuration modules here, for example,
+      # the path to your home.nix.
+      modules = [./sunnari.nix];
 
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
