@@ -42,6 +42,9 @@ vim.g.maplocalleader = " "
 
 vim.keymap.set({ "n", "x" }, "<leader>w", "<cmd>set wrap!<cr>")
 
+-- disabled help because of https://github.com/rmagatti/auto-session/issues/325
+vim.o.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize,winpos,terminal,localoptions"
+
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
