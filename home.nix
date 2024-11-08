@@ -154,8 +154,6 @@
     in "fzf --preview '${preview}' --bind ctrl-k:down,ctrl-l:up";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --group-directories-first";
-    lt = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --ignore-glob .git --tree";
-    lt2 = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --ignore-glob .git --tree --level 2";
   };
   programs = {
     # Let Home Manager install and manage itself.
@@ -200,6 +198,8 @@
           position = "anywhere";
           expansion = "nh home switch ~/.config/home-manager";
         };
+        lt = "ls --ignore-glob .git --tree";
+        lt2 = "ls --ignore-glob .git --tree --level 2";
       };
     };
     thefuck = {
