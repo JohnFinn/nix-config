@@ -78,6 +78,11 @@
     #media-session.enable = true;
   };
 
+  services.kanata = {
+    enable = true;
+    keyboards.foo.configFile = ./kanata.kbd;
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
