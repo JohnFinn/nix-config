@@ -139,7 +139,9 @@ in {
       	lazypath = "${pkgs.vimPlugins.lazy-nvim}",
       	load_treesitters = function ()
       	${load_treesitters_body}
-      	end
+      	end,
+        -- https://github.com/NixOS/nixpkgs/issues/264141
+        codelldb = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/.codelldb-wrapped_"
       }
     '';
 

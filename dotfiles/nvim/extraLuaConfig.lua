@@ -605,6 +605,18 @@ require("lazy").setup({
 					command = "gdb",
 					args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
 				}
+				dap.adapters.codelldb = {
+					type = "server",
+					port = "${port}",
+					executable = {
+						-- CHANGE THIS to your path!
+						command = require("nix_paths").codelldb,
+						args = { "--port", "${port}" },
+
+						-- On windows you may have to uncomment this:
+						-- detached = false,
+					},
+				}
 			end,
 			-- stylua: ignore
 			keys = {
