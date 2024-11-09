@@ -200,6 +200,7 @@
         };
         lt = "ls --ignore-glob .git --tree";
         lt2 = "ls --ignore-glob .git --tree --level 2";
+        kux = "kubectl exec -it";
       };
     };
     thefuck = {
