@@ -31,6 +31,7 @@
       thrift
       hcl
       dockerfile
+      commonlisp
       (helm.overrideAttrs
         (oldAttrs: {
           src = pkgs.fetchFromGitHub {

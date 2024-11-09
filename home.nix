@@ -494,7 +494,7 @@
     "org/gnome/desktop/input-sources" = {
       mru-sources = [(mkTuple ["xkb" "us"])];
       sources = [(mkTuple ["xkb" "us"]) (mkTuple ["xkb" "ru"])];
-      xkb-options = ["" "caps:swapescape"];
+      xkb-options = ["" "caps:swapescape"]; # TODO: replace with kanata
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = ["<Super>q"];
