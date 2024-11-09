@@ -617,6 +617,11 @@ require("lazy").setup({
 						-- detached = false,
 					},
 				}
+				dap.adapters.lldb = {
+					type = "executable",
+					command = require("nix_paths").lldb_dap, -- adjust as needed, must be absolute path
+					name = "lldb",
+				}
 			end,
 			-- stylua: ignore
 			keys = {

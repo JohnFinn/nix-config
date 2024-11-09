@@ -141,7 +141,8 @@ in {
       	${load_treesitters_body}
       	end,
         -- https://github.com/NixOS/nixpkgs/issues/264141
-        codelldb = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/.codelldb-wrapped_"
+        codelldb = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/.codelldb-wrapped_",
+        lldb_dap = "${pkgs.lldb}/bin/lldb-dap"
       }
     '';
 
