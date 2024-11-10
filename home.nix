@@ -110,6 +110,7 @@
   xdg.configFile = {
     "pulsemixer.cfg".source = ./dotfiles/pulsemixer.cfg;
     "mpv/mpv.conf".source = ./dotfiles/mpv.conf;
+    "otree.toml".source = ./dotfiles/otree.toml;
   };
 
   home.file = {

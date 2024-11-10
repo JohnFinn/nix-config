@@ -1,0 +1,5 @@
+[keys]
+move_up = ["l", "<up>"]
+move_down = ["k", "<down>"]
+move_left = ["j", "<left>"]
+move_right = [";", "<right>"]
