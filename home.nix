@@ -194,6 +194,7 @@
         lg = "lazygit";
         gs = "git status";
         ga = "git add";
+        gco = "git checkout";
         ipy = "ipython";
         py = "python";
         ta = "todo.sh -t add";
