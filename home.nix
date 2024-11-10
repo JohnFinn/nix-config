@@ -192,6 +192,7 @@
       shellAbbrs = {
         lg = "lazygit";
         gs = "git status";
+        ga = "git add";
         ipy = "ipython";
         py = "python";
         ta = "todo.sh -t add";
