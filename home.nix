@@ -194,6 +194,7 @@
         lg = "lazygit";
         gs = "git status";
         ga = "git add";
+        gp = "git pull";
         gco = "git checkout";
         ipy = "ipython";
         py = "python";
