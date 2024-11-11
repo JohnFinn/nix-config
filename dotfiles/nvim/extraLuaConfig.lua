@@ -15,7 +15,7 @@ vim.api.nvim_command([[
 	nnoremap <C-W>j <C-W>h
 	nnoremap <C-W>h <C-W>;
 
-	set tabstop=2 shiftwidth=2
+	set tabstop=2 shiftwidth=2 expandtab
 ]]);
 
 (function()
