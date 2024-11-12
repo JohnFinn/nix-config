@@ -45,6 +45,7 @@
   vimPlugins = with pkgs.vimPlugins; [
     lazy-nvim
     oil-nvim
+    nvim-tree-lua
     telescope-nvim
     telescope-live-grep-args-nvim
     vim-rhubarb

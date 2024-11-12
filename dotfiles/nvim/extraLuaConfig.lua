@@ -121,6 +121,19 @@ require("lazy").setup({
 			-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 		},
 		{
+			"nvim-tree/nvim-tree.lua",
+			dev = true,
+			config = function()
+				require("nvim-tree").setup({ view = { side = "right" } })
+				vim.api.nvim_create_autocmd({ "QuitPre" }, {
+					callback = function()
+						vim.cmd("NvimTreeClose")
+					end,
+				})
+			end,
+			cmd = { "NvimTreeFindFile" },
+		},
+		{
 			"rmagatti/auto-session",
 			dev = true,
 			lazy = false,
