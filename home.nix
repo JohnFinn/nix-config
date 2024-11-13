@@ -153,7 +153,8 @@
         bash
         */
         "${pkgs.chafa}/bin/chafa -f iterm --view-size \${FZF_PREVIEW_COLUMNS}x\${FZF_PREVIEW_LINES} {} 2> /dev/null || ${pkgs.bat}/bin/bat --color=always {}";
-    in "fzf --preview '${preview}' --bind ctrl-k:down,ctrl-l:up";
+      respect_gitignore_find = "${pkgs.fd}/bin/fd --type f";
+    in "FZF_DEFAULT_COMMAND='${respect_gitignore_find}' ${pkgs.fzf}/bin/fzf --preview '${preview}' --bind ctrl-k:down,ctrl-l:up";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --group-directories-first";
   };
