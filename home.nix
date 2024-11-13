@@ -172,9 +172,14 @@
     };
     fish = {
       enable = true;
-      interactiveShellInit = ''
-        set fish_greeting
-      '';
+      interactiveShellInit =
+        /*
+        fish
+        */
+        ''
+          set fish_greeting
+          just --completions fish | source
+        '';
       functions = {
         # NOTE: use upstream code once home-manager is updated https://github.com/nix-community/home-manager/pull/5449
         yazi.body =
