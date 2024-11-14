@@ -105,6 +105,7 @@ in {
       nixd
       dockerfile-language-server-nodejs
       pyright
+      neocmakelsp
       nodePackages.bash-language-server
       (pkgs.callPackage ./derivations/fish-lsp.nix {})
       vscode-langservers-extracted
