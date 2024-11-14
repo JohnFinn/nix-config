@@ -9,6 +9,7 @@
       lua
       cpp
       c
+      cmake
       nix
       python
       rust
