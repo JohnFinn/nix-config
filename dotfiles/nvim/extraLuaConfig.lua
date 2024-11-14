@@ -40,6 +40,8 @@ end)()
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.neovide_cursor_trail_size = 0.2
+
 vim.keymap.set({ "n", "x" }, "<leader>w", "<cmd>set wrap!<cr>")
 
 -- disabled help because of https://github.com/rmagatti/auto-session/issues/325
