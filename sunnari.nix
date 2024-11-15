@@ -3,7 +3,7 @@
   home.username = "sunnari";
 
   programs.fish.shellAbbrs = {
-    neovide = "nixGLIntel neovide";
+    neovide = "nixGLIntel neovide --fork";
     anki = "nixGLIntel anki";
     sudo = "sudo --preserve-env=PATH env";
   };
