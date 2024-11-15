@@ -46,7 +46,7 @@ vim.api.nvim_create_user_command("Watchexec", function(args)
 		"wezterm cli send-text --pane-id "
 			.. io.popen("wezterm cli split-pane --cells 10"):read("*a"):sub(1, -2)
 			.. " "
-			.. quote("watchexec --watch-file " .. vim.fn.expand("%:p") .. " -- ")
+			.. quote("watchexec --watch " .. vim.fn.expand("%:p") .. " -- ")
 	)
 end, {})
 
