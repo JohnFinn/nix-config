@@ -23,6 +23,7 @@
   # environment.
   home.packages = with pkgs; [
     monolith
+    ffmpeg
     todo-txt-cli
     pwgen
     hyperfine
