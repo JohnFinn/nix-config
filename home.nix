@@ -220,8 +220,8 @@
         py = "python";
         ta = "todo.sh -t add";
         j = "just";
-        "..." = "../..";
-        "...." = "../../..";
+        "...." = "../..";
+        "......" = "../../..";
         nhm = {
           position = "anywhere";
           expansion = "nh home switch ~/.config/home-manager";
