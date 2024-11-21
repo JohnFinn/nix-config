@@ -147,6 +147,7 @@ require("lazy").setup({
 				})
 			end,
 			cmd = { "NvimTreeFindFile" },
+			keys = { { "<leader>tt", mode = { "n", "x" }, "<cmd>NvimTreeFindFile<cr>" } },
 		},
 		{
 			"rmagatti/auto-session",
