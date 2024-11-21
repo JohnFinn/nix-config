@@ -433,7 +433,7 @@
         {
           on = ["i"];
           run = ''
-            shell '${pkgs.ripdrag}/bin/ripdrag "$@"' --confirm
+            shell '${pkgs.ripdrag}/bin/ripdrag --all --no-click --and-exit "$@"' --confirm
           '';
         }
       ];
