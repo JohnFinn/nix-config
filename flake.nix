@@ -59,5 +59,13 @@
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
     };
+    apps.${system}.bootstrap = {
+      type = "app";
+      program = let
+        bootstrap = pkgs.writeShellScriptBin "bootstrap" ''
+          nix shell nixpkgs#hello --extra-experimental-features nix-command --extra-experimental-features flakes --command ${pkgs.cowsay} hello
+        '';
+      in "${bootstrap}/bin/bootstrap";
+    };
   };
 }
