@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.filetype.add({
-	extension = { tfvars = "terraform", tfstate = "json", kbd = "commonlisp" },
+	extension = { tfstate = "json", kbd = "commonlisp" },
 	filename = { ["flake.lock"] = "json", [".envrc"] = "bash", ["todo.txt"] = "todotxt" },
 	pattern = {
 		[".*/templates/.*%.tpl"] = "helm",
