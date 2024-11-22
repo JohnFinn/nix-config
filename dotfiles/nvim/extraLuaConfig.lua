@@ -453,6 +453,7 @@ require("lazy").setup({
 				require("lspconfig").jsonls.setup({})
 				require("lspconfig").dockerls.setup({})
 				require("lspconfig").neocmake.setup({})
+				require("lspconfig").terraformls.setup({})
 
 				vim.diagnostic.config({
 					virtual_text = { prefix = "" }, -- '' ''

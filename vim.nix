@@ -114,6 +114,7 @@ in {
       texlab
       rust-analyzer
       typescript-language-server
+      terraform-ls
       #
       rustfmt
       (python3.withPackages (python-pkgs: [python-pkgs.mdformat-gfm]))
