@@ -776,6 +776,12 @@ require("lazy").setup({
 			end,
 		},
 		{ "github/copilot.vim", dev = true },
+		{
+			"yetone/avante.nvim",
+			dev = true,
+			opts = {},
+			cmd = "AvanteAsk",
+		},
 		{ "tpope/vim-fugitive", dev = true, event = "VeryLazy" },
 		{ "tpope/vim-rhubarb", dev = true, event = "VeryLazy" },
 		{

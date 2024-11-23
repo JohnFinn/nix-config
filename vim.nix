@@ -51,6 +51,7 @@
     telescope-live-grep-args-nvim
     vim-rhubarb
     copilot-vim
+    avante-nvim
     comment-nvim
     conform-nvim
     zen-mode-nvim
