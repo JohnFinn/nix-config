@@ -8,6 +8,7 @@ keybinding:
         scrollDownMain-alt1: 'K'
         scrollLeft: <disabled> # TODO
         scrollRight: <disabled> # TODO
+notARepository: quit
 git:
     paging:
         colorArg: always
