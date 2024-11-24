@@ -34,7 +34,7 @@ return {
 	},
 	-- font = wezterm.font('JetBrains Mono Nerd Font'),
 	-- https://github.com/wez/wezterm/issues/3334#issuecomment-1877641574
-	xcursor_theme = "Adwaita",
+	xcursor_theme = "Yaru",
 	xcursor_size = 24,
 	keys = {
 		{

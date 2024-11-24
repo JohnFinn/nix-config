@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./vim.nix
+    ./theme.nix
     ({pkgs, ...}: {
       home.packages = [pkgs.easyeffects];
       xdg.configFile = {
