@@ -8,6 +8,7 @@
   imports = [
     ./vim.nix
     ./theme.nix
+    ./gui-apps.nix
     ({pkgs, ...}: {
       home.packages = [pkgs.easyeffects];
       xdg.configFile = {
@@ -41,7 +42,6 @@
     todo-txt-cli
     pwgen
     hyperfine
-    telegram-desktop
     chafa
     figlet
     cowsay
@@ -78,26 +78,15 @@
     gdb
     nerdfonts
     pulsemixer
-    neovide
-    kitty
     watchexec
     (import ./derivations/checkexec.nix {inherit pkgs;})
     jqp
-    google-chrome
-    spotify
-    (pkgs.writeShellScriptBin "spotify-adblock" ''
-      LD_PRELOAD=${pkgs.callPackage ./derivations/spotify-adblock.nix {}}/lib/libspotifyadblock.so spotify
-    '')
     entr
     clang
     clang-tools
     ripgrep
-    swappy
     (python3.withPackages
       (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.tqdm]))
-    anki
-    obsidian
-    discord
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
