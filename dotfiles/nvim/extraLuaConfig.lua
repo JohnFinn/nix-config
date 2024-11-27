@@ -122,12 +122,21 @@ require("lazy").setup({
 					},
 				})
 				vim.cmd("colorscheme vscode")
+				vim.api.nvim_set_hl(
+					0,
+					"CurrentSelectionMatches",
+					(function(hl_group)
+						hl_group.bg = "#333333"
+						return hl_group
+					end)(vim.api.nvim_get_hl(0, { name = "Visual" }))
+				)
 			end,
 		},
 		{
 			"aaron-p1/match-visual.nvim",
 			dev = true,
-			opts = { min_length = 5, hl_group = "Visual" },
+			init = function() end,
+			opts = { min_length = 5, hl_group = "CurrentSelectionMatches" },
 			event = "ModeChanged *:[vV\x16]*",
 		},
 		{
