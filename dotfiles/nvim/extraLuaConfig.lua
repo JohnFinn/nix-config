@@ -93,10 +93,7 @@ require("lazy").setup({
 		patterns = {}, -- For example {"folke"}
 		fallback = false, -- Fallback to git when local plugin doesn't exist
 	},
-	install = {
-		-- Safeguard in case we forget to install a plugin with Nix
-		missing = false,
-	},
+	install = { missing = false }, -- Safeguard in case we forget to install a plugin with Nix
 	performance = { reset_packpath = true, rtp = { reset = true } },
 	---@type LazySpec
 	spec = {
