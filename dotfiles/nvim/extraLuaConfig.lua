@@ -125,6 +125,12 @@ require("lazy").setup({
 			end,
 		},
 		{
+			"aaron-p1/match-visual.nvim",
+			dev = true,
+			opts = { min_length = 5, hl_group = "Visual" },
+			event = "ModeChanged *:[vV\x16]*",
+		},
+		{
 			"stevearc/oil.nvim",
 			dev = true,
 			---@module 'oil'

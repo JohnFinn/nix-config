@@ -60,6 +60,7 @@
     gitsigns-nvim
     vim-fugitive
     flash-nvim
+    (pkgs.callPackage ./derivations/match-visual-nvim.nix {})
     # for some reason old one has better startup time
     pkgs_old.vimPlugins.auto-session
     refactoring-nvim
