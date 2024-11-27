@@ -5,4 +5,4 @@
 - [ ] [systemfd](https://github.com/mitsuhiko/systemfd)
 - [ ] [remap keyboard](https://www.youtube.com/watch?v=sLWQ4Gx88h4&list=TLPQMDIxMTIwMjS-uNhKxyCZIg&index=2&ab_channel=DreamsofCode)
 - [ ] sops or something else for secrets
-- [ ] https://github.com/aaron-p1/match-visual.nvim
+- [ ] [match-visual.nvim](https://github.com/aaron-p1/match-visual.nvim)
