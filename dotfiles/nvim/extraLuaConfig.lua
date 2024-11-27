@@ -97,12 +97,7 @@ require("lazy").setup({
 		-- Safeguard in case we forget to install a plugin with Nix
 		missing = false,
 	},
-	performance = {
-		reset_packpath = true,
-		rtp = {
-			reset = true,
-		},
-	},
+	performance = { reset_packpath = true, rtp = { reset = true } },
 	---@type LazySpec
 	spec = {
 		{
