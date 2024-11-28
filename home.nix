@@ -236,6 +236,9 @@
         style = "compact";
         inline_height = 20;
         show_preview = true;
+        network_timeout = 5;
+        network_connect_timeout = 5;
+        local_timeout = 2;
       };
     };
     less = {
