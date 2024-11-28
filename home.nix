@@ -40,6 +40,7 @@
     monolith
     ffmpeg
     todo-txt-cli
+    expect
     pwgen
     hyperfine
     chafa
