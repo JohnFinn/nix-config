@@ -39,6 +39,7 @@
   home.packages = with pkgs; [
     monolith
     ffmpeg
+    ripdrag
     todo-txt-cli
     expect
     pwgen
