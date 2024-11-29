@@ -213,6 +213,7 @@
         py = "python";
         ta = "todo.sh -t add";
         j = "just";
+        we = "watchexec -r --clear --";
         "...." = "../..";
         "......" = "../../..";
         nhm = {
