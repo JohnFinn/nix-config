@@ -13,5 +13,7 @@ git:
     paging:
         colorArg: always
         pager: delta --dark --paging=never --tabs=2
+        # externalDiffCommand: difft --color=always --display=inline
+        #
 gui:
     nerdFontsVersion: "3"

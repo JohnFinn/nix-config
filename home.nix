@@ -393,6 +393,7 @@
         init.defaultBranch = "main";
       };
       delta.enable = true;
+      # difftastic.enable = true;
     };
     yazi = {
       enable = true;
