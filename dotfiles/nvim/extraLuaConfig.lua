@@ -458,6 +458,7 @@ require("lazy").setup({
 				require("lspconfig").bashls.setup({})
 				require("lspconfig").fish_lsp.setup({})
 				require("lspconfig").jsonls.setup({})
+				require("lspconfig").yamlls.setup({})
 				require("lspconfig").dockerls.setup({})
 				require("lspconfig").neocmake.setup({})
 				require("lspconfig").terraformls.setup({})

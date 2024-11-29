@@ -107,6 +107,7 @@ in {
       nixd
       dockerfile-language-server-nodejs
       pyright
+      yaml-language-server
       neocmakelsp
       nodePackages.bash-language-server
       (pkgs.callPackage ./derivations/fish-lsp.nix {})
