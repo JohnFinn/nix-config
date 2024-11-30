@@ -160,7 +160,7 @@
         */
         "${pkgs.chafa}/bin/chafa -f iterm --view-size \${FZF_PREVIEW_COLUMNS}x\${FZF_PREVIEW_LINES} {} 2> /dev/null || ${pkgs.bat}/bin/bat --color=always {}";
       respect_gitignore_find = "${pkgs.fd}/bin/fd --type f";
-    in "FZF_DEFAULT_COMMAND='${respect_gitignore_find}' ${pkgs.fzf}/bin/fzf --preview '${preview}' --bind ctrl-k:down,ctrl-l:up";
+    in "FZF_DEFAULT_COMMAND='${respect_gitignore_find}' ${config.programs.fzf.package}/bin/fzf --preview '${preview}' --bind ctrl-k:down,ctrl-l:up";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --group-directories-first";
   };
@@ -253,6 +253,18 @@
     };
     fzf = {
       enable = true;
+      package =
+        pkgs.fzf.overrideAttrs
+        (oldAttrs: {
+          version = "3b0c86e4013abb66f36108aedad4ef81fe2a06e2";
+          src = pkgs.fetchFromGitHub {
+            owner = "junegunn";
+            repo = "fzf";
+            rev = "3b0c86e4013abb66f36108aedad4ef81fe2a06e2";
+            hash = "sha256-jmpdGbLSMpdj+kpdyVbtBDTMhjg1MI218CXe34m7fAg=";
+          };
+          vendorHash = "sha256-4VAAka9FvKuoDZ1E1v9Es3r00GZeG8Jp4pJONYpB/t8=";
+        });
       enableFishIntegration = true;
       enableBashIntegration = true;
     };
