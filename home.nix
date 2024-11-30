@@ -84,6 +84,7 @@
     watchexec
     (import ./derivations/checkexec.nix {inherit pkgs;})
     jqp
+    wl-clipboard
     entr
     clang
     clang-tools
