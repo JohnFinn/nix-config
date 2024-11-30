@@ -50,6 +50,10 @@ vim.api.nvim_create_user_command("Watchexec", function(args)
 	)
 end, {})
 
+vim.api.nvim_create_user_command("ShellArgsSplit", function()
+	vim.cmd([[s/ --/  \\\r    &/g]]) -- <cmd>
+end, { range = true })
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
