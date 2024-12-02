@@ -320,6 +320,7 @@ require("lazy").setup({
 						python = { "black" },
 						markdown = { "mdformat" },
 						terraform = { "tofufmt" },
+						just = { "justfmt" },
 						-- -- Conform will run multiple formatters sequentially
 						-- python = { "isort", "black" },
 						-- Use a sub-list to run only the first available formatter
@@ -327,6 +328,12 @@ require("lazy").setup({
 					},
 					formatters = {
 						tofufmt = { inherit = false, command = "tofu", args = { "fmt", "-" }, stdin = true },
+						justfmt = {
+							inherit = false,
+							command = "just",
+							args = { "--justfile", "$FILENAME", "--fmt", "--unstable" },
+							stdin = false,
+						},
 					},
 				})
 
