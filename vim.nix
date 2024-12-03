@@ -54,6 +54,7 @@
     avante-nvim
     comment-nvim
     conform-nvim
+    nvim-lint
     zen-mode-nvim
     twilight-nvim
     nvim-highlight-colors

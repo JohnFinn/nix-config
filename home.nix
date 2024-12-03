@@ -88,6 +88,7 @@
     entr
     clang
     clang-tools
+    hadolint
     ripgrep
     (python3.withPackages
       (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.tqdm]))
