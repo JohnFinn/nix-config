@@ -189,7 +189,6 @@
         ''
           set fish_greeting
           just --completions fish | source
-          bind --preset \ea 'fish_commandline_prepend "bkt --ttl 1h --"' # FIXME: binding does not load
         '';
       functions = {
         # NOTE: use upstream code once home-manager is updated https://github.com/nix-community/home-manager/pull/5449
@@ -204,6 +203,13 @@
                 builtin cd -- "$cwd"
             end
             rm -f -- "$tmp"
+          '';
+        fish_user_key_bindings.body =
+          /*
+          fish
+          */
+          ''
+            bind --preset \ea 'fish_commandline_prepend "bkt --ttl 1h --"'
           '';
       };
       shellAbbrs = {
