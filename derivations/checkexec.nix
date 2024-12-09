@@ -1,8 +1,11 @@
-{pkgs}:
-pkgs.rustPlatform.buildRustPackage rec {
+{
+  rustPlatform,
+  fetchFromGitHub,
+}:
+rustPlatform.buildRustPackage rec {
   pname = "checkexec";
   version = "0.2.0";
-  src = pkgs.fetchFromGitHub {
+  src = fetchFromGitHub {
     owner = "kurtbuilds";
     repo = "checkexec";
     rev = "v0.2.0";

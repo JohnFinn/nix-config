@@ -82,7 +82,7 @@
     nerdfonts
     pulsemixer
     watchexec
-    (import ./derivations/checkexec.nix {inherit pkgs;})
+    (pkgs.callPackage ./derivations/checkexec.nix {})
     jqp
     wl-clipboard
     entr
