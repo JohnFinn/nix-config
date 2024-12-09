@@ -540,6 +540,7 @@
   fonts.fontconfig.enable = true;
 
   dconf.settings = with lib.hm.gvariant; {
+    "org/gnome/mutter".dynamic-workspaces = true;
     "org/gnome/desktop/input-sources" = {
       mru-sources = [(mkTuple ["xkb" "us"])];
       sources = [(mkTuple ["xkb" "us"]) (mkTuple ["xkb" "ru"])];
