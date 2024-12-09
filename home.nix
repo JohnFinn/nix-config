@@ -396,7 +396,7 @@
             pkgs_firefox-addons.istilldontcareaboutcookies
             pkgs_firefox-addons.videospeed
             pkgs_firefox-addons.vimium # TODO: remap hjkl
-            (import ./derivations/firefox_addon_web_vim_remap.nix {inherit pkgs;})
+            (pkgs.callPackage ./derivations/firefox_addon_web_vim_remap.nix {})
           ];
         };
         work = {

@@ -1,11 +1,15 @@
 # copy-pasted and modified from https://github.com/nix-community/nur-combined/blob/87ffa62e85cd000fdd2cb0e5ef9d5a9cf3c2eef4/repos/rycee/pkgs/firefox-addons/default.nix#L5-L25
-{pkgs}: let
+{
+  stdenv,
+  fetchFromGitHub,
+  web-ext,
+}: let
   addonId = "hackce@nanigashi.stackoverflow";
 in
-  pkgs.stdenv.mkDerivation {
+  stdenv.mkDerivation {
     name = "hackce-0.1";
 
-    src = pkgs.fetchFromGitHub {
+    src = fetchFromGitHub {
       owner = "JohnFinn";
       repo = "web_vim_remap";
       rev = "main";
@@ -17,7 +21,7 @@ in
 
     passthru = {inherit addonId;};
 
-    nativeBuildInputs = [pkgs.web-ext];
+    nativeBuildInputs = [web-ext];
 
     buildCommand = ''
       web-ext build --source-dir "$src"
