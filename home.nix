@@ -230,6 +230,7 @@
           position = "anywhere";
           expansion = "nh home switch ~/.config/home-manager";
         };
+        nos = "nh os switch ~/.config/home-manager -H default";
         lt = "ls --ignore-glob .git --tree";
         lt2 = "ls --ignore-glob .git --tree --level 2";
         kux = "kubectl exec -it";
