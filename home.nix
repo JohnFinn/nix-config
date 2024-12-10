@@ -38,6 +38,7 @@
   # environment.
   home.packages = with pkgs; [
     opentofu
+    dotenvx
     monolith
     ffmpeg
     ripdrag
