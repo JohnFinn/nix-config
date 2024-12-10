@@ -13,4 +13,12 @@
     '')
     neovide
   ];
+  xdg.desktopEntries = {
+    spotify-adblock = {
+      name = "spotify-adblock";
+      genericName = "music streamer";
+      exec = "spotify-adblock";
+      terminal = false;
+    };
+  };
 }
