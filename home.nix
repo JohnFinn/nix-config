@@ -210,7 +210,6 @@
           */
           ''
             bind --preset \ea 'fish_commandline_prepend "bkt --ttl 1h --"'
-            bind --preset \ez 'builtin cd (zoxide query -i)'
           '';
       };
       shellAbbrs = {
