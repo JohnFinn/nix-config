@@ -66,6 +66,7 @@
     seahorse # password manager
 
     # these should be self explanatory
+    gnome-tour
     gnome-calculator
     gnome-calendar
     gnome-characters
