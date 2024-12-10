@@ -76,6 +76,7 @@
     gnome-maps
     gnome-music
     gnome-photos
+    gnome-text-editor
     # gnome-screenshot
     gnome-system-monitor
     gnome-weather
