@@ -21,7 +21,7 @@
     ...
   }: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = nixpkgs.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
     pkgs_old = import nixpkgs_old {
       inherit system;
     };
