@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [./home.nix];
   home.username = "sunnari";
 
@@ -8,5 +8,7 @@
     anki = "nixGLIntel anki";
     sudo = "sudo --preserve-env=PATH env";
   };
+
+  home.packages = [pkgs.nixgl.nixGLIntel]; # TODO: investigate why packages are duplicated resulting in ~1GB of extra disk space usage
   dconf.settings."org/gnome/desktop/input-sources".xkb-options = ["" "caps:swapescape"]; # TODO: replace with kanata
 }

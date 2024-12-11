@@ -3,6 +3,10 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs_old.url = "github:nixos/nixpkgs/1042fd8b148a9105f3c0aca3a6177fd1d9360ba5";
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,9 +23,9 @@
     firefox-addons,
     home-manager,
     ...
-  }: let
+  } @ inputs: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
+    pkgs = (nixpkgs.legacyPackages.${system}.extend (import ./spotify-overlay.nix)).extend inputs.nixgl.overlay;
     pkgs_old = import nixpkgs_old {
       inherit system;
     };
