@@ -420,6 +420,7 @@ require("lazy").setup({
 				{ "nvim-tree/nvim-web-devicons", dev = true },
 			},
 			config = function()
+				-- TODO: install and test fzf extension
 				local telescope_builtin = require("telescope.builtin")
 				require("telescope").load_extension("live_grep_args")
 				local TelescopeCaller = function(input)
