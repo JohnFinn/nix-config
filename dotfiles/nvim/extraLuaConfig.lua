@@ -424,9 +424,7 @@ require("lazy").setup({
 				require("telescope").load_extension("live_grep_args")
 				vim.keymap.set("n", "ff", telescope_builtin.find_files)
 				-- vim.keymap.set("n", "fg", telescope_builtin.live_grep)
-				vim.keymap.set("n", "fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-				-- TODO: find out why using this instead of the line above doesn't work
-				-- vim.keymap.set("n", "fg", require("telescope").load_extension("live_grep_args").live_grep_args)
+				vim.keymap.set("n", "fg", require("telescope").load_extension("live_grep_args").live_grep_args)
 				vim.keymap.set("n", "fo", telescope_builtin.oldfiles)
 				vim.keymap.set("n", "fw", telescope_builtin.grep_string)
 				vim.keymap.set(
