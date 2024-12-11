@@ -1,8 +1,8 @@
-# copy-paste from https://github.com/oskardotglobal/.dotfiles/blob/nix/default.nix
+# copy-paste from https://github.com/oskardotglobal/.dotfiles/blob/nix/overlays/spotx.nix
 final: prev: let
   spotx = prev.fetchurl {
-    url = "https://raw.githubusercontent.com/SpotX-Official/SpotX-Bash/9b8e3a6c443f5bde5803505105a569fac8510668/spotx.sh";
-    hash = "sha256-vry/wB5mcQUNeUUwwipzGwsZhxOJYJkc2w5z9vmcRdE=";
+    url = "https://raw.githubusercontent.com/SpotX-Official/SpotX-Bash/21481cea97bac720590c2aad8b1fc2c58c9ec8f9/spotx.sh";
+    hash = "sha256-1k1sEEnT1SE6RAWrfd1qFY1gFrUVNh7zUQJLu3DODlU=";
   };
 in {
   spotify = prev.spotify.overrideAttrs (old: {
@@ -10,13 +10,11 @@ in {
 
     unpackPhase =
       builtins.replaceStrings
-      [
-        "unsquashfs \"$src\" '/usr/share/spotify' '/usr/bin/spotify' '/meta/snap.yaml'"
-      ]
+      ["runHook postUnpack"]
       [
         ''
-          unsquashfs "$src" '/usr/share/spotify' '/usr/bin/spotify' '/meta/snap.yaml'
           patchShebangs --build ${spotx}
+          runHook postUnpack
         ''
       ]
       old.unpackPhase;
