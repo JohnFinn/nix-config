@@ -25,7 +25,7 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = (nixpkgs.legacyPackages.${system}.extend (import ./spotify-overlay.nix)).extend inputs.nixgl.overlay;
+    pkgs = nixpkgs.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
     pkgs_old = import nixpkgs_old {
       inherit system;
     };
@@ -50,7 +50,7 @@
     };
 
     homeConfigurations."sunnari" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+      pkgs = pkgs.extend inputs.nixgl.overlay;
       extraSpecialArgs = {
         inherit pkgs_old;
         inherit pkgs_firefox-addons;
