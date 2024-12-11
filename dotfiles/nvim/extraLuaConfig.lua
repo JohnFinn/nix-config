@@ -422,11 +422,20 @@ require("lazy").setup({
 			config = function()
 				local telescope_builtin = require("telescope.builtin")
 				require("telescope").load_extension("live_grep_args")
-				vim.keymap.set("n", "ff", telescope_builtin.find_files)
+				local TelescopeCaller = function(input)
+					return function()
+						input(require("telescope.themes").get_ivy({}))
+					end
+				end
+				vim.keymap.set("n", "ff", TelescopeCaller(telescope_builtin.find_files))
 				-- vim.keymap.set("n", "fg", telescope_builtin.live_grep)
-				vim.keymap.set("n", "fg", require("telescope").load_extension("live_grep_args").live_grep_args)
-				vim.keymap.set("n", "fo", telescope_builtin.oldfiles)
-				vim.keymap.set("n", "fw", telescope_builtin.grep_string)
+				vim.keymap.set(
+					"n",
+					"fg",
+					TelescopeCaller(require("telescope").load_extension("live_grep_args").live_grep_args)
+				)
+				vim.keymap.set("n", "fo", TelescopeCaller(telescope_builtin.oldfiles))
+				vim.keymap.set("n", "fw", TelescopeCaller(telescope_builtin.grep_string))
 				vim.keymap.set(
 					"v",
 					"ff",
