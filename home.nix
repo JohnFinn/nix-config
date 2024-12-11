@@ -65,6 +65,7 @@
     sd
     jless
     (pkgs.callPackage ./derivations/otree.nix {})
+    (pkgs.callPackage ./derivations/mdtohtml.nix {})
     concurrently
     qpdf
     nodePackages.prettier
