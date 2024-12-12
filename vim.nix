@@ -102,6 +102,7 @@ in {
       wl-clipboard
       stylua
       black
+      eslint_d
       alejandra
       # language servers
       lua-language-server
