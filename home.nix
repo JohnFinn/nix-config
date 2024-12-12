@@ -414,7 +414,10 @@
       userName = "JohnFinn";
       userEmail = "dz4tune@gmail.com";
       extraConfig = {
-        core = {editor = "nvim";};
+        core = {
+          editor = "nvim";
+          excludesFile = "${pkgs.writeText ".gitignore" ".direnv"}";
+        };
         init.defaultBranch = "main";
       };
       delta.enable = true;
