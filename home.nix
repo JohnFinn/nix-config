@@ -416,7 +416,10 @@
       extraConfig = {
         core = {
           editor = "nvim";
-          excludesFile = "${pkgs.writeText ".gitignore" ".direnv"}";
+          excludesFile = "${pkgs.writeText ".gitignore" ''
+            .direnv
+            .cache/clangd/index
+          ''}";
         };
         init.defaultBranch = "main";
       };
