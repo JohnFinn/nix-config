@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-hyperfine --show-output "vim --cmd 'let g:exitAfterStart=1'" 
+FLAGS="--max-runs 1"
+hyperfine $FLAGS --show-output "vim --cmd 'let g:exitAfterStart=1'" 
