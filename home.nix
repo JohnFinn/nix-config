@@ -591,5 +591,13 @@
       two-finger-scrolling-enabled = true;
     };
     "org/gnome/desktop/sound".allow-volume-above-100-percent = true;
+    "org/gnome/settings-daemon/plugins/power" = {
+      ambient-enabled = false;
+      power-saver-profile-on-low-battery = true;
+      sleep-inactive-ac-timeout = 3600;
+      sleep-inactive-ac-type = "suspend";
+      sleep-inactive-battery-timeout = 900;
+      sleep-inactive-battery-type = "suspend";
+    };
   };
 }
