@@ -15,5 +15,4 @@ end
 
 ensure_installed com.whatsapp
 ensure_installed org.telegram.messenger
-echo foo
-
+ensure_installed com.nutomic.syncthingandroid
