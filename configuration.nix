@@ -133,7 +133,7 @@
   users.users.jouni = {
     isNormalUser = true;
     description = "jouni";
-    extraGroups = ["networkmanager" "wheel" "input"];
+    extraGroups = ["networkmanager" "wheel" "input" "adbusers"];
     packages = with pkgs; [config.boot.kernelPackages.perf];
   };
 
@@ -156,6 +156,7 @@
   #   enableSSHSupport = true;
   # };
   programs.hyprland.enable = true;
+  programs.adb.enable = true;
 
   # List services that you want to enable:
 
