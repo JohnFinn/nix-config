@@ -20,7 +20,6 @@ function ensure_installed
     # wait for user clicks
     while not is_installed "$argv"
         sleep 1
-        break
     end
 end
 
