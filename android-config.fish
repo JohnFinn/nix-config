@@ -1,4 +1,5 @@
 #!/usr/bin/env fish
+adb shell settings put system haptic_feedback_enabled 0
 # adb install (bkt --ttl 1h -- curl https://f-droid.org/F-Droid.apk | psub --suffix .apk)
 
 function is_installed
