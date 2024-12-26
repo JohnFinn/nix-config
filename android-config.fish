@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 adb shell settings put system haptic_feedback_enabled 0
-# adb install (bkt --ttl 1h -- curl https://f-droid.org/F-Droid.apk | psub --suffix .apk)
+adb install-multiple (bkt --ttl 1h -- curl https://f-droid.org/F-Droid.apk | psub --suffix .apk) (bkt --ttl 1h -- curl https://distractionfreeapps.com/build/dfinsta_1_4_1.apk | psub --suffix .apk)
 
 function is_installed
     adb shell cmd package list packages | rg "package:$argv\$"
