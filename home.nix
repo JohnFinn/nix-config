@@ -170,6 +170,7 @@
     in "FZF_DEFAULT_COMMAND='${respect_gitignore_find}' ${config.programs.fzf.package}/bin/fzf --preview '${preview}' --bind ctrl-k:down,ctrl-l:up";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --group-directories-first";
+    mv = "mv --interactive";
   };
   programs = {
     # Let Home Manager install and manage itself.
