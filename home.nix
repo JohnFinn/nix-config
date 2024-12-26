@@ -94,6 +94,7 @@
     clang-tools
     hadolint
     ripgrep
+    ocrmypdf
     (python3.withPackages
       (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.tqdm]))
     # # It is sometimes useful to fine-tune packages, for example, by applying
