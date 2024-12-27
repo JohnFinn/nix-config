@@ -44,6 +44,7 @@
       extraSpecialArgs = {
         inherit pkgs_old;
         inherit pkgs_firefox-addons;
+        inherit ghostty;
       };
 
       # Specify your home configuration modules here, for example,
