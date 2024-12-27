@@ -26,3 +26,5 @@ end
 ensure_installed com.whatsapp
 ensure_installed org.telegram.messenger
 ensure_installed com.nutomic.syncthingandroid
+ensure_installed com.ichi2.anki
+ensure_installed mentz.com.vrr_cibo_app
