@@ -572,11 +572,6 @@
       screensaver = ["<Super>l"];
     };
     "org/gnome/desktop/session" = {idle-delay = mkUint32 900;};
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>Return";
-      command = ''wezterm --config default_prog={\'${pkgs.fish}/bin/fish\'}''; # making sure fish from nix store is used on non-nixos systems
-      name = "terminal";
-    };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       binding = "<Super>b";
       command = "${config.programs.firefox.finalPackage}/bin/firefox-esr";

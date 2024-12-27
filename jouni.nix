@@ -10,5 +10,13 @@
     wezterm
     inputs.ghostty
   ];
-  dconf.settings."org/gnome/desktop/input-sources".xkb-options = [""];
+  dconf.settings = {
+    "org/gnome/desktop/input-sources".xkb-options = [""];
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = ''ghostty -e ${pkgs.fish}/bin/fish'';
+      name = "terminal";
+    };
+  };
 }
