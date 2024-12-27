@@ -15,6 +15,10 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -26,6 +30,7 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
+    ghostty = inputs.ghostty.packages.${system}.default;
     pkgs_old = import nixpkgs_old {
       inherit system;
     };
@@ -54,6 +59,7 @@
       extraSpecialArgs = {
         inherit pkgs_old;
         inherit pkgs_firefox-addons;
+        inherit ghostty;
       };
 
       # Specify your home configuration modules here, for example,
