@@ -58,6 +58,8 @@ matches:
     replace: ó
   - trigger: ":u'"
     replace: ú
+  - trigger: ":emptyset"
+    replace: ∅
   - trigger: ":date"
     replace: "{{mydate}}"
     vars:
