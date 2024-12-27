@@ -139,6 +139,7 @@
     ".ideavimrc".source = ./dotfiles/nvim/ideavimrc;
     ".config/lazygit/config.yml".source = ./dotfiles/lazygit.yaml;
     ".config/espanso/match/base.yml".source = ./dotfiles/base.yml;
+    ".config/ghostty/config".source = ./dotfiles/ghostty;
   };
 
   # Home Manager can also manage your environment variables through
