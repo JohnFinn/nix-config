@@ -1,3 +1,5 @@
 background = 1e1e1e
 keybind = ctrl+'=new_split:right
 keybind = ctrl+/=new_split:down
+gtk-single-instance = true
+quit-after-last-window-closed = false
