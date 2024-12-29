@@ -6,6 +6,10 @@ function is_installed
     adb shell cmd package list packages | rg "package:$argv\$"
 end
 
+function fetch_from_fdroid_repo
+    bkt --ttl 1h -- curl https://f-droid.org/repo/(bkt --ttl 1h -- curl https://f-droid.org/repo/index.xml | xq -r ".fdroid.application[] | select(.id == \"$argv\") .package[0].apkname")
+end
+
 function screen_locked
     adb shell dumpsys window | rg mDreamingLockscreen=true
 end
