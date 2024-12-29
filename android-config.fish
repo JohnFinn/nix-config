@@ -6,8 +6,8 @@ function fetch_from_fdroid_repo
 end
 adb shell settings put global verifier_verify_adb_installs 0
 
-adb install (bkt --ttl 1h -- curl https://f-droid.org/F-Droid.apk | psub --suffix .apk)
 adb install (bkt --ttl 1h -- curl https://distractionfreeapps.com/build/dfinsta_1_4_1.apk | psub --suffix .apk)
+adb install (fetch_from_fdroid_repo org.fdroid.fdroid | psub --suffix .apk)
 adb install (fetch_from_fdroid_repo com.nutomic.syncthingandroid | psub --suffix .apk)
 adb install (fetch_from_fdroid_repo com.ichi2.anki | psub --suffix .apk)
 adb install (fetch_from_fdroid_repo com.termux | psub --suffix .apk)
