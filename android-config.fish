@@ -15,6 +15,9 @@ function screen_locked
 end
 
 function ensure_installed
+    if is_installed "$argv"
+        return
+    end
     while screen_locked
         echo 'unlock screen'
         sleep 1
