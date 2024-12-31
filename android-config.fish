@@ -11,6 +11,7 @@ adb install (fetch_from_fdroid_repo org.fdroid.fdroid | psub --suffix .apk)
 adb install (fetch_from_fdroid_repo com.nutomic.syncthingandroid | psub --suffix .apk)
 adb install (fetch_from_fdroid_repo com.ichi2.anki | psub --suffix .apk)
 adb install (fetch_from_fdroid_repo com.termux | psub --suffix .apk)
+adb install (bkt --ttl 1h -- curl --location https://github.com/topjohnwu/Magisk/releases/download/v28.1/Magisk-v28.1.apk | psub --suffix .apk)
 
 function is_installed
     adb shell cmd package list packages | rg "package:$argv\$"
