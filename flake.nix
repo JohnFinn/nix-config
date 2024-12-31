@@ -70,5 +70,6 @@
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
     };
+    legacyPackages.${system}.foo = pkgs.callPackage ./android-apply.nix {android-config = import ./android-config.nix;};
   };
 }
