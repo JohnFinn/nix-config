@@ -38,6 +38,7 @@
   # environment.
   home.packages = with pkgs; [
     yt-dlp
+    pass
     ags
     opentofu
     dotenvx
