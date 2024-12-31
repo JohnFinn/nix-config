@@ -3,5 +3,6 @@
   android-config,
 }:
 pkgs.writeShellScriptBin "android-apply" ''
-  echo would install ${android-config.dfinsta}
+  adb install ${android-config.dfinsta}
+  ${./android-config.fish}
 ''
