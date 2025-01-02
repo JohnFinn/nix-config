@@ -22,4 +22,15 @@
       name = "terminal";
     };
   };
+
+  home.file.".local/share/applications/anki.desktop".text = ''
+    [Desktop Entry]
+    Name=Anki
+    Exec=${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel ${pkgs.anki}/bin/anki %f
+    Icon=${pkgs.anki}/share/pixmaps/anki.png
+    Terminal=false
+    Type=Application
+    Version=1.0
+    MimeType=application/x-apkg;application/x-anki;application/x-ankiaddon;
+  '';
 }
