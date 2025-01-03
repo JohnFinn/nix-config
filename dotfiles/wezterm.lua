@@ -25,7 +25,6 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 end)
 
 return {
-	front_end = "WebGpu", -- https://github.com/wez/wezterm/issues/5990#issuecomment-2305416553
 	hide_mouse_cursor_when_typing = false,
 	hide_tab_bar_if_only_one_tab = true,
 	color_scheme = "GruvboxDarkHard",
