@@ -33,4 +33,16 @@
     Version=1.0
     MimeType=application/x-apkg;application/x-anki;application/x-ankiaddon;
   '';
+
+  home.file.".local/share/applications/spotify.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=Spotify
+    GenericName=Music Player
+    Exec=${pkgs.spotify}/bin/spotify %U
+    Terminal=false
+    MimeType=x-scheme-handler/spotify;
+    Categories=Audio;Music;Player;AudioVideo;
+    StartupWMClass=spotify
+  '';
 }
