@@ -120,8 +120,10 @@ in {
       rust-analyzer
       typescript-language-server
       terraform-ls
-      #
+      #linters
       pylint
+      yamllint
+      #
       rustfmt
       (python3.withPackages (python-pkgs: [python-pkgs.mdformat-gfm]))
     ];

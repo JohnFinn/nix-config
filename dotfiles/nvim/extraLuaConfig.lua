@@ -381,6 +381,7 @@ require("lazy").setup({
 					typescriptreact = { "eslint_d" },
 					svelte = { "eslint_d" },
 					python = { "pylint" },
+					yaml = { "yamllint" },
 					dockerfile = { "hadolint" },
 				}
 
