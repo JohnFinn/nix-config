@@ -4,6 +4,7 @@
     "org/gnome/desktop/interface".gtk-theme = "Yaru-prussiangreen-dark";
     "org/gnome/desktop/interface".cursor-theme = "Yaru";
     "org/gnome/desktop/sound".theme-name = "mysoundtheme";
+    "org/gnome/desktop/background".picture-uri-dark = "${pkgs.gnome-backgrounds}/share/backgrounds/gnome/pixels-d.jpg";
   };
   home.file = {
     ".local/share/sounds/mysoundtheme/index.theme".text = ''
