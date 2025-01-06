@@ -10,6 +10,10 @@
     wezterm
     inputs.ghostty
   ];
+  programs.git = {
+    userName = "JohnFinn";
+    userEmail = "dz4tune@gmail.com";
+  };
   dconf.settings = {
     "org/gnome/desktop/input-sources".xkb-options = [""];
 
