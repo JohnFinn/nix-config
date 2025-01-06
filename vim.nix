@@ -121,6 +121,7 @@ in {
       typescript-language-server
       terraform-ls
       #
+      pylint
       rustfmt
       (python3.withPackages (python-pkgs: [python-pkgs.mdformat-gfm]))
     ];
