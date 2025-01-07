@@ -45,4 +45,11 @@
     Categories=Audio;Music;Player;AudioVideo;
     StartupWMClass=spotify
   '';
+  # NOTE: impure invocation of systemctl
+  # FIXME: fails to start after reboot
+  home.activation = {
+    startEspanso = inputs.lib.hm.dag.entryAfter ["writeBoundary"] ''
+      run /usr/bin/systemctl start --user espanso.service
+    '';
+  };
 }
