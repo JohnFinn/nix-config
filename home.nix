@@ -140,7 +140,10 @@
     ".config/starship.toml".source = ./dotfiles/starship.toml;
     ".ideavimrc".source = ./dotfiles/nvim/ideavimrc;
     ".config/lazygit/config.yml".source = ./dotfiles/lazygit.yaml;
-    ".config/espanso/match/base.yml".source = ./dotfiles/base.yml;
+    ".config/espanso/" = {
+      source = ./dotfiles/espanso;
+      recursive = true;
+    };
     ".config/ghostty/config".source = ./dotfiles/ghostty;
   };
 
