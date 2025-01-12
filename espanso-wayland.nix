@@ -1,17 +1,27 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   espanso = pkgs.espanso.override {
     waylandSupport = true;
     x11Support = false;
   };
+  path = lib.makeBinPath [
+    pkgs.libnotify
+    pkgs.wl-clipboard
+    pkgs.coreutils
+  ];
 in {
-  services.espanso = {
-    enable = true;
-    # wayland = true;
-    package = espanso;
+  systemd.user.services.espanso = {
+    description = "Espanso daemon";
+    serviceConfig = {
+      Environment = ''"PATH=${path}"'';
+      ExecStart = "${config.security.wrapperDir}/espanso worker";
+      Restart = "on-failure";
+    };
+    wantedBy = ["default.target"];
   };
 
   security.wrappers = {
