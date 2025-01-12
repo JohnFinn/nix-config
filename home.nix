@@ -38,6 +38,8 @@
   # environment.
   home.packages = with pkgs; [
     qrencode
+    zip
+    unzip
     yt-dlp
     pass
     ags
