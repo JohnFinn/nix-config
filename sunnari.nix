@@ -40,6 +40,7 @@
     Name=Spotify
     GenericName=Music Player
     Exec=${pkgs.spotify}/bin/spotify %U
+    Icon=${pkgs.spotify}/share/spotify/icons/spotify-linux-128.png
     Terminal=false
     MimeType=x-scheme-handler/spotify;
     Categories=Audio;Music;Player;AudioVideo;
