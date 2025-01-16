@@ -42,7 +42,6 @@
     unzip
     yt-dlp
     pass
-    ags
     opentofu
     dotenvx
     monolith
