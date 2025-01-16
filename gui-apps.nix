@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, ...} @ inputs: {
   home.packages = with pkgs; [
     anki
     kitty
@@ -20,5 +20,10 @@
       exec = "spotify-adblock";
       terminal = false;
     };
+  };
+  home.activation = {
+    chrome-prefs = inputs.lib.hm.dag.entryAfter ["writeBoundary"] ''
+      jq '.browser.custom_chrome_frame = true' < ~/.config/google-chrome/Default/Preferences | run ${pkgs.moreutils}/bin/sponge ~/.config/google-chrome/Default/Preferences
+    '';
   };
 }
