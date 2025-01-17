@@ -18,6 +18,7 @@
           rev = "32d0f416e7867ccffdab16c7fe396f2522d04b2e";
           sha256 = "sha256-U9SSyHOOs8GsV6GBEqAqlBAuYONeh/4nkK8HurkEfWk=";
         };
+        "conky".source = ./dotfiles/conky;
       };
     })
   ];
@@ -37,6 +38,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    inotify-tools
     ansible
     qrencode
     zip
@@ -120,8 +122,7 @@
     configs.default.show_notifications = false;
   };
   services.syncthing = {enable = true;};
-    enable = true;
-  };
+  services.conky = {enable = true;};
 
   xdg.configFile = {
     "pulsemixer.cfg".source = ./dotfiles/pulsemixer.cfg;
