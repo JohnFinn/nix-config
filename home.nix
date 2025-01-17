@@ -121,7 +121,7 @@
     enable = true;
     configs.default.show_notifications = false;
   };
-  services.syncthing = {
+  services.syncthing = {enable = true;};
     enable = true;
   };
 
