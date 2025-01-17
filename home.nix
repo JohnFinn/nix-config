@@ -37,6 +37,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    ansible
     qrencode
     zip
     unzip
@@ -146,6 +147,10 @@
       recursive = true;
     };
     ".config/ghostty/config".source = ./dotfiles/ghostty;
+    ".ansible.cfg".text = ''
+      [defaults]
+      nocows = 1
+    '';
   };
 
   # Home Manager can also manage your environment variables through
