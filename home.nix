@@ -250,6 +250,8 @@
         lt2 = "ls --ignore-glob .git --tree --level 2";
         kux = "kubectl exec -it";
         ku = "kubectl";
+        sy = "systemctl";
+        syu = "systemctl --user";
       };
     };
     thefuck = {
