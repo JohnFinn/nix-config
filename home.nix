@@ -608,5 +608,9 @@
       sleep-inactive-battery-timeout = 900;
       sleep-inactive-battery-type = "suspend";
     };
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
+      night-light-temperature = mkUint32 2700;
+    };
   };
 }
