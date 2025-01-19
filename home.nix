@@ -573,7 +573,10 @@
       close = ["<Super>q"];
       toggle-fullscreen = ["<Super>f"];
     };
-    "org/gnome/desktop/wm/preferences" = {focus-mode = "sloppy";};
+    "org/gnome/desktop/wm/preferences" = {
+      focus-mode = "sloppy";
+      button-layout = "appmenu:minimize,close";
+    };
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
