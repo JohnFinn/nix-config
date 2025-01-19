@@ -13,6 +13,8 @@
     pkgs.nixgl.nixGLIntel # TODO: investigate why packages are duplicated resulting in ~1GB of extra disk space usage
     inputs.ghostty
   ];
+
+  services.espanso = {enable = true;};
   dconf.settings = {
     "org/gnome/desktop/input-sources".xkb-options = ["" "caps:swapescape"]; # TODO: replace with kanata
 

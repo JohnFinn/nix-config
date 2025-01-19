@@ -117,10 +117,6 @@
     # '')
   ];
 
-  services.espanso = {
-    enable = true;
-    configs.default.show_notifications = false;
-  };
   services.syncthing = {enable = true;};
   services.conky = {enable = true;};
 
