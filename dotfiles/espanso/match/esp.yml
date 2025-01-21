@@ -1,0 +1,20 @@
+---
+matches:
+  - trigger: ":nn"
+    replace: ñ
+  - trigger: ":NN"
+    replace: Ñ
+  - trigger: ":u`"
+    replace: ú
+  - trigger: ":E`"
+    replace: É
+  - trigger: ":a'"
+    replace: á
+  - trigger: ":e'"
+    replace: é
+  - trigger: ":i'"
+    replace: í
+  - trigger: ":o'"
+    replace: ó
+  - trigger: ":u'"
+    replace: ú

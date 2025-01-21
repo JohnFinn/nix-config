@@ -1,0 +1,18 @@
+---
+matches:
+  - trigger: ":ss"
+    replace: ß
+  - trigger: ":ae"
+    replace: ä
+  - trigger: ":oe"
+    replace: ö
+  - trigger: ":ue"
+    replace: ü
+  - trigger: ":Ss"
+    replace: ẞ
+  - trigger: ":Ae"
+    replace: Ä
+  - trigger: ":Oe"
+    replace: Ö
+  - trigger: ":Ue"
+    replace: Ü
