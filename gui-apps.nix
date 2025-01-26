@@ -1,4 +1,5 @@
 {pkgs, ...} @ inputs: {
+  imports = [./json-field.nix];
   home.packages = with pkgs; [
     anki
     kitty
@@ -7,6 +8,7 @@
     discord
     swappy
     google-chrome
+    brave
     spotify
     (pkgs.writeShellScriptBin "spotify-adblock" ''
       LD_PRELOAD=${pkgs.callPackage ./derivations/spotify-adblock.nix {}}/lib/libspotifyadblock.so spotify
@@ -21,9 +23,14 @@
       terminal = false;
     };
   };
-  home.activation = {
-    chrome-prefs = inputs.lib.hm.dag.entryAfter ["writeBoundary"] ''
-      jq '.browser.custom_chrome_frame = true' < ~/.config/google-chrome/Default/Preferences | run ${pkgs.moreutils}/bin/sponge ~/.config/google-chrome/Default/Preferences
-    '';
+  jsonField = {
+    "~/.config/BraveSoftware/Brave-Browser/Default/Preferences" = {
+      key = ".extensions.theme.system_theme";
+      value = "1";
+    };
+    "~/.config/google-chrome/Default/Preferences" = {
+      key = ".browser.custom_chrome_frame";
+      value = "true";
+    };
   };
 }
