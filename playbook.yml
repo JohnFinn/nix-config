@@ -1,0 +1,18 @@
+---
+- name: Test commands
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: wezterm-nightly
+      ansible.builtin.apt:
+        name: wezterm-nightly
+        state: present
+    - name: skype
+      community.general.snap:
+        name: skype
+        state: present
+    - name: Remove file (delete file)
+      ansible.builtin.file:
+        path: /home/sunnari/snap/skype/common/.config/autostart/skypeforlinux.desktop
+        state: absent
