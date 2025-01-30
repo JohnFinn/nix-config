@@ -62,6 +62,7 @@ vim.g.neovide_cursor_trail_size = 0.2
 vim.keymap.set({ "n", "x" }, "<leader>w", "<cmd>set wrap!<cr>")
 vim.keymap.set({ "n", "x" }, "q]", "<cmd>cnext<cr>")
 vim.keymap.set({ "n", "x" }, "q[", "<cmd>cprev<cr>")
+vim.keymap.set({ "n", "x" }, "<leader>b", [[<cmd>:let @+ = "b " . expand("%:t") . ":" . line(".")<cr>]])
 
 -- disabled help because of https://github.com/rmagatti/auto-session/issues/325
 vim.o.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize,winpos,terminal,localoptions"
