@@ -18,6 +18,8 @@ matches:
     replace: →
   - trigger: ":<->"
     replace: ↔
+  - trigger: ":<=>"
+    replace: ⇔
   - trigger: ":up"
     replace: ↑
   - trigger: ":down"
