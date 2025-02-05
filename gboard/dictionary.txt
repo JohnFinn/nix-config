@@ -1,0 +1,6 @@
+# Gboard Dictionary version:1
+
+t1	<ul><li>item</li></ul>	
+t2	<ul><li>item</li><li>item</li></ul>	
+dunno	¯\_(ツ)_/¯	
+emptyset	∅	
