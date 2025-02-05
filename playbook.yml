@@ -16,3 +16,8 @@
       ansible.builtin.file:
         path: /home/sunnari/snap/skype/common/.config/autostart/skypeforlinux.desktop
         state: absent
+    - name: Stop apport service
+      systemd:
+        name: apport
+        state: stopped
+        enabled: no
