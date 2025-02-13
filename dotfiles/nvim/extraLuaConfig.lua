@@ -325,7 +325,7 @@ require("lazy").setup({
 						tex = { "latexindent" },
 						rust = { "rustfmt" },
 						python = { "black" },
-						markdown = { "mdformat" },
+						-- markdown = { "mdformat" },
 						terraform = { "tofufmt" },
 						just = { "justfmt" },
 						-- -- Conform will run multiple formatters sequentially
