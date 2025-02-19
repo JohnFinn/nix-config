@@ -12,6 +12,7 @@
   home.packages = [
     pkgs.nixgl.nixGLIntel # TODO: investigate why packages are duplicated resulting in ~1GB of extra disk space usage
     inputs.ghostty
+    pkgs.git-lfs
   ];
 
   services.espanso = {enable = true;};
