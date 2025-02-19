@@ -110,6 +110,7 @@ in {
       nixd
       dockerfile-language-server-nodejs
       pyright
+      kotlin-language-server
       yaml-language-server
       neocmakelsp
       nodePackages.bash-language-server

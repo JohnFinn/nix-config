@@ -524,6 +524,7 @@ require("lazy").setup({
 				require("lspconfig").dockerls.setup({})
 				require("lspconfig").neocmake.setup({})
 				require("lspconfig").terraformls.setup({})
+				require("lspconfig").kotlin_language_server.setup({})
 
 				vim.diagnostic.config({
 					virtual_text = { prefix = "" }, -- '' ''
