@@ -105,6 +105,7 @@ in {
       black
       eslint_d
       alejandra
+      ktfmt
       # language servers
       lua-language-server
       nixd
