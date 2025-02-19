@@ -18,6 +18,7 @@
       latex
       javascript
       java
+      kotlin
       html
       xml
       json
