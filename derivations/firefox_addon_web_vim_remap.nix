@@ -12,8 +12,8 @@ in
     src = fetchFromGitHub {
       owner = "JohnFinn";
       repo = "web_vim_remap";
-      rev = "main";
-      sha256 = "sha256-H4SIRSsXGZgArLRf0Ao12aN6ZUaIdGQ2Majo1xG26Ck=";
+      rev = "a91b81f1a1340a9d6b2f171c72ff933a9c07c501";
+      sha256 = "sha256-Pio6UlG1egWjHhNlDEPOzIiMTbp216JgcKPRpt83QwQ=";
     };
 
     preferLocalBuild = true;
