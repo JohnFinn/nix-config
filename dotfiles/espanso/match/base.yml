@@ -46,3 +46,14 @@ matches:
         type: shell
         params:
           cmd: echo $1 Hello from your shell
+  - trigger: ":lifetimelogger"
+    replace: |
+      #include <iostream>
+
+      class LifetimeLogger {
+      public:
+        LifetimeLogger() { std::cerr << "constructor\n"; }
+        LifetimeLogger(const LifetimeLogger&) { std::cerr << "copy\n"; }
+        LifetimeLogger(LifetimeLogger&&) { std::cerr << "move\n"; }
+        ~LifetimeLogger() { std::cerr << "~destructor\n"; }
+      };
