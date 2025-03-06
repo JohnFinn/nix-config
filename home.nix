@@ -429,6 +429,7 @@
           excludesFile = "${pkgs.writeText ".gitignore" ''
             .direnv
             .cache/clangd/index
+            neovide_backtraces.log
           ''}";
         };
         init.defaultBranch = "main";
