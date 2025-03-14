@@ -564,6 +564,10 @@ require("lazy").setup({
 						-- Opens a popup that displays documentation about the word under your cursor
 						--  See `:help K` for why this keymap.
 						map("K", vim.lsp.buf.hover, "Hover Documentation")
+
+						map("<leader>hh", function()
+							vim.cmd("ClangdSwitchSourceHeader")
+						end, "Switch Source/Header (C/C++)")
 					end,
 				})
 				-- NOTE: lsp won't work with initially opened file when loaded with VeryLazy, but would when switching files
