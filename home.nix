@@ -43,6 +43,7 @@
     qrencode
     zip
     unzip
+    unar
     yt-dlp
     pass
     opentofu
