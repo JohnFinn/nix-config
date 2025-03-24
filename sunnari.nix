@@ -31,8 +31,7 @@
     Name=Telegram Desktop
     Comment=Official desktop version of Telegram messaging app
     Exec=${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel ${pkgs.telegram-desktop}/bin/telegram-desktop -- %u
-    Icon=${pkgs.telegram-desktop}/share/share/icons/hicolor/512x512/apps/telegram.png
-    Icon=telegram
+    Icon=${pkgs.telegram-desktop}/share/icons/hicolor/512x512/apps/telegram.png
     Terminal=false
     StartupWMClass=TelegramDesktop
     Type=Application
