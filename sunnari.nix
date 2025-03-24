@@ -26,6 +26,31 @@
     };
   };
 
+  home.file.".local/share/applications/telegram.desktop".text = ''
+    [Desktop Entry]
+    Name=Telegram Desktop
+    Comment=Official desktop version of Telegram messaging app
+    Exec=${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel ${pkgs.telegram-desktop}/bin/telegram-desktop -- %u
+    Icon=${pkgs.telegram-desktop}/share/share/icons/hicolor/512x512/apps/telegram.png
+    Icon=telegram
+    Terminal=false
+    StartupWMClass=TelegramDesktop
+    Type=Application
+    Categories=Chat;Network;InstantMessaging;Qt;
+    MimeType=x-scheme-handler/tg;
+    Keywords=tg;chat;im;messaging;messenger;sms;tdesktop;
+    Actions=quit;
+    DBusActivatable=true
+    SingleMainWindow=true
+    X-GNOME-UsesNotifications=true
+    X-GNOME-SingleWindow=true
+
+    [Desktop Action quit]
+    Exec=telegram-desktop -quit
+    Name=Quit Telegram
+    Icon=application-exit
+  '';
+
   home.file.".local/share/applications/anki.desktop".text = ''
     [Desktop Entry]
     Name=Anki
