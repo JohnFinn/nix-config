@@ -333,6 +333,7 @@ require("lazy").setup({
 						-- python = { "isort", "black" },
 						-- Use a sub-list to run only the first available formatter
 						javascript = { { "prettierd", "prettier" } },
+						java = { "spotless" },
 					},
 					formatters = {
 						tofufmt = { inherit = false, command = "tofu", args = { "fmt", "-" }, stdin = true },
@@ -340,6 +341,12 @@ require("lazy").setup({
 							inherit = false,
 							command = "just",
 							args = { "--justfile", "$FILENAME", "--fmt", "--unstable" },
+							stdin = false,
+						},
+						spotless = {
+							inherit = false,
+							command = "sh",
+							args = { "-c", 'mvn spotless:apply -DspotlessFiles="$0"', "$FILENAME" },
 							stdin = false,
 						},
 					},
