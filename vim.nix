@@ -104,6 +104,7 @@ in {
       stylua
       black
       ruff
+      cmake-format
       eslint_d
       alejandra
       ktfmt

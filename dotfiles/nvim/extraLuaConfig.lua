@@ -334,6 +334,7 @@ require("lazy").setup({
 						-- python = { "isort", "black" },
 						javascript = { { "prettierd", "prettier" } },
 						java = { "spotless" },
+						cmake = { "cmake_format" },
 					},
 					formatters = {
 						tofufmt = { inherit = false, command = "tofu", args = { "fmt", "-" }, stdin = true },
