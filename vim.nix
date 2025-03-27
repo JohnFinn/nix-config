@@ -103,6 +103,7 @@ in {
       wl-clipboard
       stylua
       black
+      ruff
       eslint_d
       alejandra
       ktfmt
