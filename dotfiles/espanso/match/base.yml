@@ -46,6 +46,12 @@ matches:
         type: shell
         params:
           cmd: echo $1 Hello from your shell
+  - trigger: ":ghspoiler"
+    replace: |
+      <details>
+        <summary>title</summary>
+         text
+      </details>
   - trigger: ":lifetimelogger"
     replace: |
       // #include <https://raw.githubusercontent.com/philsquared/understanding_cpp_coroutines/refs/heads/main/scopedlogger.h>
