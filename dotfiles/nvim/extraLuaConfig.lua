@@ -894,6 +894,7 @@ require("lazy").setup({
 				},
 			},
 		},
+		{ "glacambre/firenvim", build = ":call firenvim#install(0)", dev = true, enabled = false },
 	},
 })
 

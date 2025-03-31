@@ -45,6 +45,7 @@
         }))
     ]);
   vimPlugins = with pkgs.vimPlugins; [
+    firenvim
     lazy-nvim
     oil-nvim
     nvim-tree-lua
