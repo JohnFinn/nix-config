@@ -63,6 +63,8 @@
     gitsigns-nvim
     vim-fugitive
     flash-nvim
+    (pkgs.callPackage ./derivations/sqlite-lua.nix {}) # sqlite-lua but newer to be compatible with bookmarks-nvim below
+    (pkgs.callPackage ./derivations/bookmarks-nvim.nix {})
     (pkgs.callPackage ./derivations/match-visual-nvim.nix {})
     # for some reason old one has better startup time
     pkgs_old.vimPlugins.auto-session
@@ -101,6 +103,7 @@ in {
     extraLuaPackages = luaPkgs: with luaPkgs; [nvim-nio pathlib-nvim];
     plugins = vimPlugins;
     extraPackages = with pkgs; [
+      sqlite
       wl-clipboard
       stylua
       black
@@ -154,6 +157,7 @@ in {
     */
     ''
       return {
+        sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3.so",
       	lazypath = "${pkgs.vimPlugins.lazy-nvim}",
       	load_treesitters = function ()
       	${load_treesitters_body}

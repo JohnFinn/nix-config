@@ -895,6 +895,20 @@ require("lazy").setup({
 			},
 		},
 		{ "glacambre/firenvim", build = ":call firenvim#install(0)", dev = true, enabled = false },
+		{
+			"LintaoAmons/bookmarks.nvim",
+			dev = true,
+			cmd = { "BookmarksMark", "BookmarksGoto", "BookmarksNewList", "BookmarksLists", "BookmarksCommands" },
+			dependencies = {
+				{ "kkharji/sqlite.lua", dev = true },
+				{ "nvim-telescope/telescope.nvim", dev = true },
+				-- { "stevearc/dressing.nvim" }, -- optional: better UI
+			},
+			config = function()
+				local opts = {} -- check the "./lua/bookmarks/default-config.lua" file for all the options
+				require("bookmarks").setup(opts) -- you must call setup to init sqlite db
+			end,
+		},
 	},
 })
 
