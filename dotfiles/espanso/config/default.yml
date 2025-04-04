@@ -1,1 +1,2 @@
 show_notifications: false
+backend: inject # TODO: make this inject for monaco vim editors only and clipbord for the rest

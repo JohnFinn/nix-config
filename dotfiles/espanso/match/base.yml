@@ -64,3 +64,11 @@ matches:
         LifetimeLogger(LifetimeLogger&&) { std::cerr << "move\n"; }
         ~LifetimeLogger() { std::cerr << "~destructor\n"; }
       };
+  - trigger: ":leetcode"
+    replace: |
+      #include <algorithm>
+      #include <ranges>
+      #include <numeric>
+
+      namespace r = std::ranges;
+      namespace v = std::views;
