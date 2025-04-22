@@ -86,6 +86,7 @@
     btop
     dconf2nix
     lazygit
+    pre-commit
     lazydocker
     zsh
     eza
