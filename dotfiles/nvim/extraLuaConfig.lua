@@ -386,6 +386,7 @@ require("lazy").setup({
 		{
 			"mfussenegger/nvim-lint",
 			dev = true,
+			enabled = false,
 			event = { "BufReadPre", "BufNewFile" },
 			config = function()
 				local lint = require("lint")
