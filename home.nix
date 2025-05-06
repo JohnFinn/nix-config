@@ -38,6 +38,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    pkgs.linuxKernel.packages.linux_6_10.perf
     inotify-tools
     ansible
     qrencode
