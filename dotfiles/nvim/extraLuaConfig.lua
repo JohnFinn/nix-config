@@ -231,7 +231,9 @@ require("lazy").setup({
 				})
 				-- MiniStatusline.section_git({ args })
 
-				require("mini.surround").setup({})
+				require("mini.surround").setup({
+					custom_surroundings = { ["l"] = { output = { left = "[&](){return ", right = " ;}()" } } },
+				})
 			end,
 		},
 		{
