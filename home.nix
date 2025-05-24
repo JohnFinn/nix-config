@@ -282,18 +282,6 @@
     };
     fzf = {
       enable = true;
-      package =
-        pkgs.fzf.overrideAttrs
-        (oldAttrs: {
-          version = "3b0c86e4013abb66f36108aedad4ef81fe2a06e2";
-          src = pkgs.fetchFromGitHub {
-            owner = "junegunn";
-            repo = "fzf";
-            rev = "3b0c86e4013abb66f36108aedad4ef81fe2a06e2";
-            hash = "sha256-jmpdGbLSMpdj+kpdyVbtBDTMhjg1MI218CXe34m7fAg=";
-          };
-          vendorHash = "sha256-4VAAka9FvKuoDZ1E1v9Es3r00GZeG8Jp4pJONYpB/t8=";
-        });
       enableFishIntegration = true;
       enableBashIntegration = true;
     };
