@@ -120,7 +120,7 @@ in {
       yaml-language-server
       neocmakelsp
       nodePackages.bash-language-server
-      (pkgs.callPackage ./derivations/fish-lsp.nix {})
+      fish-lsp
       vscode-langservers-extracted
       yaml-language-server
       jdt-language-server
