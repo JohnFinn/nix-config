@@ -37,88 +37,89 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    pkgs.linuxKernel.packages.linux_6_10.perf
-    inotify-tools
-    ansible
-    qrencode
-    zip
-    unzip
-    unar
-    yt-dlp
-    pass
-    opentofu
-    dotenvx
-    monolith
-    ffmpeg
-    ripdrag
-    todo-txt-cli
-    expect
-    pwgen
-    hyperfine
-    chafa
-    figlet
-    cowsay
-    lolcat
-    fortune
-    bkt
-    just
-    kondo
-    nixfmt-classic
-    nh
-    dust
-    ncdu
-    duf
-    jq
-    yq
-    fd
-    sd
-    jless
-    (pkgs.callPackage ./derivations/otree.nix {})
-    (pkgs.callPackage ./derivations/mdtohtml.nix {})
-    concurrently
-    qpdf
-    nodePackages.prettier
-    tldr
-    nix-output-monitor
-    portal
-    nvd
-    htop
-    btop
-    dconf2nix
-    lazygit
-    pre-commit
-    lazydocker
-    zsh
-    eza
-    gdb
-    nerdfonts
-    pulsemixer
-    watchexec
-    (pkgs.callPackage ./derivations/checkexec.nix {})
-    jqp
-    wl-clipboard
-    entr
-    clang
-    clang-tools
-    hadolint
-    ripgrep
-    ocrmypdf
-    (python3.withPackages
-      (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.tqdm]))
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+  home.packages = with pkgs;
+    [
+      pkgs.linuxKernel.packages.linux_6_12.perf
+      inotify-tools
+      ansible
+      qrencode
+      zip
+      unzip
+      unar
+      yt-dlp
+      pass
+      opentofu
+      dotenvx
+      monolith
+      ffmpeg
+      ripdrag
+      todo-txt-cli
+      expect
+      pwgen
+      hyperfine
+      chafa
+      figlet
+      cowsay
+      lolcat
+      fortune
+      bkt
+      just
+      kondo
+      nixfmt-classic
+      nh
+      dust
+      ncdu
+      duf
+      jq
+      yq
+      fd
+      sd
+      jless
+      (pkgs.callPackage ./derivations/otree.nix {})
+      (pkgs.callPackage ./derivations/mdtohtml.nix {})
+      concurrently
+      qpdf
+      nodePackages.prettier
+      tldr
+      nix-output-monitor
+      portal
+      nvd
+      htop
+      btop
+      dconf2nix
+      lazygit
+      pre-commit
+      lazydocker
+      zsh
+      eza
+      gdb
+      pulsemixer
+      watchexec
+      (pkgs.callPackage ./derivations/checkexec.nix {})
+      jqp
+      wl-clipboard
+      entr
+      clang
+      clang-tools
+      hadolint
+      ripgrep
+      ocrmypdf
+      (python3.withPackages
+        (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.tqdm]))
+      # # It is sometimes useful to fine-tune packages, for example, by applying
+      # # overrides. You can do that directly here, just don't forget the
+      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+      # # fonts?
+      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
+      # # You can also create simple shell scripts directly inside your
+      # # configuration. For example, this adds a command 'my-hello' to your
+      # # environment:
+      # (pkgs.writeShellScriptBin "my-hello" ''
+      #   echo "Hello, ${config.home.username}!"
+      # '')
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   services.syncthing = {enable = true;};
   services.conky = {enable = true;};
@@ -408,7 +409,7 @@
               definedAliases = ["@nix"];
             };
           };
-          extensions = [
+          extensions.packages = [
             pkgs_firefox-addons.dictionary-german
             pkgs_firefox-addons.ublock-origin
             pkgs_firefox-addons.sponsorblock

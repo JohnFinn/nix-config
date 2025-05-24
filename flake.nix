@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
     firefox-addons = {
@@ -22,17 +22,17 @@
   };
 
   outputs = {
-    nixpkgs,
+    nixpkgs_latest_stable,
     firefox-addons,
     home-manager,
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
+    pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
     ghostty = inputs.ghostty.packages.${system}.default;
     pkgs_firefox-addons = firefox-addons.packages.${system};
   in {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.default = nixpkgs_latest_stable.lib.nixosSystem {
       modules = [./configuration.nix];
     };
     homeConfigurations."jouni" = home-manager.lib.homeManagerConfiguration {

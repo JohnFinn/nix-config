@@ -4,7 +4,15 @@
     "org/gnome/desktop/interface".gtk-theme = "Yaru-prussiangreen-dark";
     "org/gnome/desktop/interface".cursor-theme = "Yaru";
     "org/gnome/desktop/sound".theme-name = "mysoundtheme";
-    "org/gnome/desktop/background".picture-uri-dark = "${pkgs.gnome-backgrounds}/share/backgrounds/gnome/pixels-d.jpg";
+    "org/gnome/desktop/background".picture-uri-dark = let
+      bg = pkgs.fetchFromGitLab {
+        domain = "gitlab.gnome.org";
+        owner = "GNOME";
+        repo = "gnome-backgrounds";
+        rev = "gnome-46";
+        sha256 = "sha256-pWyh/oUSTfHERYev3TH/xlkRNY+Z5xrsuHutafd01m4=";
+      };
+    in "${bg}/backgrounds/pixels-d.jpg";
   };
   home.file = {
     ".local/share/sounds/mysoundtheme/index.theme".text = ''
