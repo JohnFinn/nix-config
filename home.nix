@@ -172,6 +172,8 @@
     ipython = "ipython --no-banner --no-confirm-exit";
     python = "python -q";
     # TODO: optimize chafa speed, maybe by caching thumbnails
+
+    # in ghostty this doesn't work https://github.com/ghostty-org/ghostty/discussions/3054
     fzf = let
       preview =
         /*
