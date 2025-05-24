@@ -2,7 +2,6 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs_old.url = "github:nixos/nixpkgs/1042fd8b148a9105f3c0aca3a6177fd1d9360ba5";
     nixpkgs_latest_stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixgl = {
       url = "github:nix-community/nixGL";
@@ -24,7 +23,6 @@
 
   outputs = {
     nixpkgs,
-    nixpkgs_old,
     firefox-addons,
     home-manager,
     ...
@@ -32,9 +30,6 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
     ghostty = inputs.ghostty.packages.${system}.default;
-    pkgs_old = import nixpkgs_old {
-      inherit system;
-    };
     pkgs_firefox-addons = firefox-addons.packages.${system};
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
@@ -43,7 +38,6 @@
     homeConfigurations."jouni" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {
-        inherit pkgs_old;
         inherit pkgs_firefox-addons;
         inherit ghostty;
       };
@@ -59,7 +53,6 @@
     homeConfigurations."sunnari" = home-manager.lib.homeManagerConfiguration {
       pkgs = pkgs.extend inputs.nixgl.overlay;
       extraSpecialArgs = {
-        inherit pkgs_old;
         inherit pkgs_firefox-addons;
         inherit ghostty;
       };
