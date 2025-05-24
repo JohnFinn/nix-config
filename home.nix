@@ -75,7 +75,7 @@
       fd
       sd
       jless
-      (pkgs.callPackage ./derivations/otree.nix {})
+      otree
       (pkgs.callPackage ./derivations/mdtohtml.nix {})
       concurrently
       qpdf
