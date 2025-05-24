@@ -18,7 +18,7 @@
   config = lib.mkIf (config.jsonField != {}) {
     home.activation.json-file = inputs.lib.hm.dag.entryAfter ["writeBoundary"] (
       lib.concatStringsSep "\n" (lib.mapAttrsToList (filename: attrs: ''
-          ${pkgs.jq}/bin/jq '${attrs.key} = ${attrs.value}' < ${filename} | run ${pkgs.moreutils}/bin/sponge ${filename}
+          [ -f ${filename} ] && ${pkgs.jq}/bin/jq '${attrs.key} = ${attrs.value}' < ${filename} | run ${pkgs.moreutils}/bin/sponge ${filename}
         '')
         config.jsonField)
     );
