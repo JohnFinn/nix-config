@@ -507,7 +507,8 @@ require("lazy").setup({
 				-- TODO: what do these do?
 				-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 				-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-				require("lspconfig").clangd.setup({})
+				require("lspconfig").clangd.setup({ --[[ cmd = { "clangd", "--log=verbose" } ]]
+				})
 				require("lspconfig").pyright.setup({})
 				require("lspconfig").nixd.setup({
 					cmd = { "nixd" },
