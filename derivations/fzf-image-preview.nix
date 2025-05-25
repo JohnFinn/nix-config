@@ -6,6 +6,7 @@
   fzf,
   writeShellApplication,
 }:
+# TODO: try using this to make ghostty work https://github.com/junegunn/fzf/blob/d18c0bf6948b4707684fe77631aff26a17cbc4fa/bin/fzf-preview.sh#L68
 writeShellApplication {
   name = "fzf-image-preview";
   runtimeInputs = [imagemagick chafa bat fd fzf];
