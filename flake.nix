@@ -15,6 +15,10 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
+    web_vim_remap = {
+      url = "github:JohnFinn/web_vim_remap";
+      inputs.nixpkgs.follows = "nixpkgs_latest_stable";
+    };
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs.nixpkgs-stable.follows = "nixpkgs_latest_stable";
@@ -31,6 +35,7 @@
     pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
     ghostty = inputs.ghostty.packages.${system}.default;
     pkgs_firefox-addons = firefox-addons.packages.${system};
+    web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
   in {
     nixosConfigurations.default = nixpkgs_latest_stable.lib.nixosSystem {
       modules = [./configuration.nix];
@@ -40,6 +45,7 @@
       extraSpecialArgs = {
         inherit pkgs_firefox-addons;
         inherit ghostty;
+        inherit web_vim_remap_firefox_extension;
       };
 
       # Specify your home configuration modules here, for example,
@@ -55,6 +61,7 @@
       extraSpecialArgs = {
         inherit pkgs_firefox-addons;
         inherit ghostty;
+        inherit web_vim_remap_firefox_extension;
       };
 
       # Specify your home configuration modules here, for example,

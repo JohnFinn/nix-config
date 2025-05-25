@@ -2,6 +2,7 @@
   config,
   pkgs,
   pkgs_firefox-addons,
+  web_vim_remap_firefox_extension,
   lib,
   ...
 }: {
@@ -399,7 +400,7 @@
             pkgs_firefox-addons.istilldontcareaboutcookies
             pkgs_firefox-addons.videospeed
             pkgs_firefox-addons.vimium # TODO: remap hjkl
-            (pkgs.callPackage ./derivations/firefox_addon_web_vim_remap.nix {})
+            web_vim_remap_firefox_extension
           ];
         };
         work = {

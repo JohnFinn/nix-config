@@ -193,7 +193,8 @@
         "home-manager": "home-manager",
         "nixgl": "nixgl",
         "nixpkgs_latest_stable": "nixpkgs_latest_stable",
-        "nixpkgs_unstable": "nixpkgs_unstable"
+        "nixpkgs_unstable": "nixpkgs_unstable",
+        "web_vim_remap": "web_vim_remap"
       }
     },
     "systems": {
@@ -208,6 +209,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "web_vim_remap": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs_latest_stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1748178970,
+        "narHash": "sha256-iPSvm4G2gstbvR6il9C+cl+7xQI64CjbZdwmF0BWSQQ=",
+        "owner": "JohnFinn",
+        "repo": "web_vim_remap",
+        "rev": "42285fa371ef781027ed851542fb94c8bfa5a152",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JohnFinn",
+        "repo": "web_vim_remap",
         "type": "github"
       }
     },
