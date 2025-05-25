@@ -174,14 +174,7 @@
     # TODO: optimize chafa speed, maybe by caching thumbnails
 
     # in ghostty this doesn't work https://github.com/ghostty-org/ghostty/discussions/3054
-    fzf = let
-      preview =
-        /*
-        bash
-        */
-        "${pkgs.imagemagick}/bin/identify {} > /dev/null 2> /dev/null && ${pkgs.chafa}/bin/chafa -f iterm --view-size \${FZF_PREVIEW_COLUMNS}x\${FZF_PREVIEW_LINES} {} || ${pkgs.bat}/bin/bat --color=always {}";
-      respect_gitignore_find = "${pkgs.fd}/bin/fd --type f";
-    in "FZF_DEFAULT_COMMAND='${respect_gitignore_find}' ${config.programs.fzf.package}/bin/fzf --preview '${preview}' --bind ctrl-k:down,ctrl-l:up";
+    fzf = "${pkgs.callPackage ./derivations/fzf-image-preview.nix {}}/bin/fzf-image-preview";
     cat = "${pkgs.bat}/bin/bat";
     ls = "${pkgs.eza}/bin/eza --icons --git -a --hyperlink --group-directories-first";
     mv = "mv --interactive";
