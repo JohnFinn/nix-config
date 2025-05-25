@@ -179,7 +179,7 @@
         /*
         bash
         */
-        "${pkgs.imagemagick}/bin/identify -quiet {} > /dev/null && ${pkgs.chafa}/bin/chafa -f iterm --view-size \${FZF_PREVIEW_COLUMNS}x\${FZF_PREVIEW_LINES} {} || ${pkgs.bat}/bin/bat --color=always {}";
+        "${pkgs.imagemagick}/bin/identify {} > /dev/null 2> /dev/null && ${pkgs.chafa}/bin/chafa -f iterm --view-size \${FZF_PREVIEW_COLUMNS}x\${FZF_PREVIEW_LINES} {} || ${pkgs.bat}/bin/bat --color=always {}";
       respect_gitignore_find = "${pkgs.fd}/bin/fd --type f";
     in "FZF_DEFAULT_COMMAND='${respect_gitignore_find}' ${config.programs.fzf.package}/bin/fzf --preview '${preview}' --bind ctrl-k:down,ctrl-l:up";
     cat = "${pkgs.bat}/bin/bat";
