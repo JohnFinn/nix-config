@@ -33,15 +33,7 @@
       hcl
       dockerfile
       commonlisp
-      (helm.overrideAttrs
-        (oldAttrs: {
-          src = pkgs.fetchFromGitHub {
-            owner = "ngalaiko";
-            repo = "tree-sitter-go-template";
-            rev = "ca52fbfc98366c585b84f4cb3745df49f33cd140";
-            hash = "sha256-ZWpzqKD3ceBzlsRjehXZgu+NZMbWyyK+/R1Ymg7DVkM=";
-          };
-        }))
+      helm
     ]);
   vimPlugins = with pkgs.vimPlugins; [
     firenvim
