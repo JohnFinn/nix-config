@@ -21,7 +21,7 @@
     };
     ghostty = {
       url = "github:ghostty-org/ghostty";
-      inputs.nixpkgs-stable.follows = "nixpkgs_latest_stable";
+      inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
   };
 
