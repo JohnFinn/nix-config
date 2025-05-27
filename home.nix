@@ -231,6 +231,7 @@
         ga = "git add";
         gp = "git pull";
         gco = "git checkout";
+        gaa = "git commit --amend --reset-author --date=now --no-edit";
         ipy = "ipython";
         py = "python";
         ta = "todo.sh -t add";
