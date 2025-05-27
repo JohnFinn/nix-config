@@ -96,6 +96,7 @@ in {
     extraPackages = with pkgs; [
       sqlite
       wl-clipboard
+      xclip
       stylua
       black
       ruff
