@@ -54,6 +54,31 @@
       monolith
       ffmpeg
       ripdrag
+      (pkgs.writeShellApplication
+        {
+          name = "ripdrag-singleton";
+          runtimeInputs = [pkgs.ripdrag];
+          text =
+            /*
+            bash
+            */
+            ''
+              stdin=/tmp/ripdrag-singleton-stdin
+
+              function server() {
+                touch $stdin
+                tail -f $stdin | ripdrag --from-stdin --all
+                rm -f $stdin
+              }
+
+              if [[ -f $stdin ]]
+              then echo "$@" >> $stdin
+              else
+                server &
+                echo "$@" >> $stdin
+              fi
+            '';
+        })
       todo-txt-cli
       expect
       pwgen
