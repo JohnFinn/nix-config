@@ -67,8 +67,9 @@
 
               function server() {
                 touch $stdin
+                # shellcheck disable=SC2064
+                trap "rm -f $stdin" EXIT
                 tail -f $stdin | ripdrag --from-stdin --all
-                rm -f $stdin
               }
 
               if [[ -f $stdin ]]
