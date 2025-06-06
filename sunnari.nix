@@ -11,7 +11,7 @@
 
   home.packages = [
     pkgs.nixgl.nixGLIntel
-    inputs.ghostty
+    pkgs.ghostty
     pkgs.git-lfs
   ];
 
