@@ -14,6 +14,15 @@
     userName = "JohnFinn";
     userEmail = "dz4tune@gmail.com";
   };
+  xdg.mimeApps = {
+    enable = true;
+    associations.added = {
+      "application/pdf" = ["org.gnome.Evince.desktop"];
+    };
+    defaultApplications = {
+      "application/pdf" = ["org.gnome.Evince.desktop"];
+    };
+  };
   dconf.settings = {
     "org/gnome/desktop/input-sources".xkb-options = [""];
 
