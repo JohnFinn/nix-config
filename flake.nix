@@ -19,10 +19,6 @@
       url = "github:JohnFinn/web_vim_remap";
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs.nixpkgs.follows = "nixpkgs_latest_stable";
-    };
   };
 
   outputs = {
@@ -33,7 +29,6 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
-    ghostty = inputs.ghostty.packages.${system}.default;
     pkgs_firefox-addons = firefox-addons.packages.${system};
     web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
   in {
@@ -44,7 +39,6 @@
       inherit pkgs;
       extraSpecialArgs = {
         inherit pkgs_firefox-addons;
-        inherit ghostty;
         inherit web_vim_remap_firefox_extension;
       };
 
@@ -60,7 +54,6 @@
       pkgs = pkgs.extend inputs.nixgl.overlay;
       extraSpecialArgs = {
         inherit pkgs_firefox-addons;
-        inherit ghostty;
         inherit web_vim_remap_firefox_extension;
       };
 
