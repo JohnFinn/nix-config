@@ -8,13 +8,18 @@
     discord
     swappy
     google-chrome
-    brave
     spotify
     (pkgs.writeShellScriptBin "spotify-adblock" ''
       LD_PRELOAD=${pkgs.callPackage ./derivations/spotify-adblock.nix {}}/lib/libspotifyadblock.so spotify
     '')
     neovide
   ];
+  programs.brave = {
+    enable = true;
+    extensions = [
+      "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock
+    ];
+  };
   xdg.desktopEntries = {
     spotify-adblock = {
       name = "spotify-adblock";
