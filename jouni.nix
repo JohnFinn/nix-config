@@ -14,6 +14,10 @@
     userName = "JohnFinn";
     userEmail = "dz4tune@gmail.com";
   };
+  programs.gnome-shell = {
+    enable = true;
+    extensions = [{package = pkgs.gnomeExtensions.tiling-shell;}];
+  };
   xdg.mimeApps = {
     enable = true;
     associations.added = {
