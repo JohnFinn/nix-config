@@ -67,6 +67,7 @@
       bkt
       just
       kondo
+      rmlint
       nixfmt-classic
       nh
       dust
@@ -251,6 +252,7 @@
         ku = "kubectl";
         sy = "systemctl";
         syu = "systemctl --user";
+        rmlint = "rmlint --progress";
       };
     };
     thefuck = {
