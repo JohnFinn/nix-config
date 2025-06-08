@@ -16,7 +16,9 @@
   };
   programs.gnome-shell = {
     enable = true;
-    extensions = [{package = pkgs.gnomeExtensions.tiling-shell;}];
+    extensions = [
+      {package = pkgs.gnomeExtensions.caffeine;}
+    ];
   };
   xdg.mimeApps = {
     enable = true;
