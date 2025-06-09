@@ -431,7 +431,7 @@
     };
     yazi = {
       enable = true;
-      keymap.manager.prepend_keymap = [
+      keymap.mgr.prepend_keymap = [
         {
           on = ["l"];
           run = "arrow -1";
