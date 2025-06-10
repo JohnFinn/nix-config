@@ -18,6 +18,7 @@
     enable = true;
     extensions = [
       "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock
+      "khncfooichmfjbepaaaebmommgaepoid" # Unhook
     ];
   };
   xdg.desktopEntries = {
