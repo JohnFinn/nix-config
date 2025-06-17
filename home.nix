@@ -422,6 +422,7 @@
             .direnv
             .cache/clangd/index
             neovide_backtraces.log
+            heaptrack.*.*.zst
           ''}";
         };
         init.defaultBranch = "main";
