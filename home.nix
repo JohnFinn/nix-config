@@ -108,7 +108,7 @@
       ripgrep
       ocrmypdf
       (python3.withPackages
-        (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.tqdm]))
+        (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.tqdm python-pkgs.requests]))
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
       # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
