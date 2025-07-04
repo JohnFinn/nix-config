@@ -430,6 +430,7 @@
       delta.enable = true;
       # difftastic.enable = true;
     };
+    jujutsu = {enable = true;};
     yazi = {
       enable = true;
       keymap.mgr.prepend_keymap = [
