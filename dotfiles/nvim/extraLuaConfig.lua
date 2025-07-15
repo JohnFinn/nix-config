@@ -331,7 +331,7 @@ require("lazy").setup({
 						-- markdown = { "mdformat" },
 						terraform = { "tofufmt" },
 						just = { "justfmt" },
-						kotlin = { "ktfmt" },
+						-- kotlin = { "ktfmt" },
 						-- -- Conform will run multiple formatters sequentially
 						-- python = { "isort", "black" },
 						javascript = { { "prettierd", "prettier" } },
