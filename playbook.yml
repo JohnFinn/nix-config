@@ -11,13 +11,12 @@
     - name: skype
       community.general.snap:
         name: skype
-        state: present
+        state: absent
+    - name: snap-docker
+      community.general.snap:
+        name: docker
+        state: absent
     - name: Remove file (delete file)
       ansible.builtin.file:
         path: /home/sunnari/snap/skype/common/.config/autostart/skypeforlinux.desktop
         state: absent
-    - name: Stop apport service
-      systemd:
-        name: apport
-        state: stopped
-        enabled: no
