@@ -821,6 +821,38 @@ require("lazy").setup({
 			end,
 		},
 		{
+			"LunarVim/bigfile.nvim",
+			dev = true,
+			lazy = false,
+			config = function()
+				-- default config
+				require("bigfile").setup({
+					pattern = function(bufnr, filesize_mib)
+						-- you can't use `nvim_buf_line_count` because this runs on BufReadPre
+						local file_contents = vim.fn.readfile(vim.api.nvim_buf_get_name(bufnr))
+						local file_length = #file_contents
+						-- check if either line exceeds 1000 characters
+						for _, line in ipairs(file_contents) do
+							if #line > 10000 then
+								return true
+							end
+							return false
+						end
+					end,
+					features = { -- features to disable
+						"indent_blankline",
+						"illuminate",
+						"lsp",
+						"treesitter",
+						"syntax",
+						"matchparen",
+						"vimopts",
+						"filetype",
+					},
+				})
+			end,
+		},
+		{
 			"rcarriga/nvim-notify",
 			dev = true,
 			event = "VeryLazy",

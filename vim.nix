@@ -54,6 +54,7 @@
     gitsigns-nvim
     vim-fugitive
     flash-nvim
+    bigfile-nvim
     # (pkgs.callPackage ./derivations/sqlite-lua.nix {}) # sqlite-lua but newer to be compatible with bookmarks-nvim below
     # (pkgs.callPackage ./derivations/bookmarks-nvim.nix {})
     (pkgs.callPackage ./derivations/match-visual-nvim.nix {})
