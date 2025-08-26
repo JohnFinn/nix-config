@@ -174,6 +174,7 @@
   home.shellAliases = {
     ipython = "ipython --no-banner --no-confirm-exit";
     python = "python -q";
+    ip = "ip --color";
     # TODO: optimize chafa speed, maybe by caching thumbnails
 
     # in ghostty this doesn't work https://github.com/ghostty-org/ghostty/discussions/3054
