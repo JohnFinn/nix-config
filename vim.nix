@@ -42,6 +42,7 @@
     nvim-tree-lua
     telescope-nvim
     telescope-live-grep-args-nvim
+    telescope-fzf-native-nvim
     vim-rhubarb
     copilot-vim
     avante-nvim

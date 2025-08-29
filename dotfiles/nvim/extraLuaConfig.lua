@@ -437,6 +437,7 @@ require("lazy").setup({
 			dependencies = {
 				{ "nvim-lua/plenary.nvim", dev = true },
 				{ "nvim-telescope/telescope-live-grep-args.nvim", dev = true },
+				{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", dev = true },
 				{ "nvim-tree/nvim-web-devicons", dev = true },
 			},
 			config = function()
@@ -482,7 +483,9 @@ require("lazy").setup({
 						},
 						colorscheme = { enable_preview = true },
 					},
+					extensions = { fzf = {} },
 				})
+				require("telescope").load_extension("fzf")
 			end,
 		},
 		{
