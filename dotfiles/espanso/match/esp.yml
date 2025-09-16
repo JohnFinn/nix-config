@@ -18,3 +18,8 @@ matches:
     replace: ó
   - trigger: ":u'"
     replace: ú
+  - trigger: ":??"
+    replace: ¿
+  - trigger: ":!!"
+    replace: ¡
+
