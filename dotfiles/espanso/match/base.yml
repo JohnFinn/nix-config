@@ -10,6 +10,8 @@ matches:
     replace: α
   - trigger: ":and"
     replace: ∧
+  - trigger: ":epsilon"
+    replace: "ε"
   - trigger: ":or"
     replace: ∨
   - trigger: ":not"
