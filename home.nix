@@ -70,6 +70,7 @@
       rmlint
       nixfmt-classic
       nh
+      cava
       dust
       ncdu
       duf
