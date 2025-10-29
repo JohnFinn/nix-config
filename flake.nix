@@ -50,7 +50,7 @@
       # to pass through arguments to home.nix
     };
 
-    homeConfigurations."sunnari" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."dzhouni.sunnari" = home-manager.lib.homeManagerConfiguration {
       pkgs = pkgs.extend inputs.nixgl.overlay;
       extraSpecialArgs = {
         inherit pkgs_firefox-addons;

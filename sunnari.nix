@@ -1,6 +1,6 @@
 {pkgs, ...} @ inputs: {
   imports = [./home.nix];
-  home.username = "sunnari";
+  home.username = "dzhouni.sunnari";
 
   programs.fish.shellAbbrs = {
     neovide = "nixGLIntel neovide --fork";
