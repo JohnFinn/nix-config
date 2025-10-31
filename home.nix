@@ -565,6 +565,9 @@
     "org/gnome/desktop/wm/keybindings" = {
       close = ["<Super>q"];
       toggle-fullscreen = ["<Super>f"];
+      maximize-horizontally = ["<Super>j"];
+      maximize-vertically = ["<Super>k"];
+      always-on-top = ["<Super>s"];
     };
     "org/gnome/desktop/wm/preferences" = {
       focus-mode = "sloppy";
