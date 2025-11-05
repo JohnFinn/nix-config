@@ -92,6 +92,7 @@
       btop
       dconf2nix
       lazygit
+      gh
       pre-commit
       lazydocker
       zsh
@@ -108,6 +109,7 @@
       hadolint
       ripgrep
       ocrmypdf
+      poetry
       (python3.withPackages
         (python-pkgs: [python-pkgs.ipython python-pkgs.pandas python-pkgs.matplotlib python-pkgs.debugpy python-pkgs.tqdm python-pkgs.requests]))
       # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -205,7 +207,7 @@
         */
         ''
           set fish_greeting
-          just --completions fish | source
+          # just --completions fish | source
         '';
       functions = {
         # NOTE: use upstream code once home-manager is updated https://github.com/nix-community/home-manager/pull/5449
@@ -263,7 +265,7 @@
       enableFishIntegration = true;
     };
     atuin = {
-      enable = true;
+      enable = false;
       enableFishIntegration = true;
       enableBashIntegration = true;
       settings = {
