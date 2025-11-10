@@ -53,6 +53,8 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.excludePackages = [pkgs.xterm];
 
+  # services.logind.lidSwitchExternalPower = "ignore";
+
   environment.gnome.excludePackages = with pkgs; [
     baobab # disk usage analyzer
     cheese # photo booth
