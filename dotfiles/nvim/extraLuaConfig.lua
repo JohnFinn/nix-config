@@ -334,7 +334,7 @@ require("lazy").setup({
 						-- kotlin = { "ktfmt" },
 						-- -- Conform will run multiple formatters sequentially
 						-- python = { "isort", "black" },
-						javascript = { { "prettierd", "prettier" } },
+						-- javascript = { { "prettierd", "prettier" } },
 						java = { "spotless" },
 						-- cmake = { "cmake_format" },
 					},
