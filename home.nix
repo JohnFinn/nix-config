@@ -257,6 +257,7 @@
         sy = "systemctl";
         syu = "systemctl --user";
         rmlint = "rmlint --progress";
+        prec = "perf record -F 997 --call-graph dwarf -o /tmp/perf.data --";
       };
     };
     thefuck = {
