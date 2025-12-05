@@ -2,16 +2,16 @@
   config,
   pkgs,
   pkgs_firefox-addons,
-  web_vim_remap_firefox_extension,
+  #web_vim_remap_firefox_extension,
   lib,
   ...
 }: {
   imports = [
     ./vim.nix
-    ./theme.nix
-    ./gui-apps.nix
+    #./theme.nix
+    #./gui-apps.nix
     ({pkgs, ...}: {
-      home.packages = [pkgs.easyeffects];
+      #home.packages = [pkgs.easyeffects];
       xdg.configFile = {
         "easyeffects/output".source = pkgs.fetchFromGitHub {
           owner = "Digitalone1";
@@ -24,7 +24,7 @@
     })
   ];
 
-  home.homeDirectory = "/home/${config.home.username}";
+  home.homeDirectory = "/Users/${config.home.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -40,8 +40,8 @@
   # environment.
   home.packages = with pkgs;
     [
-      pkgs.linuxKernel.packages.linux_6_12.perf
-      inotify-tools
+      #pkgs.linuxKernel.packages.linux_6_12.perf
+      #inotify-tools
       ansible
       qrencode
       zip
@@ -51,7 +51,7 @@
       pass
       opentofu
       dotenvx
-      monolith
+      #monolith
       ffmpeg
       ripdrag
       (pkgs.callPackage ./derivations/ripdrag-singleton.nix {})
@@ -128,7 +128,7 @@
     ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   services.syncthing = {enable = true;};
-  services.conky = {enable = true;};
+  #services.conky = {enable = true;};
 
   xdg.configFile = {
     "pulsemixer.cfg".source = ./dotfiles/pulsemixer.cfg;
@@ -409,7 +409,7 @@
             pkgs_firefox-addons.istilldontcareaboutcookies
             pkgs_firefox-addons.videospeed
             pkgs_firefox-addons.vimium # TODO: remap hjkl
-            web_vim_remap_firefox_extension
+            #web_vim_remap_firefox_extension
           ];
         };
         work = {

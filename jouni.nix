@@ -1,5 +1,5 @@
 {pkgs, ...} @ inputs: {
-  imports = [./home.nix ./hyprland.nix];
+  imports = [./home.nix];
   home.username = "jouni";
   programs.fish.shellAbbrs = {
     neovide = "neovide --fork";
@@ -8,7 +8,7 @@
   home.packages = with pkgs; [
     # on Ubuntu I'm using wezterm-nightly package (version 20241015-083151-9ddca7bd) because it has better startuptime
     wezterm
-    ghostty
+    #ghostty
   ];
   programs.git = {
     userName = "JohnFinn";
@@ -20,15 +20,15 @@
       {package = pkgs.gnomeExtensions.caffeine;}
     ];
   };
-  xdg.mimeApps = {
-    enable = true;
-    associations.added = {
-      "application/pdf" = ["org.gnome.Evince.desktop"];
-    };
-    defaultApplications = {
-      "application/pdf" = ["org.gnome.Evince.desktop"];
-    };
-  };
+ # xdg.mimeApps = {
+ #   enable = true;
+ #   associations.added = {
+ #     "application/pdf" = ["org.gnome.Evince.desktop"];
+ #   };
+ #   defaultApplications = {
+ #     "application/pdf" = ["org.gnome.Evince.desktop"];
+ #   };
+ # };
   dconf.settings = {
     "org/gnome/desktop/input-sources".xkb-options = [""];
 
