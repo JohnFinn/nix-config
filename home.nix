@@ -40,8 +40,6 @@
   # environment.
   home.packages = with pkgs;
     [
-      #pkgs.linuxKernel.packages.linux_6_12.perf
-      #inotify-tools
       ansible
       qrencode
       zip
@@ -125,7 +123,12 @@
       #   echo "Hello, ${config.home.username}!"
       # '')
     ]
-    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)
+    ++ lib.optionals
+    pkgs.stdenv.isLinux [
+      pkgs.linuxKernel.packages.linux_6_12.perf
+      inotify-tools
+    ];
 
   services.syncthing = {enable = true;};
   #services.conky = {enable = true;};
