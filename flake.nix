@@ -30,7 +30,7 @@
     system = "aarch64-darwin";
     pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
     pkgs_firefox-addons = firefox-addons.packages.${system};
-    #web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
+    web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
   in {
     nixosConfigurations.default = nixpkgs_latest_stable.lib.nixosSystem {
       modules = [./configuration.nix];
@@ -39,7 +39,7 @@
       inherit pkgs;
       extraSpecialArgs = {
         inherit pkgs_firefox-addons;
-        #inherit web_vim_remap_firefox_extension;
+        inherit web_vim_remap_firefox_extension;
       };
 
       # Specify your home configuration modules here, for example,
@@ -54,7 +54,7 @@
       pkgs = pkgs.extend inputs.nixgl.overlay;
       extraSpecialArgs = {
         inherit pkgs_firefox-addons;
-        #inherit web_vim_remap_firefox_extension;
+        inherit web_vim_remap_firefox_extension;
       };
 
       # Specify your home configuration modules here, for example,
