@@ -59,10 +59,15 @@
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
       system.stateVersion = 6;
+      system.primaryUser = "jouni";
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
       security.pam.services.sudo_local.touchIdAuth = true;
+      system.defaults.NSGlobalDomain = {
+        InitialKeyRepeat = 30;
+        KeyRepeat = 2;
+      };
     };
   in {
     nixosConfigurations.default = nixpkgs_latest_stable.lib.nixosSystem {
