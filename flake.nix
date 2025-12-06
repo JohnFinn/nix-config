@@ -19,18 +19,51 @@
       url = "github:JohnFinn/web_vim_remap";
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
+
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
   };
 
   outputs = {
+    self,
     nixpkgs_latest_stable,
     firefox-addons,
     home-manager,
+    nixpkgs-darwin,
+    nix-darwin,
     ...
   } @ inputs: let
     system = "aarch64-darwin";
     pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
     pkgs_firefox-addons = firefox-addons.packages.${system};
     web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
+    configuration = {pkgs, ...}: {
+      # List packages installed in system profile. To search by name, run:
+      # $ nix-env -qaP | grep wget
+      environment.systemPackages = [
+        pkgs.vim
+      ];
+
+      # Necessary for using flakes on this system.
+      nix.settings.experimental-features = "nix-command flakes";
+
+      # Enable alternative shell support in nix-darwin.
+      # programs.fish.enable = true;
+
+      # Set Git commit hash for darwin-version.
+      system.configurationRevision = self.rev or self.dirtyRev or null;
+
+      # Used for backwards compatibility, please read the changelog before changing.
+      # $ darwin-rebuild changelog
+      system.stateVersion = 6;
+
+      # The platform the configuration will be used on.
+      nixpkgs.hostPlatform = "aarch64-darwin";
+      security.pam.services.sudo_local.touchIdAuth = true;
+    };
   in {
     nixosConfigurations.default = nixpkgs_latest_stable.lib.nixosSystem {
       modules = [./configuration.nix];
@@ -65,5 +98,9 @@
       # to pass through arguments to home.nix
     };
     legacyPackages.${system}.foo = pkgs.callPackage ./android-apply.nix {android-config = import ./android-config.nix;};
+
+    darwinConfigurations."jounis-MacBook-Air" = nix-darwin.lib.darwinSystem {
+      modules = [configuration];
+    };
   };
 }
