@@ -146,11 +146,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748178970,
-        "narHash": "sha256-iPSvm4G2gstbvR6il9C+cl+7xQI64CjbZdwmF0BWSQQ=",
+        "lastModified": 1765031447,
+        "narHash": "sha256-s8PMOVyRuDMnmwAic7T3eBFxpyYGoO01DFqCT4cmvXk=",
         "owner": "JohnFinn",
         "repo": "web_vim_remap",
-        "rev": "42285fa371ef781027ed851542fb94c8bfa5a152",
+        "rev": "ed7d7e01de0d42d689b1395b332c64c471819796",
         "type": "github"
       },
       "original": {
