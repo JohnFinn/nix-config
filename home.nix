@@ -49,7 +49,6 @@
       pass
       opentofu
       dotenvx
-      monolith
       ffmpeg
       ripdrag
       (pkgs.callPackage ./derivations/ripdrag-singleton.nix {})
@@ -128,6 +127,7 @@
     pkgs.stdenv.isLinux [
       pkgs.linuxKernel.packages.linux_6_12.perf
       inotify-tools
+      monolith
     ];
 
   services.syncthing = {enable = true;};
