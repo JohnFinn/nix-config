@@ -5,3 +5,4 @@ gtk-single-instance = true
 quit-after-last-window-closed-delay = 1h
 keybind = super+enter=new_window
 keybind = super+q=close_window
+command = direct:bash -l -c fish
