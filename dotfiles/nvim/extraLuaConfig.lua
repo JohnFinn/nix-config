@@ -19,21 +19,36 @@ vim.api.nvim_command([[
 ]]);
 
 (function()
-	local XDG_SESSION_TYPE = vim.fn.getenv("XDG_SESSION_TYPE")
-	if XDG_SESSION_TYPE == "x11" then
-		vim.o.clipboard = "unnamedplus"
-	elseif XDG_SESSION_TYPE == "wayland" then
+	if vim.loop.os_uname().sysname == "Darwin" then
+		-- macOS
 		vim.o.clipboard = "unnamed"
 		vim.g.clipboard = {
 			copy = {
-				["+"] = "wl-copy",
-				["*"] = "wl-copy",
+				["+"] = "pbcopy",
+				["*"] = "pbcopy",
 			},
 			paste = {
-				["+"] = { "wl-paste", "--no-newline" },
-				["*"] = { "wl-paste", "--no-newline" },
+				["+"] = "pbpaste",
+				["*"] = "pbpaste",
 			},
 		}
+	else
+		local XDG_SESSION_TYPE = vim.fn.getenv("XDG_SESSION_TYPE")
+		if XDG_SESSION_TYPE == "x11" then
+			vim.o.clipboard = "unnamedplus"
+		elseif XDG_SESSION_TYPE == "wayland" then
+			vim.o.clipboard = "unnamed"
+			vim.g.clipboard = {
+				copy = {
+					["+"] = "wl-copy",
+					["*"] = "wl-copy",
+				},
+				paste = {
+					["+"] = { "wl-paste", "--no-newline" },
+					["*"] = { "wl-paste", "--no-newline" },
+				},
+			}
+		end
 	end
 end)()
 
