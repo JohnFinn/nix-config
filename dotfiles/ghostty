@@ -8,4 +8,5 @@ keybind = super+q=close_window
 #SIGINT https://github.com/ghostty-org/ghostty/discussions/3516
 keybind = ctrl+shift+c=text:\x03
 keybind = ctrl+shift+z=text:\x1A
+keybind = super+w=ignore
 command = direct:bash -l -c fish
