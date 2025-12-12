@@ -65,9 +65,13 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
       security.pam.services.sudo_local.touchIdAuth = true;
-      system.defaults.NSGlobalDomain = {
-        InitialKeyRepeat = 30;
-        KeyRepeat = 2;
+      system.defaults = {
+        NSGlobalDomain = {
+          InitialKeyRepeat = 30;
+          KeyRepeat = 2;
+        };
+        dock.autohide = true;
+        WindowManager.StandardHideDesktopIcons = true;
       };
     };
   in {
