@@ -2,13 +2,13 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs_unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs_latest_stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs_latest_stable.url = "github:nixos/nixpkgs/nixos-25.11";
     nixgl = {
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
     firefox-addons = {
