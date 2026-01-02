@@ -582,10 +582,11 @@ require("lazy").setup({
 				-- TODO: what do these do?
 				-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 				-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-				require("lspconfig").clangd.setup({ --[[ cmd = { "clangd", "--log=verbose" } ]]
+				vim.lsp.config("clangd", {--[[ cmd = { "clangd", "--log=verbose" } ]]
 				})
-				require("lspconfig").pyright.setup({})
-				require("lspconfig").nixd.setup({
+				vim.lsp.enable("clangd")
+				vim.lsp.enable("pyright")
+				vim.lsp.config("nixd", {
 					cmd = { "nixd" },
 					settings = {
 						nixd = {
@@ -606,18 +607,19 @@ require("lazy").setup({
 						},
 					},
 				})
-				require("lspconfig").lua_ls.setup({})
-				require("lspconfig").texlab.setup({})
-				require("lspconfig").rust_analyzer.setup({})
-				require("lspconfig").ts_ls.setup({})
-				require("lspconfig").jdtls.setup({})
-				require("lspconfig").bashls.setup({})
-				require("lspconfig").fish_lsp.setup({})
-				require("lspconfig").jsonls.setup({})
-				require("lspconfig").yamlls.setup({})
-				require("lspconfig").dockerls.setup({})
-				require("lspconfig").neocmake.setup({})
-				require("lspconfig").terraformls.setup({})
+				vim.lsp.enable("nixd")
+				vim.lsp.enable("lua_ls")
+				vim.lsp.enable("texlab")
+				vim.lsp.enable("rust_analyzer")
+				vim.lsp.enable("ts_ls")
+				vim.lsp.enable("jdtls")
+				vim.lsp.enable("bashls")
+				vim.lsp.enable("fish_lsp")
+				vim.lsp.enable("jsonls")
+				vim.lsp.enable("yamlls")
+				vim.lsp.enable("dockerls")
+				vim.lsp.enable("neocmake")
+				vim.lsp.enable("terraformls")
 				-- BUG: language server won't stop on vim exit. New server spawns on re-entry.
 				-- this eventually leads to 100% RAM & CPU usage
 				-- require("lspconfig").kotlin_language_server.setup({})
