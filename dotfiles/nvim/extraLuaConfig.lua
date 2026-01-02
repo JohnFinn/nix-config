@@ -620,9 +620,11 @@ require("lazy").setup({
 				vim.lsp.enable("dockerls")
 				vim.lsp.enable("neocmake")
 				vim.lsp.enable("terraformls")
-				-- BUG: language server won't stop on vim exit. New server spawns on re-entry.
-				-- this eventually leads to 100% RAM & CPU usage
-				-- require("lspconfig").kotlin_language_server.setup({})
+				vim.lsp.config("kotlin_lsp", {
+					-- TODO: take kotlin-lsp from nix store
+					cmd = { "/home/dzhouni.sunnari/.local/bin/kotlin-lsp", "--stdio" },
+				})
+				vim.lsp.enable("kotlin_lsp")
 
 				vim.diagnostic.config({
 					virtual_text = { prefix = "" }, -- '' ''
