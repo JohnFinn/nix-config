@@ -10,9 +10,9 @@ keybinding:
         scrollRight: <disabled> # TODO
 notARepository: quit
 git:
-    paging:
-        colorArg: always
-        pager: delta --dark --paging=never --tabs=2
+    pagers:
+        - pager: delta --dark --paging=never --tabs=2
+          colorArg: always
         # externalDiffCommand: difft --color=always --display=inline
         #
 gui:
