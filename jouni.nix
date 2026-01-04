@@ -20,15 +20,15 @@
       {package = pkgs.gnomeExtensions.caffeine;}
     ];
   };
-  xdg.mimeApps = {
-    enable = true;
-    associations.added = {
-      "application/pdf" = ["org.gnome.Evince.desktop"];
-    };
-    defaultApplications = {
-      "application/pdf" = ["org.gnome.Evince.desktop"];
-    };
-  };
+  # xdg.mimeApps = {
+  #   enable = true;
+  #   associations.added = {
+  #     "application/pdf" = ["org.gnome.Evince.desktop"];
+  #   };
+  #   defaultApplications = {
+  #     "application/pdf" = ["org.gnome.Evince.desktop"];
+  #   };
+  # };
   dconf.settings = {
     "org/gnome/desktop/input-sources".xkb-options = [""];
 
