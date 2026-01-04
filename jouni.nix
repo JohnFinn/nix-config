@@ -11,8 +11,8 @@
     ghostty
   ];
   programs.git = {
-    userName = "JohnFinn";
-    userEmail = "dz4tune@gmail.com";
+    settings.user.name = "JohnFinn";
+    settings.user.email = "dz4tune@gmail.com";
   };
   programs.gnome-shell = {
     enable = true;
