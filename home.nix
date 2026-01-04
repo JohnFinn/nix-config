@@ -211,13 +211,24 @@
     fish = {
       enable = true;
       interactiveShellInit =
-        /*
-        fish
-        */
-        ''
-          set fish_greeting
-          # just --completions fish | source
-        '';
+        if pkgs.stdenv.isDarwin
+        then
+          /*
+          fish
+          */
+          ''
+            set fish_greeting
+            # just --completions fish | source
+            /opt/homebrew/bin/brew shellenv | source
+          ''
+        else
+          /*
+          fish
+          */
+          ''
+            set fish_greeting
+            # just --completions fish | source
+          '';
       functions = {
         # NOTE: use upstream code once home-manager is updated https://github.com/nix-community/home-manager/pull/5449
         yazi.body =
