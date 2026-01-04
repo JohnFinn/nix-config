@@ -78,20 +78,38 @@
     nixosConfigurations.default = nixpkgs_latest_stable.lib.nixosSystem {
       modules = [./configuration.nix];
     };
-    homeConfigurations."jouni" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = {
-        inherit pkgs_firefox-addons;
-        inherit web_vim_remap_firefox_extension;
-      };
+    homeConfigurations."jouni" =
+      if pkgs.stdenv.isLinux
+      then
+        (home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit pkgs_firefox-addons;
+            inherit web_vim_remap_firefox_extension;
+          };
 
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
-      modules = [./jouni.nix];
+          # Specify your home configuration modules here, for example,
+          # the path to your home.nix.
+          modules = [./jouni.nix ./linux-specific.nix];
 
-      # Optionally use extraSpecialArgs
-      # to pass through arguments to home.nix
-    };
+          # Optionally use extraSpecialArgs
+          # to pass through arguments to home.nix
+        })
+      else
+        (home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit pkgs_firefox-addons;
+            inherit web_vim_remap_firefox_extension;
+          };
+
+          # Specify your home configuration modules here, for example,
+          # the path to your home.nix.
+          modules = [./jouni.nix];
+
+          # Optionally use extraSpecialArgs
+          # to pass through arguments to home.nix
+        });
 
     homeConfigurations."dzhouni.sunnari" = home-manager.lib.homeManagerConfiguration {
       pkgs = pkgs.extend inputs.nixgl.overlay;

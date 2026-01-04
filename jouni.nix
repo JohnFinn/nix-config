@@ -1,5 +1,5 @@
 {pkgs, ...} @ inputs: {
-  imports = [./home.nix ./linux-specific.nix];
+  imports = [./home.nix];
   home.username = "jouni";
   programs.fish.shellAbbrs = {
     neovide = "neovide --fork";
