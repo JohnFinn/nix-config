@@ -24,7 +24,10 @@
     })
   ];
 
-  home.homeDirectory = "/Users/${config.home.username}";
+  home.homeDirectory =
+    if pkgs.stdenv.isLinux
+    then "/home/${config.home.username}"
+    else "/Users/${config.home.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
