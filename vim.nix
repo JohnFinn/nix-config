@@ -95,41 +95,45 @@ in {
     extraLuaConfig = builtins.readFile ./dotfiles/nvim/extraLuaConfig.lua;
     extraLuaPackages = luaPkgs: with luaPkgs; [nvim-nio pathlib-nvim];
     plugins = vimPlugins;
-    extraPackages = with pkgs; [
-      sqlite
-      wl-clipboard
-      xclip
-      stylua
-      black
-      ruff
-      cmake-format
-      eslint_d
-      alejandra
-      ktfmt
-      # language servers
-      lua-language-server
-      nixd
-      dockerfile-language-server-nodejs
-      pyright
-      kotlin-language-server
-      yaml-language-server
-      neocmakelsp
-      nodePackages.bash-language-server
-      fish-lsp
-      vscode-langservers-extracted
-      yaml-language-server
-      jdt-language-server
-      texlab
-      rust-analyzer
-      typescript-language-server
-      terraform-ls
-      #linters
-      pylint
-      yamllint
-      #
-      rustfmt
-      (python3.withPackages (python-pkgs: [python-pkgs.mdformat-gfm]))
-    ];
+    extraPackages = with pkgs;
+      [
+        sqlite
+        xclip
+        stylua
+        black
+        ruff
+        cmake-format
+        eslint_d
+        alejandra
+        ktfmt
+        # language servers
+        lua-language-server
+        nixd
+        dockerfile-language-server-nodejs
+        pyright
+        kotlin-language-server
+        yaml-language-server
+        neocmakelsp
+        nodePackages.bash-language-server
+        fish-lsp
+        vscode-langservers-extracted
+        yaml-language-server
+        jdt-language-server
+        texlab
+        rust-analyzer
+        typescript-language-server
+        terraform-ls
+        #linters
+        pylint
+        yamllint
+        #
+        rustfmt
+        (python3.withPackages (python-pkgs: [python-pkgs.mdformat-gfm]))
+      ]
+      ++ lib.optionals
+      pkgs.stdenv.isLinux [
+        wl-clipboard
+      ];
   };
   home.file.".config/nvim/lua/nix_paths.lua".text = let
     load_treesitters_body = lib.strings.concatStrings (lib.strings.intersperse "\n"
