@@ -154,7 +154,10 @@
       source = ./dotfiles/espanso;
       recursive = true;
     };
-    ".config/ghostty/config".source = ./dotfiles/ghostty;
+    ".config/ghostty/config".source =
+      if pkgs.stdenv.isLinux
+      then ./dotfiles/ghostty
+      else ./dotfiles/macos-ghostty;
     ".ansible.cfg".text = ''
       [defaults]
       nocows = 1
