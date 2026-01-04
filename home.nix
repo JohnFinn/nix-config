@@ -266,11 +266,11 @@
         prec = "perf record -F 997 --call-graph dwarf -o /tmp/perf.data --";
       };
     };
-    thefuck = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-    };
+    # thefuck = {
+    #   enable = true;
+    #   enableBashIntegration = true;
+    #   enableFishIntegration = true;
+    # };
     atuin = {
       enable = false;
       enableFishIntegration = true;
@@ -286,7 +286,7 @@
     };
     less = {
       enable = true;
-      keys = ''
+      config = ''
         k forw-line
         l back-line
       '';
@@ -426,7 +426,7 @@
     };
     git = {
       enable = true;
-      extraConfig = {
+      settings = {
         core = {
           editor = "nvim";
           excludesFile = "${pkgs.writeText ".gitignore" ''
@@ -438,8 +438,11 @@
         };
         init.defaultBranch = "main";
       };
-      delta.enable = true;
       # difftastic.enable = true;
+    };
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
     };
     jujutsu = {enable = true;};
     yazi = {
