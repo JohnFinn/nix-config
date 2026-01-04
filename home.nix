@@ -131,7 +131,7 @@
     ];
 
   services.syncthing = {enable = true;};
-  services.conky = {enable = true;};
+  #services.conky = {enable = true;};
 
   xdg.configFile = {
     "pulsemixer.cfg".source = ./dotfiles/pulsemixer.cfg;
