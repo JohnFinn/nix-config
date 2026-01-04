@@ -67,7 +67,6 @@
       rmlint
       nixfmt-classic
       nh
-      cava
       dust
       ncdu
       duf
@@ -128,6 +127,7 @@
       inotify-tools
       monolith
       wl-clipboard
+      cava
     ];
 
   services.syncthing = {enable = true;};
