@@ -5,11 +5,13 @@
     neovide = "neovide --fork";
     n = "neovide --fork";
   };
-  home.packages = with pkgs; [
-    # on Ubuntu I'm using wezterm-nightly package (version 20241015-083151-9ddca7bd) because it has better startuptime
-    wezterm
-    #ghostty
-  ];
+  home.packages = with pkgs;
+    lib.optionals
+    pkgs.stdenv.isLinux [
+      # on Ubuntu I'm using wezterm-nightly package (version 20241015-083151-9ddca7bd) because it has better startuptime
+      wezterm
+      ghostty
+    ];
   programs.git = {
     settings.user.name = "JohnFinn";
     settings.user.email = "dz4tune@gmail.com";
