@@ -108,5 +108,9 @@
       # to pass through arguments to home.nix
     };
     legacyPackages.${system}.foo = pkgs.callPackage ./android-apply.nix {android-config = import ./android-config.nix;};
+
+    darwinConfigurations."jounis-MacBook-Air" = nix-darwin.lib.darwinSystem {
+      modules = [configuration];
+    };
   };
 }
