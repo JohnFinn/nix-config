@@ -19,6 +19,7 @@
       url = "github:JohnFinn/web_vim_remap";
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
+
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
