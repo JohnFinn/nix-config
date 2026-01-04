@@ -1,8 +1,5 @@
 {pkgs, ...} @ inputs: {
-  imports =
-    if pkgs.stdenv.isLinux
-    then [./home.nix ./hyprland.nix]
-    else [./home.nix];
+  imports = [./home.nix ./hyprland.nix];
   home.username = "jouni";
   programs.fish.shellAbbrs = {
     neovide = "neovide --fork";
