@@ -28,9 +28,12 @@
   };
 
   outputs = {
+    self,
     nixpkgs_latest_stable,
     firefox-addons,
     home-manager,
+    nixpkgs-darwin,
+    nix-darwin,
     ...
   } @ inputs: let
     system = "x86_64-linux";
