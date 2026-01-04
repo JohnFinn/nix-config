@@ -36,10 +36,34 @@
     nix-darwin,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
-    pkgs_firefox-addons = firefox-addons.packages.${system};
-    web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
+    mkHomeConfiguration = system: let
+      pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
+      pkgs_firefox-addons = firefox-addons.packages.${system};
+      web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
+    in
+      if pkgs.stdenv.isLinux
+      then
+        (home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit pkgs_firefox-addons;
+            inherit web_vim_remap_firefox_extension;
+          };
+          modules = [./jouni.nix ./linux-specific.nix];
+        })
+      else
+        (home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit pkgs_firefox-addons;
+            inherit web_vim_remap_firefox_extension;
+          };
+          modules = [./jouni.nix];
+        });
+
+    # Darwin-specific configuration
+    darwinSystem = "aarch64-darwin";
+    darwinPkgs = nixpkgs_latest_stable.legacyPackages.${darwinSystem};
     configuration = {pkgs, ...}: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
@@ -78,54 +102,32 @@
     nixosConfigurations.default = nixpkgs_latest_stable.lib.nixosSystem {
       modules = [./configuration.nix];
     };
-    homeConfigurations."jouni" =
-      if pkgs.stdenv.isLinux
-      then
-        (home-manager.lib.homeManagerConfiguration {
+
+    # Generate home configurations for each supported system
+    homeConfigurations = {
+      # macOS configuration
+      "jouni@jounis-MacBook-Air" = mkHomeConfiguration "aarch64-darwin";
+      "jouni@nixos" = mkHomeConfiguration "x86_64-linux"; # Fallback for auto-detection
+
+      # Linux configuration (you can add your Linux hostname here)
+      # "jouni@linux-hostname" = mkHomeConfiguration "x86_64-linux";
+
+      # Work configuration
+      "dzhouni.sunnari" = let
+        system = "x86_64-linux";
+        pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend inputs.nixgl.overlay;
+        pkgs_firefox-addons = firefox-addons.packages.${system};
+        web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
+      in
+        home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
             inherit pkgs_firefox-addons;
             inherit web_vim_remap_firefox_extension;
           };
-
-          # Specify your home configuration modules here, for example,
-          # the path to your home.nix.
-          modules = [./jouni.nix ./linux-specific.nix];
-
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
-        })
-      else
-        (home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit pkgs_firefox-addons;
-            inherit web_vim_remap_firefox_extension;
-          };
-
-          # Specify your home configuration modules here, for example,
-          # the path to your home.nix.
-          modules = [./jouni.nix];
-
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
-        });
-
-    homeConfigurations."dzhouni.sunnari" = home-manager.lib.homeManagerConfiguration {
-      pkgs = pkgs.extend inputs.nixgl.overlay;
-      extraSpecialArgs = {
-        inherit pkgs_firefox-addons;
-        inherit web_vim_remap_firefox_extension;
-      };
-
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
-      modules = [./sunnari.nix];
-
-      # Optionally use extraSpecialArgs
-      # to pass through arguments to home.nix
+          modules = [./sunnari.nix];
+        };
     };
-    legacyPackages.${system}.foo = pkgs.callPackage ./android-apply.nix {android-config = import ./android-config.nix;};
 
     darwinConfigurations."jounis-MacBook-Air" = nix-darwin.lib.darwinSystem {
       modules = [configuration];
