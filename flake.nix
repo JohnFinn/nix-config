@@ -15,14 +15,14 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
+    web_vim_remap = {
+      url = "github:JohnFinn/web_vim_remap";
+      inputs.nixpkgs.follows = "nixpkgs_latest_stable";
+    };
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
-    };
-    web_vim_remap = {
-      url = "github:JohnFinn/web_vim_remap";
-      inputs.nixpkgs.follows = "nixpkgs_latest_stable";
     };
   };
 
