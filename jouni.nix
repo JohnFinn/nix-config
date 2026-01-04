@@ -11,8 +11,8 @@
     #ghostty
   ];
   programs.git = {
-    userName = "JohnFinn";
-    userEmail = "dz4tune@gmail.com";
+    settings.user.name = "JohnFinn";
+    settings.user.email = "dz4tune@gmail.com";
   };
   programs.gnome-shell = {
     enable = true;
@@ -20,15 +20,15 @@
       {package = pkgs.gnomeExtensions.caffeine;}
     ];
   };
- # xdg.mimeApps = {
- #   enable = true;
- #   associations.added = {
- #     "application/pdf" = ["org.gnome.Evince.desktop"];
- #   };
- #   defaultApplications = {
- #     "application/pdf" = ["org.gnome.Evince.desktop"];
- #   };
- # };
+  # xdg.mimeApps = {
+  #   enable = true;
+  #   associations.added = {
+  #     "application/pdf" = ["org.gnome.Evince.desktop"];
+  #   };
+  #   defaultApplications = {
+  #     "application/pdf" = ["org.gnome.Evince.desktop"];
+  #   };
+  # };
   dconf.settings = {
     "org/gnome/desktop/input-sources".xkb-options = [""];
 

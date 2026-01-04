@@ -99,7 +99,6 @@
       watchexec
       (pkgs.callPackage ./derivations/checkexec.nix {})
       jqp
-      wl-clipboard
       entr
       clang
       clang-tools
@@ -128,6 +127,7 @@
       pkgs.linuxKernel.packages.linux_6_12.perf
       inotify-tools
       monolith
+      wl-clipboard
     ];
 
   services.syncthing = {enable = true;};
