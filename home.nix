@@ -67,7 +67,6 @@
       rmlint
       nixfmt-classic
       nh
-      cava
       dust
       ncdu
       duf
@@ -99,7 +98,6 @@
       watchexec
       (pkgs.callPackage ./derivations/checkexec.nix {})
       jqp
-      wl-clipboard
       entr
       clang
       clang-tools
@@ -128,6 +126,8 @@
       pkgs.linuxKernel.packages.linux_6_12.perf
       inotify-tools
       monolith
+      wl-clipboard
+      cava
     ];
 
   services.syncthing = {enable = true;};
