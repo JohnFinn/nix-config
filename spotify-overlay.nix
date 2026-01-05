@@ -3,8 +3,8 @@ final: prev: let
   spotx = prev.fetchFromGitHub {
     owner = "SpotX-Official";
     repo = "SpotX-Bash";
-    rev = "12cfe5dcec1d82cb613d8aa8dd60f4cd181dfb06";
-    sha256 = "sha256-GPy9/fJhcx1XPS6WRt4yVQQrEt/YQCh2cDzQxb1nvfg=";
+    rev = "63b31200ff28feae474a4898d1e2fd7de04e2969";
+    sha256 = "sha256-3Fvizc52/AUnsRX5I/y1Yk+O7FOoI0cJPDcn0vxzq4E=";
   };
   spotx_sh = "${spotx}/spotx.sh";
 in {
