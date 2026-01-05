@@ -36,31 +36,6 @@
     nix-darwin,
     ...
   } @ inputs: let
-    mkHomeConfiguration = system: let
-      pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
-      pkgs_firefox-addons = firefox-addons.packages.${system};
-      web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
-    in
-      if pkgs.stdenv.isLinux
-      then
-        (home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit pkgs_firefox-addons;
-            inherit web_vim_remap_firefox_extension;
-          };
-          modules = [./jouni.nix ./linux-specific.nix];
-        })
-      else
-        (home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit pkgs_firefox-addons;
-            inherit web_vim_remap_firefox_extension;
-          };
-          modules = [./jouni.nix];
-        });
-
     # Darwin-specific configuration
     darwinSystem = "aarch64-darwin";
     darwinPkgs = nixpkgs_latest_stable.legacyPackages.${darwinSystem};
@@ -103,16 +78,34 @@
       modules = [./configuration.nix];
     };
 
-    # Generate home configurations for each supported system
     homeConfigurations = {
-      # macOS configuration
-      "jouni@jounis-MacBook-Air" = mkHomeConfiguration "aarch64-darwin";
-      "jouni@nixos" = mkHomeConfiguration "x86_64-linux"; # Fallback for auto-detection
+      "jouni@jounis-MacBook-Air" = let
+        system = "aarch64-darwin";
+        pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
+        pkgs_firefox-addons = firefox-addons.packages.${system};
+        web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
+      in (home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit pkgs_firefox-addons;
+          inherit web_vim_remap_firefox_extension;
+        };
+        modules = [./jouni.nix];
+      });
+      "jouni@nixos" = let
+        system = "x86_64-linux";
+        pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend (import ./spotify-overlay.nix);
+        pkgs_firefox-addons = firefox-addons.packages.${system};
+        web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
+      in (home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit pkgs_firefox-addons;
+          inherit web_vim_remap_firefox_extension;
+        };
+        modules = [./jouni.nix ./linux-specific.nix];
+      });
 
-      # Linux configuration (you can add your Linux hostname here)
-      # "jouni@linux-hostname" = mkHomeConfiguration "x86_64-linux";
-
-      # Work configuration
       "dzhouni.sunnari" = let
         system = "x86_64-linux";
         pkgs = (nixpkgs_latest_stable.legacyPackages.${system}.extend inputs.nixgl.overlay) .extend (import ./spotify-overlay.nix);
