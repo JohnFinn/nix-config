@@ -86,8 +86,8 @@
       (pkgs.callPackage ./derivations/checkexec.nix {})
       jqp
       entr
-      clang
-      clang-tools
+      # clang
+      # clang-tools
       hadolint
       ripgrep
       ocrmypdf
