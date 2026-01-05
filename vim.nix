@@ -109,7 +109,7 @@ in {
         # language servers
         lua-language-server
         nixd
-        dockerfile-language-server-nodejs
+        dockerfile-language-server
         pyright
         kotlin-language-server
         yaml-language-server
