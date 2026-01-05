@@ -115,7 +115,7 @@
       # Work configuration
       "dzhouni.sunnari" = let
         system = "x86_64-linux";
-        pkgs = nixpkgs_latest_stable.legacyPackages.${system}.extend inputs.nixgl.overlay;
+        pkgs = (nixpkgs_latest_stable.legacyPackages.${system}.extend inputs.nixgl.overlay) .extend (import ./spotify-overlay.nix);
         pkgs_firefox-addons = firefox-addons.packages.${system};
         web_vim_remap_firefox_extension = inputs.web_vim_remap.packages.${system}.firefox_extension;
       in
