@@ -108,6 +108,7 @@ in {
         ktfmt
         # language servers
         lua-language-server
+        clang-tools
         nixd
         dockerfile-language-server
         pyright
