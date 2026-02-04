@@ -78,6 +78,7 @@
       gh
       pre-commit
       lazydocker
+      vis
       zsh
       eza
       gdb
@@ -137,6 +138,7 @@
     ".config/starship.toml".source = ./dotfiles/starship.toml;
     ".ideavimrc".source = ./dotfiles/nvim/ideavimrc;
     ".config/lazygit/config.yml".source = ./dotfiles/lazygit.yaml;
+    ".config/vis/visrc.lua".source = ./dotfiles/vis/visrc.lua;
     ".config/espanso/" = {
       source = ./dotfiles/espanso;
       recursive = true;
