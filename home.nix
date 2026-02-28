@@ -27,6 +27,7 @@
   # environment.
   home.packages = with pkgs;
     [
+      glow
       ansible
       qrencode
       zip
