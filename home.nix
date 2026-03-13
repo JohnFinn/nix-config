@@ -79,6 +79,7 @@
       gh
       pre-commit
       lazydocker
+      gh-dash
       vis
       zsh
       eza
