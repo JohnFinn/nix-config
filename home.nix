@@ -129,31 +129,40 @@
     "otree.toml".source = ./dotfiles/otree.toml;
   };
 
-  home.file = {
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-    ".todo/config".source = ./dotfiles/todotxt-config;
-    ".config/wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
-    ".config/starship.toml".source = ./dotfiles/starship.toml;
-    ".ideavimrc".source = ./dotfiles/nvim/ideavimrc;
-    ".config/lazygit/config.yml".source = ./dotfiles/lazygit.yaml;
-    ".config/vis/visrc.lua".source = ./dotfiles/vis/visrc.lua;
-    ".config/espanso/" = {
-      source = ./dotfiles/espanso;
-      recursive = true;
-    };
-    ".config/ghostty/config".source =
-      if pkgs.stdenv.isLinux
-      then ./dotfiles/ghostty
-      else ./dotfiles/macos-ghostty;
-    ".ansible.cfg".text = ''
-      [defaults]
-      nocows = 1
-    '';
-  };
+  home.file =
+    {
+      # # You can also set the file content immediately.
+      # ".gradle/gradle.properties".text = ''
+      #   org.gradle.console=verbose
+      #   org.gradle.daemon.idletimeout=3600000
+      # '';
+      ".todo/config".source = ./dotfiles/todotxt-config;
+      ".config/wezterm/wezterm.lua".source = ./dotfiles/wezterm.lua;
+      ".config/starship.toml".source = ./dotfiles/starship.toml;
+      ".ideavimrc".source = ./dotfiles/nvim/ideavimrc;
+      ".config/vis/visrc.lua".source = ./dotfiles/vis/visrc.lua;
+      ".config/espanso/" = {
+        source = ./dotfiles/espanso;
+        recursive = true;
+      };
+      ".config/ghostty/config".source =
+        if pkgs.stdenv.isLinux
+        then ./dotfiles/ghostty
+        else ./dotfiles/macos-ghostty;
+      ".ansible.cfg".text = ''
+        [defaults]
+        nocows = 1
+      '';
+    }
+    // (
+      if pkgs.stdenv.isDarwin
+      then {
+        "Library/Application Support/lazygit/config.yml".source = ./dotfiles/lazygit.yaml;
+      }
+      else {
+        ".config/lazygit/config.yml".source = ./dotfiles/lazygit.yaml;
+      }
+    );
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
