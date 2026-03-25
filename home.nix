@@ -580,10 +580,16 @@
   fonts.fontconfig.enable = true;
 
   dconf.settings = with lib.hm.gvariant; {
-    "org/gnome/mutter".dynamic-workspaces = true;
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+      overlay-key = "";
+    };
     "org/gnome/desktop/input-sources" = {
       mru-sources = [(mkTuple ["xkb" "us"])];
       sources = [(mkTuple ["xkb" "us"]) (mkTuple ["xkb" "ru"])];
+    };
+    "org/gnome/shell/keybindings" = {
+      toggle-overview = ["<Super>space"];
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = ["<Super>q"];
@@ -591,6 +597,8 @@
       maximize-horizontally = ["<Super>j"];
       maximize-vertically = ["<Super>k"];
       always-on-top = ["<Super>s"];
+      switch-input-source = ["<Control>space"];
+      switch-input-source-backward = ["<Shift><Control>space"];
     };
     "org/gnome/desktop/wm/preferences" = {
       focus-mode = "sloppy";
