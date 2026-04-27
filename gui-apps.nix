@@ -4,7 +4,6 @@
     anki
     kitty
     obsidian
-    todoist-electron
     telegram-desktop
     discord
     swappy
